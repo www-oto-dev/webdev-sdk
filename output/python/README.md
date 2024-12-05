@@ -1,6 +1,6 @@
-# WebdevSdk Python SDK 1.0.0
+# WebOtoDevSdk Python SDK 1.0.0
 
-Welcome to the WebdevSdk SDK documentation. This guide will help you get started with integrating and using the WebdevSdk SDK in your project.
+Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
 ## Versions
 
@@ -13,7 +13,7 @@ Welcome to the WebdevSdk SDK documentation. This guide will help you get started
   - [Supported Language Versions](#supported-language-versions)
   - [Installation](#installation)
 - [Authentication](#authentication)
-  - [Access Token Authentication](#access-token-authentication)
+  - [API Key Authentication](#api-key-authentication)
 - [Setting a Custom Timeout](#setting-a-custom-timeout)
 - [Sample Usage](#sample-usage)
 - [Services](#services)
@@ -31,32 +31,31 @@ This SDK is compatible with the following versions: `Python >= 3.7`
 To get started with the SDK, we recommend installing using `pip`:
 
 ```bash
-pip install webdev_sdk
+pip install web_oto_dev_sdk
 ```
 
 ## Authentication
 
-### Access Token Authentication
+### API Key Authentication
 
-The WebdevSdk API uses an Access Token for authentication.
+The WebOtoDevSdk API uses API keys as a form of authentication. An API key is a unique identifier used to authenticate a user, developer, or a program that is calling the API.
 
-This token must be provided to authenticate your requests to the API.
+#### Setting the API key
 
-#### Setting the Access Token
-
-When you initialize the SDK, you can set the access token as follows:
+When you initialize the SDK, you can set the API key as follows:
 
 ```py
-WebdevSdk(
-    access_token="YOUR_ACCESS_TOKEN",
+WebOtoDevSdk(
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
 )
 ```
 
-If you need to set or update the access token after initializing the SDK, you can use:
+If you need to set or update the API key after initializing the SDK, you can use:
 
 ```py
-sdk.set_access_token("YOUR_ACCESS_TOKEN")
+sdk.set_api_key("YOUR_API_KEY", "YOUR_API_KEY_HEADER")
 ```
 
 ## Setting a Custom Timeout
@@ -64,9 +63,9 @@ sdk.set_access_token("YOUR_ACCESS_TOKEN")
 You can set a custom timeout for the SDK's HTTP requests as follows:
 
 ```py
-from webdev_sdk import WebdevSdk
+from web_oto_dev_sdk import WebOtoDevSdk
 
-sdk = WebdevSdk(timeout=10000)
+sdk = WebOtoDevSdk(timeout=10000)
 ```
 
 # Sample Usage
@@ -74,14 +73,15 @@ sdk = WebdevSdk(timeout=10000)
 Below is a comprehensive example demonstrating how to authenticate and call a simple endpoint:
 
 ```py
-from webdev_sdk import WebdevSdk
+from web_oto_dev_sdk import WebOtoDevSdk
 
-sdk = WebdevSdk(
-    access_token="YOUR_ACCESS_TOKEN",
+sdk = WebOtoDevSdk(
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
 )
 
-result = sdk.v0.read_root_v0_admin_get()
+result = sdk.admin.get_projects_admin_projects_get()
 
 print(result)
 
@@ -94,9 +94,26 @@ The SDK provides various services to interact with the API.
 <details> 
 <summary>Below is a list of all available services with links to their detailed documentation:</summary>
 
-| Name                                             |
-| :----------------------------------------------- |
-| [V0Service](documentation/services/V0Service.md) |
+| Name                                                       |
+| :--------------------------------------------------------- |
+| [AdminService](documentation/services/AdminService.md)     |
+| [ControlService](documentation/services/ControlService.md) |
+| [ProjectService](documentation/services/ProjectService.md) |
+
+</details>
+
+## Models
+
+The SDK includes several models that represent the data structures used in API requests and responses. These models help in organizing and managing the data efficiently.
+
+<details> 
+<summary>Below is a list of all available models with links to their detailed documentation:</summary>
+
+| Name                                                     | Description |
+| :------------------------------------------------------- | :---------- |
+| [Property](documentation/models/Property.md)             |             |
+| [PropertyCreate](documentation/models/PropertyCreate.md) |             |
+| [PropertyUpdate](documentation/models/PropertyUpdate.md) |             |
 
 </details>
 

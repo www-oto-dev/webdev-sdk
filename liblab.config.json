@@ -2,9 +2,9 @@
   "sdkName": "web-oto-dev-sdk",
   "apiVersion": "1.0.0",
   "apiName": "web-oto-dev-api",
-  "specFilePath": "http://localhost:8000/openapi.json",
+  "specFilePath": "http://localhost:8000/api/v1/openapi.json",
   "languages": [
-    "python",
+    "python"
   ],
   "auth": [
     "apikey"
@@ -14,10 +14,7 @@
     "authentication": {
       "apiKey": {
         "header": "Access-Token"
-      },
-      "access": {
-        "prefix": ""
-      }      
+      }     
     },
     "devContainer": true,
     "generateEnv": true,
