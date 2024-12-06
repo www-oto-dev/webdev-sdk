@@ -107,6 +107,70 @@
     }
   },
   {
+    "code": "path-keys-no-trailing-slash",
+    "message": "Path must not end with slash.",
+    "path": [
+      "paths",
+      "/project/{pid}/"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 755
+      },
+      "end": {
+        "line": 0,
+        "character": 1305
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/",
+      "get",
+      "tags",
+      "0"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 771
+      },
+      "end": {
+        "line": 0,
+        "character": 780
+      }
+    }
+  },
+  {
+    "code": "tag-operationId-unique",
+    "message": "Operation with \"operationId: get\" is not unique for tag \"project\".",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}",
+      "get"
+    ],
+    "severity": 0,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 1347
+      },
+      "end": {
+        "line": 0,
+        "character": 2038
+      }
+    }
+  },
+  {
     "code": "operation-tag-defined",
     "message": "Operation tags must be defined in global tags.",
     "path": [
@@ -121,11 +185,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 787
+        "character": 1356
       },
       "end": {
         "line": 0,
-        "character": 796
+        "character": 1365
       }
     }
   },
@@ -144,11 +208,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 797
+        "character": 1366
       },
       "end": {
         "line": 0,
-        "character": 809
+        "character": 1378
       }
     }
   },
@@ -167,11 +231,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 1488
+        "character": 2057
       },
       "end": {
         "line": 0,
-        "character": 1497
+        "character": 2066
       }
     }
   },
@@ -190,11 +254,32 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 1498
+        "character": 2067
       },
       "end": {
         "line": 0,
-        "character": 1510
+        "character": 2079
+      }
+    }
+  },
+  {
+    "code": "path-params",
+    "message": "Operation must define parameter \"{pid}\" as expected by path \"/project/{pid}/properties/{key}/{value}\".",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}/{value}",
+      "put"
+    ],
+    "severity": 0,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 2853
+      },
+      "end": {
+        "line": 0,
+        "character": 3582
       }
     }
   },
@@ -213,11 +298,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 2293
+        "character": 2862
       },
       "end": {
         "line": 0,
-        "character": 2302
+        "character": 2871
       }
     }
   },
@@ -236,11 +321,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 2303
+        "character": 2872
       },
       "end": {
         "line": 0,
-        "character": 2315
+        "character": 2884
       }
     }
   },
@@ -259,11 +344,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3153
+        "character": 3638
       },
       "end": {
         "line": 0,
-        "character": 3162
+        "character": 3647
       }
     }
   },
@@ -282,11 +367,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3163
+        "character": 3648
       },
       "end": {
         "line": 0,
-        "character": 3175
+        "character": 3660
       }
     }
   },
@@ -302,11 +387,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3922
+        "character": 4407
       },
       "end": {
         "line": 0,
-        "character": 4685
+        "character": 5214
       }
     }
   },
@@ -325,11 +410,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3938
+        "character": 4423
       },
       "end": {
         "line": 0,
-        "character": 3947
+        "character": 4432
       }
     }
   },
@@ -348,11 +433,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3948
+        "character": 4433
       },
       "end": {
         "line": 0,
-        "character": 3960
+        "character": 4445
       }
     }
   }

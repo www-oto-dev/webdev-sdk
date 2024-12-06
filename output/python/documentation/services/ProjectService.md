@@ -4,11 +4,45 @@ A list of all methods in the `ProjectService` service. Click on the method name 
 
 | Methods               | Description                                                                                                                 |
 | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| [get](#get)           | Obtain project by ID                                                                                                        |
 | [get](#get)           | Obtain the lastest value for preference with specified 'key'                                                                |
 | [remove](#remove)     | Remove all values for specified 'key'                                                                                       |
 | [set](#set)           | Remove all previous values for specified 'key' and add a new value                                                          |
 | [get_many](#get_many) | Obtain a list of all preferences with specified 'key'                                                                       |
 | [set_many](#set_many) | Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list |
+
+## get
+
+Obtain project by ID
+
+- HTTP Method: `GET`
+- Endpoint: `/project/{pid}/`
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| :--- | :--- | :------- | :---------- |
+| pid  | str  | ✅       |             |
+
+**Return Type**
+
+`Project`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.project.get(pid="pid")
+
+print(result)
+```
 
 ## get
 
@@ -19,10 +53,10 @@ Obtain the lastest value for preference with specified 'key'
 
 **Parameters**
 
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ✅       |             |
-| key  | str  | ✅       |             |
+| Name  | Type | Required | Description |
+| :---- | :--- | :------- | :---------- |
+| pid_1 | str  | ✅       |             |
+| key   | str  | ✅       |             |
 
 **Return Type**
 
@@ -40,7 +74,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.project.get(
-    pid="pid",
+    pid_1="pid",
     key="key"
 )
 
@@ -97,7 +131,6 @@ Remove all previous values for specified 'key' and add a new value
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
-| pid   | str  | ✅       |             |
 | key   | str  | ✅       |             |
 | value | str  | ✅       |             |
 
@@ -117,7 +150,6 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.project.set(
-    pid="pid",
     key="key",
     value="value"
 )
@@ -171,10 +203,10 @@ Remove previously set and add new preferences with specified 'key' fileds with v
 
 **Parameters**
 
-| Name         | Type                              | Required | Description       |
-| :----------- | :-------------------------------- | :------- | :---------------- |
-| request_body | [Property](../models/Property.md) | ✅       | The request body. |
-| pid          | str                               | ✅       |                   |
+| Name         | Type                                    | Required | Description       |
+| :----------- | :-------------------------------------- | :------- | :---------------- |
+| request_body | [List[Property]](../models/Property.md) | ✅       | The request body. |
+| pid          | str                                     | ✅       |                   |
 
 **Return Type**
 
@@ -184,7 +216,6 @@ Remove previously set and add new preferences with specified 'key' fileds with v
 
 ```python
 from web_oto_dev_sdk import WebOtoDevSdk
-from web_oto_dev_sdk.models import Property
 
 sdk = WebOtoDevSdk(
     api_key="YOUR_API_KEY",
@@ -192,10 +223,12 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-request_body = Property(
-    key="key",
-    value="value"
-)
+request_body = [
+    {
+        "key": "key",
+        "value": "value"
+    }
+]
 
 result = sdk.project.set_many(
     request_body=request_body,

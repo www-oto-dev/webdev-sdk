@@ -115,6 +115,7 @@ The SDK includes several models that represent the data structures used in API r
 
 | Name     | Description |
 | :------- | :---------- |
+| Project  |             |
 | Property |             |
 
 </details>
