@@ -14,26 +14,7 @@
       },
       "end": {
         "line": 0,
-        "character": 63
-      }
-    }
-  },
-  {
-    "code": "info-description",
-    "message": "Info \"description\" must be present and non-empty string.",
-    "path": [
-      "info"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 26
-      },
-      "end": {
-        "line": 0,
-        "character": 63
+        "character": 121
       }
     }
   },
@@ -50,11 +31,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 128
+        "character": 186
       },
       "end": {
         "line": 0,
-        "character": 389
+        "character": 447
       }
     }
   },
@@ -73,11 +54,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 137
+        "character": 195
       },
       "end": {
         "line": 0,
-        "character": 144
+        "character": 202
       }
     }
   },
@@ -94,11 +75,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 418
+        "character": 476
       },
       "end": {
         "line": 0,
-        "character": 677
+        "character": 735
       }
     }
   },
@@ -117,52 +98,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 427
+        "character": 485
       },
       "end": {
         "line": 0,
-        "character": 436
-      }
-    }
-  },
-  {
-    "code": "path-keys-no-trailing-slash",
-    "message": "Path must not end with slash.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 717
-      },
-      "end": {
-        "line": 0,
-        "character": 2152
-      }
-    }
-  },
-  {
-    "code": "operation-description",
-    "message": "Operation \"description\" must be present and non-empty string.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/",
-      "post"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 725
-      },
-      "end": {
-        "line": 0,
-        "character": 1442
+        "character": 494
       }
     }
   },
@@ -171,51 +111,7 @@
     "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
-      "/project/{project_slug}/properties/",
-      "post",
-      "tags",
-      "0"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 734
-      },
-      "end": {
-        "line": 0,
-        "character": 743
-      }
-    }
-  },
-  {
-    "code": "operation-description",
-    "message": "Operation \"description\" must be present and non-empty string.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/",
-      "get"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 1449
-      },
-      "end": {
-        "line": 0,
-        "character": 2151
-      }
-    }
-  },
-  {
-    "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/",
+      "/project/{pid}/properties/{key}",
       "get",
       "tags",
       "0"
@@ -225,53 +121,11 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 1458
+        "character": 787
       },
       "end": {
         "line": 0,
-        "character": 1467
-      }
-    }
-  },
-  {
-    "code": "operation-description",
-    "message": "Operation \"description\" must be present and non-empty string.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/{property_slug}",
-      "get"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 2213
-      },
-      "end": {
-        "line": 0,
-        "character": 2912
-      }
-    }
-  },
-  {
-    "code": "path-params",
-    "message": "Operation must define parameter \"{property_slug}\" as expected by path \"/project/{project_slug}/properties/{property_slug}\".",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/{property_slug}",
-      "get"
-    ],
-    "severity": 0,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 2213
-      },
-      "end": {
-        "line": 0,
-        "character": 2912
+        "character": 796
       }
     }
   },
@@ -280,42 +134,21 @@
     "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
-      "/project/{project_slug}/properties/{property_slug}",
+      "/project/{pid}/properties/{key}",
       "get",
       "tags",
-      "0"
+      "1"
     ],
     "severity": 1,
     "source": "openapi.json",
     "range": {
       "start": {
         "line": 0,
-        "character": 2222
+        "character": 797
       },
       "end": {
         "line": 0,
-        "character": 2231
-      }
-    }
-  },
-  {
-    "code": "operation-description",
-    "message": "Operation \"description\" must be present and non-empty string.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/{property_slug}",
-      "put"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 2919
-      },
-      "end": {
-        "line": 0,
-        "character": 3738
+        "character": 809
       }
     }
   },
@@ -324,51 +157,7 @@
     "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
-      "/project/{project_slug}/properties/{property_slug}",
-      "put",
-      "tags",
-      "0"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 2928
-      },
-      "end": {
-        "line": 0,
-        "character": 2937
-      }
-    }
-  },
-  {
-    "code": "operation-description",
-    "message": "Operation \"description\" must be present and non-empty string.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/{property_slug}",
-      "delete"
-    ],
-    "severity": 1,
-    "source": "openapi.json",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 3748
-      },
-      "end": {
-        "line": 0,
-        "character": 4449
-      }
-    }
-  },
-  {
-    "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
-    "path": [
-      "paths",
-      "/project/{project_slug}/properties/{property_slug}",
+      "/project/{pid}/properties/{key}",
       "delete",
       "tags",
       "0"
@@ -378,11 +167,192 @@
     "range": {
       "start": {
         "line": 0,
-        "character": 3757
+        "character": 1488
       },
       "end": {
         "line": 0,
-        "character": 3766
+        "character": 1497
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}",
+      "delete",
+      "tags",
+      "1"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 1498
+      },
+      "end": {
+        "line": 0,
+        "character": 1510
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}/{value}",
+      "put",
+      "tags",
+      "0"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 2293
+      },
+      "end": {
+        "line": 0,
+        "character": 2302
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}/{value}",
+      "put",
+      "tags",
+      "1"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 2303
+      },
+      "end": {
+        "line": 0,
+        "character": 2315
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}/all",
+      "get",
+      "tags",
+      "0"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3153
+      },
+      "end": {
+        "line": 0,
+        "character": 3162
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/{key}/all",
+      "get",
+      "tags",
+      "1"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3163
+      },
+      "end": {
+        "line": 0,
+        "character": 3175
+      }
+    }
+  },
+  {
+    "code": "path-keys-no-trailing-slash",
+    "message": "Path must not end with slash.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3922
+      },
+      "end": {
+        "line": 0,
+        "character": 4685
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/",
+      "put",
+      "tags",
+      "0"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3938
+      },
+      "end": {
+        "line": 0,
+        "character": 3947
+      }
+    }
+  },
+  {
+    "code": "operation-tag-defined",
+    "message": "Operation tags must be defined in global tags.",
+    "path": [
+      "paths",
+      "/project/{pid}/properties/",
+      "put",
+      "tags",
+      "1"
+    ],
+    "severity": 1,
+    "source": "openapi.json",
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3948
+      },
+      "end": {
+        "line": 0,
+        "character": 3960
       }
     }
   }

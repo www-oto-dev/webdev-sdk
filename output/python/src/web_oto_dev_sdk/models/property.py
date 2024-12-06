@@ -4,33 +4,24 @@ from .utils.json_map import JsonMap
 from .utils.base_model import BaseModel
 
 
-@JsonMap({"id_": "id"})
+@JsonMap({})
 class Property(BaseModel):
     """Property
 
     :param key: key
     :type key: str
-    :param value: value
-    :type value: str
-    :param id_: id_
-    :type id_: str
-    :param project_id: project_id
-    :type project_id: str
+    :param value: value, defaults to None
+    :type value: str, optional
     """
 
-    def __init__(self, key: str, value: str, id_: str, project_id: str):
+    def __init__(self, key: str, value: str = None):
         """Property
 
         :param key: key
         :type key: str
-        :param value: value
-        :type value: str
-        :param id_: id_
-        :type id_: str
-        :param project_id: project_id
-        :type project_id: str
+        :param value: value, defaults to None
+        :type value: str, optional
         """
         self.key = key
-        self.value = value
-        self.id_ = id_
-        self.project_id = project_id
+        if value is not None:
+            self.value = self._define_str("value", value, nullable=True)

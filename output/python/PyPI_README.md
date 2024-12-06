@@ -4,8 +4,12 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions<a id="versions"></a>
 
-- API version: `0.1.0`
+- API version: `1.0.1`
 - SDK version: `1.0.0`
+
+## About the API<a id="about-the-api"></a>
+
+API v1 for web.oto.dev service
 
 ## Table of Contents<a id="table-of-contents"></a>
 
@@ -109,11 +113,9 @@ The SDK includes several models that represent the data structures used in API r
 <details> 
 <summary>Below is a list of all available models:</summary>
 
-| Name           | Description |
-| :------------- | :---------- |
-| Property       |             |
-| PropertyCreate |             |
-| PropertyUpdate |             |
+| Name     | Description |
+| :------- | :---------- |
+| Property |             |
 
 </details>
 

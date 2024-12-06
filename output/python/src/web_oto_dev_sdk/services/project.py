@@ -5,51 +5,19 @@ from .utils.validator import Validator
 from .utils.base_service import BaseService
 from ..net.transport.serializer import Serializer
 from ..models.utils.cast_models import cast_models
-from ..models import Property, PropertyCreate, PropertyUpdate
+from ..models import Property
 
 
 class ProjectService(BaseService):
 
     @cast_models
-    def read_project_properties_project_project_slug_properties_get(
-        self, project_slug: str
-    ) -> List[Property]:
-        """read_project_properties_project_project_slug_properties_get
+    def get(self, pid: str, key: str) -> Property:
+        """Obtain the lastest value for preference with specified 'key'
 
-        :param project_slug: project_slug
-        :type project_slug: str
-        ...
-        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
-        ...
-        :return: Successful Response
-        :rtype: List[Property]
-        """
-
-        Validator(str).validate(project_slug)
-
-        serialized_request = (
-            Serializer(
-                f"{self.base_url}/project/{{project_slug}}/properties/",
-                self.get_default_headers(),
-            )
-            .add_path("project_slug", project_slug)
-            .serialize()
-            .set_method("GET")
-        )
-
-        response = self.send_request(serialized_request)
-        return [Property._unmap(item) for item in response]
-
-    @cast_models
-    def create_project_property_project_project_slug_properties_post(
-        self, request_body: PropertyCreate, project_slug: str
-    ) -> Property:
-        """create_project_property_project_project_slug_properties_post
-
-        :param request_body: The request body.
-        :type request_body: PropertyCreate
-        :param project_slug: project_slug
-        :type project_slug: str
+        :param pid: pid
+        :type pid: str
+        :param key: key
+        :type key: str
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -57,31 +25,103 @@ class ProjectService(BaseService):
         :rtype: Property
         """
 
-        Validator(PropertyCreate).validate(request_body)
-        Validator(str).validate(project_slug)
+        Validator(str).validate(pid)
+        Validator(str).validate(key)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url}/project/{{project_slug}}/properties/",
+                f"{self.base_url}/project/{{pid}}/properties/{{key}}",
                 self.get_default_headers(),
             )
-            .add_path("project_slug", project_slug)
+            .add_path("pid", pid)
+            .add_path("key", key)
             .serialize()
-            .set_method("POST")
-            .set_body(request_body)
+            .set_method("GET")
         )
 
         response = self.send_request(serialized_request)
         return Property._unmap(response)
 
     @cast_models
-    def get_property_project_project_slug_properties_property_slug_get(
-        self, project_slug: str
-    ) -> List[Property]:
-        """get_property_project_project_slug_properties_property_slug_get
+    def remove(self, pid: str, key: str, value: str = None) -> any:
+        """Remove all values for specified 'key'
 
-        :param project_slug: project_slug
-        :type project_slug: str
+        :param pid: pid
+        :type pid: str
+        :param key: key
+        :type key: str
+        :param value: value, defaults to None
+        :type value: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).validate(pid)
+        Validator(str).validate(key)
+        Validator(str).is_optional().validate(value)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/project/{{pid}}/properties/{{key}}",
+                self.get_default_headers(),
+            )
+            .add_path("pid", pid)
+            .add_path("key", key)
+            .add_query("value", value, nullable=True)
+            .serialize()
+            .set_method("DELETE")
+        )
+
+        response = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def set(self, pid: str, key: str, value: str) -> Property:
+        """Remove all previous values for specified 'key' and add a new value
+
+        :param pid: pid
+        :type pid: str
+        :param key: key
+        :type key: str
+        :param value: value
+        :type value: str
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: Property
+        """
+
+        Validator(str).validate(pid)
+        Validator(str).validate(key)
+        Validator(str).validate(value)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/project/{{pid}}/properties/{{key}}/{{value}}",
+                self.get_default_headers(),
+            )
+            .add_path("pid", pid)
+            .add_path("key", key)
+            .add_path("value", value)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response = self.send_request(serialized_request)
+        return Property._unmap(response)
+
+    @cast_models
+    def get_many(self, pid: str, key: str) -> List[Property]:
+        """Obtain a list of all preferences with specified 'key'
+
+        :param pid: pid
+        :type pid: str
+        :param key: key
+        :type key: str
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -89,14 +129,16 @@ class ProjectService(BaseService):
         :rtype: List[Property]
         """
 
-        Validator(str).validate(project_slug)
+        Validator(str).validate(pid)
+        Validator(str).validate(key)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url}/project/{{project_slug}}/properties/{property_slug}",
+                f"{self.base_url}/project/{{pid}}/properties/{{key}}/all",
                 self.get_default_headers(),
             )
-            .add_path("project_slug", project_slug)
+            .add_path("pid", pid)
+            .add_path("key", key)
             .serialize()
             .set_method("GET")
         )
@@ -105,73 +147,33 @@ class ProjectService(BaseService):
         return [Property._unmap(item) for item in response]
 
     @cast_models
-    def update_property_project_project_slug_properties_property_slug_put(
-        self, request_body: PropertyUpdate, project_slug: str, property_slug: str
-    ) -> Property:
-        """update_property_project_project_slug_properties_property_slug_put
+    def set_many(self, request_body: Property, pid: str) -> any:
+        """Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list
 
         :param request_body: The request body.
-        :type request_body: PropertyUpdate
-        :param project_slug: project_slug
-        :type project_slug: str
-        :param property_slug: property_slug
-        :type property_slug: str
+        :type request_body: Property
+        :param pid: pid
+        :type pid: str
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
-        :rtype: Property
+        :rtype: any
         """
 
-        Validator(PropertyUpdate).validate(request_body)
-        Validator(str).validate(project_slug)
-        Validator(str).validate(property_slug)
+        Validator(Property).validate(request_body)
+        Validator(str).validate(pid)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url}/project/{{project_slug}}/properties/{{property_slug}}",
+                f"{self.base_url}/project/{{pid}}/properties/",
                 self.get_default_headers(),
             )
-            .add_path("project_slug", project_slug)
-            .add_path("property_slug", property_slug)
+            .add_path("pid", pid)
             .serialize()
             .set_method("PUT")
             .set_body(request_body)
         )
 
         response = self.send_request(serialized_request)
-        return Property._unmap(response)
-
-    @cast_models
-    def delete_property_project_project_slug_properties_property_slug_delete(
-        self, project_slug: str, property_slug: str
-    ) -> Property:
-        """delete_property_project_project_slug_properties_property_slug_delete
-
-        :param project_slug: project_slug
-        :type project_slug: str
-        :param property_slug: property_slug
-        :type property_slug: str
-        ...
-        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
-        ...
-        :return: Successful Response
-        :rtype: Property
-        """
-
-        Validator(str).validate(project_slug)
-        Validator(str).validate(property_slug)
-
-        serialized_request = (
-            Serializer(
-                f"{self.base_url}/project/{{project_slug}}/properties/{{property_slug}}",
-                self.get_default_headers(),
-            )
-            .add_path("project_slug", project_slug)
-            .add_path("property_slug", property_slug)
-            .serialize()
-            .set_method("DELETE")
-        )
-
-        response = self.send_request(serialized_request)
-        return Property._unmap(response)
+        return response
