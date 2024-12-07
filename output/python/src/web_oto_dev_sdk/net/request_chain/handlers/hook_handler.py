@@ -4,7 +4,7 @@ from typing import Generator, Optional, Tuple
 
 
 from .base_handler import BaseHandler
-from ....hooks.hook import DefaultHook
+from ....hooks.hook import CustomHook
 from ...transport.request import Request
 from ...transport.response import Response
 from ...transport.request_error import RequestError
@@ -17,12 +17,14 @@ class HookHandler(BaseHandler):
     :ivar Hook _hook: The hook to be called. This is a placeholder and should be replaced with an instance of the actual hook class.
     """
 
-    def __init__(self):
+    def __init__(self, additional_variables: dict = {}):
         """
         Initialize a new instance of HookHandler.
         """
         super().__init__()
-        self._hook = DefaultHook()
+        self._hook = CustomHook()
+
+        self._additional_variables = additional_variables
 
     def handle(
         self, request: Request
@@ -39,7 +41,7 @@ class HookHandler(BaseHandler):
         if self._next_handler is None:
             raise RequestError("Handler chain is incomplete")
 
-        self._hook.before_request(request)
+        self._hook.before_request(request, **self._additional_variables)
         response, error = self._next_handler.handle(request)
         self._handle_response(request, response, error)
 
@@ -60,7 +62,7 @@ class HookHandler(BaseHandler):
         if self._next_handler is None:
             raise RequestError("Handler chain is incomplete")
 
-        self._hook.before_request(request)
+        self._hook.before_request(request, **self._additional_variables)
         for response, error in self._next_handler.stream(request):
             self._handle_response(request, response, error)
             yield response, error
@@ -69,6 +71,8 @@ class HookHandler(BaseHandler):
         self, request: Request, response: Response, error: RequestError
     ):
         if error is not None and error.is_http_error:
-            self._hook.on_error(error, request, error.response)
+            self._hook.on_error(
+                error, request, error.response, **self._additional_variables
+            )
         else:
-            self._hook.after_response(request, response)
+            self._hook.after_response(request, response, **self._additional_variables)

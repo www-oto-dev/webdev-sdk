@@ -30,6 +30,8 @@ class BaseService:
         self._default_headers = DefaultHeaders()
         self._timeout = 60000
 
+        self._additional_variables = {}
+
         self._update_request_handler()
 
     def set_api_key(self, api_key: str, api_key_header="Access-Token"):
@@ -40,6 +42,16 @@ class BaseService:
             DefaultHeadersKeys.API_KEY_AUTH, ApiKeyAuth(api_key, api_key_header)
         )
 
+        return self
+
+    def set_additional_variables(self, project_id: str = None):
+        """
+        Sets the additional variables for the service.
+        """
+        if project_id is not None:
+            self._additional_variables["project_id"] = project_id
+
+        self._update_request_handler()
         return self
 
     def set_timeout(self, timeout: int):
@@ -98,7 +110,7 @@ class BaseService:
         return (
             RequestChain()
             .add_handler(RetryHandler())
-            .add_handler(HookHandler())
+            .add_handler(HookHandler(self._additional_variables))
             .add_handler(HttpHandler(self._timeout))
         )
 

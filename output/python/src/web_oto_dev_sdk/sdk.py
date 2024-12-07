@@ -2,14 +2,15 @@
 
 from typing import Union
 from .services.admin import AdminService
-from .services.control import ControlService
 from .services.project import ProjectService
+from .services.properties import PropertiesService
 from .net.environment import Environment
 
 
 class WebOtoDevSdk:
     def __init__(
         self,
+        project_id: str = None,
         api_key: str = None,
         api_key_header: str = "Access-Token",
         base_url: Union[Environment, str] = Environment.DEFAULT,
@@ -23,9 +24,10 @@ class WebOtoDevSdk:
             base_url.value if isinstance(base_url, Environment) else base_url
         )
         self.admin = AdminService(base_url=self._base_url)
-        self.control = ControlService(base_url=self._base_url)
         self.project = ProjectService(base_url=self._base_url)
+        self.properties = PropertiesService(base_url=self._base_url)
         self.set_api_key(api_key, api_key_header)
+        self.set_additional_variables(project_id)
         self.set_timeout(timeout)
 
     def set_base_url(self, base_url: Union[Environment, str]):
@@ -40,8 +42,8 @@ class WebOtoDevSdk:
         )
 
         self.admin.set_base_url(self._base_url)
-        self.control.set_base_url(self._base_url)
         self.project.set_base_url(self._base_url)
+        self.properties.set_base_url(self._base_url)
 
         return self
 
@@ -50,8 +52,18 @@ class WebOtoDevSdk:
         Sets the api key and the api key header for the entire SDK.
         """
         self.admin.set_api_key(api_key, api_key_header)
-        self.control.set_api_key(api_key, api_key_header)
         self.project.set_api_key(api_key, api_key_header)
+        self.properties.set_api_key(api_key, api_key_header)
+
+        return self
+
+    def set_additional_variables(self, project_id: str = None):
+        """
+        Sets the additional variables for the entire SDK.
+        """
+        self.admin.set_additional_variables(project_id)
+        self.project.set_additional_variables(project_id)
+        self.properties.set_additional_variables(project_id)
 
         return self
 
@@ -63,8 +75,8 @@ class WebOtoDevSdk:
         :return: The SDK instance.
         """
         self.admin.set_timeout(timeout)
-        self.control.set_timeout(timeout)
         self.project.set_timeout(timeout)
+        self.properties.set_timeout(timeout)
 
         return self
 

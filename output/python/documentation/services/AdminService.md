@@ -2,18 +2,20 @@
 
 A list of all methods in the `AdminService` service. Click on the method name to view detailed information about that method.
 
-| Methods                                                             | Description |
-| :------------------------------------------------------------------ | :---------- |
-| [get_projects_admin_projects_get](#get_projects_admin_projects_get) |             |
+| Methods               | Description                                           |
+| :-------------------- | :---------------------------------------------------- |
+| [projects](#projects) | Obtain a list of all projects [ADMIN RIGHTS REQUIRED] |
 
-## get_projects_admin_projects_get
+## projects
+
+Obtain a list of all projects [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `GET`
 - Endpoint: `/admin/projects`
 
 **Return Type**
 
-`any`
+`List[Project]`
 
 **Example Usage Code Snippet**
 
@@ -21,12 +23,13 @@ A list of all methods in the `AdminService` service. Click on the method name to
 from web_oto_dev_sdk import WebOtoDevSdk
 
 sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
     api_key="YOUR_API_KEY",
     api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
 )
 
-result = sdk.admin.get_projects_admin_projects_get()
+result = sdk.admin.projects()
 
 print(result)
 ```

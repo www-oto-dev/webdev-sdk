@@ -50,6 +50,7 @@ When you initialize the SDK, you can set the API key as follows:
 
 ```py
 WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
     api_key="YOUR_API_KEY",
     api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
@@ -80,12 +81,13 @@ Below is a comprehensive example demonstrating how to authenticate and call a si
 from web_oto_dev_sdk import WebOtoDevSdk
 
 sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
     api_key="YOUR_API_KEY",
     api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
 )
 
-result = sdk.admin.get_projects_admin_projects_get()
+result = sdk.admin.projects()
 
 print(result)
 
@@ -98,11 +100,11 @@ The SDK provides various services to interact with the API.
 <details> 
 <summary>Below is a list of all available services with links to their detailed documentation:</summary>
 
-| Name                                                       |
-| :--------------------------------------------------------- |
-| [AdminService](documentation/services/AdminService.md)     |
-| [ControlService](documentation/services/ControlService.md) |
-| [ProjectService](documentation/services/ProjectService.md) |
+| Name                                                             |
+| :--------------------------------------------------------------- |
+| [AdminService](documentation/services/AdminService.md)           |
+| [ProjectService](documentation/services/ProjectService.md)       |
+| [PropertiesService](documentation/services/PropertiesService.md) |
 
 </details>
 

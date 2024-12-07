@@ -2,27 +2,26 @@
 
 A list of all methods in the `ProjectService` service. Click on the method name to view detailed information about that method.
 
-| Methods               | Description                                                                                                                 |
-| :-------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| [get](#get)           | Obtain project by ID                                                                                                        |
-| [get](#get)           | Obtain the lastest value for preference with specified 'key'                                                                |
-| [remove](#remove)     | Remove all values for specified 'key'                                                                                       |
-| [set](#set)           | Remove all previous values for specified 'key' and add a new value                                                          |
-| [get_many](#get_many) | Obtain a list of all preferences with specified 'key'                                                                       |
-| [set_many](#set_many) | Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list |
+| Methods               | Description                      |
+| :-------------------- | :------------------------------- |
+| [get](#get)           | Obtain project information by ID |
+| [collect](#collect)   | collect                          |
+| [generate](#generate) | generate                         |
+| [build](#build)       | build                            |
+| [view](#view)         | view                             |
 
 ## get
 
-Obtain project by ID
+Obtain project information by ID
 
 - HTTP Method: `GET`
-- Endpoint: `/project/{pid}/`
+- Endpoint: `/project/get`
 
 **Parameters**
 
 | Name | Type | Required | Description |
 | :--- | :--- | :------- | :---------- |
-| pid  | str  | ✅       |             |
+| pid  | str  | ❌       |             |
 
 **Return Type**
 
@@ -34,6 +33,7 @@ Obtain project by ID
 from web_oto_dev_sdk import WebOtoDevSdk
 
 sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
     api_key="YOUR_API_KEY",
     api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
@@ -44,169 +44,18 @@ result = sdk.project.get(pid="pid")
 print(result)
 ```
 
-## get
+## collect
 
-Obtain the lastest value for preference with specified 'key'
+collect
 
-- HTTP Method: `GET`
-- Endpoint: `/project/{pid}/properties/{key}`
-
-**Parameters**
-
-| Name  | Type | Required | Description |
-| :---- | :--- | :------- | :---------- |
-| pid_1 | str  | ✅       |             |
-| key   | str  | ✅       |             |
-
-**Return Type**
-
-`Property`
-
-**Example Usage Code Snippet**
-
-```python
-from web_oto_dev_sdk import WebOtoDevSdk
-
-sdk = WebOtoDevSdk(
-    api_key="YOUR_API_KEY",
-    api_key_header="YOUR_API_KEY_HEADER",
-    timeout=10000
-)
-
-result = sdk.project.get(
-    pid_1="pid",
-    key="key"
-)
-
-print(result)
-```
-
-## remove
-
-Remove all values for specified 'key'
-
-- HTTP Method: `DELETE`
-- Endpoint: `/project/{pid}/properties/{key}`
-
-**Parameters**
-
-| Name  | Type | Required | Description |
-| :---- | :--- | :------- | :---------- |
-| pid   | str  | ✅       |             |
-| key   | str  | ✅       |             |
-| value | str  | ❌       |             |
-
-**Return Type**
-
-`any`
-
-**Example Usage Code Snippet**
-
-```python
-from web_oto_dev_sdk import WebOtoDevSdk
-
-sdk = WebOtoDevSdk(
-    api_key="YOUR_API_KEY",
-    api_key_header="YOUR_API_KEY_HEADER",
-    timeout=10000
-)
-
-result = sdk.project.remove(
-    pid="pid",
-    key="key",
-    value="value"
-)
-
-print(result)
-```
-
-## set
-
-Remove all previous values for specified 'key' and add a new value
-
-- HTTP Method: `PUT`
-- Endpoint: `/project/{pid}/properties/{key}/{value}`
-
-**Parameters**
-
-| Name  | Type | Required | Description |
-| :---- | :--- | :------- | :---------- |
-| key   | str  | ✅       |             |
-| value | str  | ✅       |             |
-
-**Return Type**
-
-`Property`
-
-**Example Usage Code Snippet**
-
-```python
-from web_oto_dev_sdk import WebOtoDevSdk
-
-sdk = WebOtoDevSdk(
-    api_key="YOUR_API_KEY",
-    api_key_header="YOUR_API_KEY_HEADER",
-    timeout=10000
-)
-
-result = sdk.project.set(
-    key="key",
-    value="value"
-)
-
-print(result)
-```
-
-## get_many
-
-Obtain a list of all preferences with specified 'key'
-
-- HTTP Method: `GET`
-- Endpoint: `/project/{pid}/properties/{key}/all`
+- HTTP Method: `POST`
+- Endpoint: `/project/collect`
 
 **Parameters**
 
 | Name | Type | Required | Description |
 | :--- | :--- | :------- | :---------- |
-| pid  | str  | ✅       |             |
-| key  | str  | ✅       |             |
-
-**Return Type**
-
-`List[Property]`
-
-**Example Usage Code Snippet**
-
-```python
-from web_oto_dev_sdk import WebOtoDevSdk
-
-sdk = WebOtoDevSdk(
-    api_key="YOUR_API_KEY",
-    api_key_header="YOUR_API_KEY_HEADER",
-    timeout=10000
-)
-
-result = sdk.project.get_many(
-    pid="pid",
-    key="key"
-)
-
-print(result)
-```
-
-## set_many
-
-Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list
-
-- HTTP Method: `PUT`
-- Endpoint: `/project/{pid}/properties/`
-
-**Parameters**
-
-| Name         | Type                                    | Required | Description       |
-| :----------- | :-------------------------------------- | :------- | :---------------- |
-| request_body | [List[Property]](../models/Property.md) | ✅       | The request body. |
-| pid          | str                                     | ✅       |                   |
+| pid  | str  | ❌       |             |
 
 **Return Type**
 
@@ -218,22 +67,115 @@ Remove previously set and add new preferences with specified 'key' fileds with v
 from web_oto_dev_sdk import WebOtoDevSdk
 
 sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
     api_key="YOUR_API_KEY",
     api_key_header="YOUR_API_KEY_HEADER",
     timeout=10000
 )
 
-request_body = [
-    {
-        "key": "key",
-        "value": "value"
-    }
-]
+result = sdk.project.collect(pid="pid")
 
-result = sdk.project.set_many(
-    request_body=request_body,
-    pid="pid"
+print(result)
+```
+
+## generate
+
+generate
+
+- HTTP Method: `POST`
+- Endpoint: `/project/generate`
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| :--- | :--- | :------- | :---------- |
+| pid  | str  | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
 )
+
+result = sdk.project.generate(pid="pid")
+
+print(result)
+```
+
+## build
+
+build
+
+- HTTP Method: `POST`
+- Endpoint: `/project/build`
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| :--- | :--- | :------- | :---------- |
+| pid  | str  | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.project.build(pid="pid")
+
+print(result)
+```
+
+## view
+
+view
+
+- HTTP Method: `POST`
+- Endpoint: `/project/view`
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| :--- | :--- | :------- | :---------- |
+| pid  | str  | ❌       |             |
+
+**Return Type**
+
+`Project`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.project.view(pid="pid")
 
 print(result)
 ```
