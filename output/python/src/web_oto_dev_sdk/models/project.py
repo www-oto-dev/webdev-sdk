@@ -7,29 +7,19 @@ from .utils.base_model import BaseModel
 from .property import Property
 
 
-@JsonMap({"id_": "id"})
+@JsonMap({})
 class Project(BaseModel):
     """Project
 
-    :param pid: pid
-    :type pid: str
-    :param id_: id_
-    :type id_: int
     :param properties: properties, defaults to None
     :type properties: List[Property], optional
     """
 
-    def __init__(self, pid: str, id_: int, properties: List[Property] = None):
+    def __init__(self, properties: List[Property] = None):
         """Project
 
-        :param pid: pid
-        :type pid: str
-        :param id_: id_
-        :type id_: int
         :param properties: properties, defaults to None
         :type properties: List[Property], optional
         """
-        self.pid = pid
-        self.id_ = id_
         if properties is not None:
             self.properties = self._define_list(properties, Property)

@@ -1,6 +1,6 @@
 {
   "liblabVersion": "2.9.6",
-  "date": "2024-12-06T21:22:41.857Z",
+  "date": "2024-12-09T17:32:20.499Z",
   "config": {
     "apiId": 1515,
     "sdkName": "web-oto-dev-sdk",
@@ -86,7 +86,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "8348/hooks.zip",
+      "bucketKey": "8359/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,
@@ -178,8 +178,8 @@
     "documentation/services/ProjectService.md",
     "documentation/services/PropertiesService.md",
     "src/web_oto_dev_sdk/services/project.py",
-    "src/web_oto_dev_sdk/services/properties.py",
     "README.md",
-    "PyPI_README.md"
+    "PyPI_README.md",
+    "src/web_oto_dev_sdk/services/properties.py"
   ]
 }

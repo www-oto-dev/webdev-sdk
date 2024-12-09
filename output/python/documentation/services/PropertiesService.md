@@ -2,32 +2,32 @@
 
 A list of all methods in the `PropertiesService` service. Click on the method name to view detailed information about that method.
 
-| Methods             | Description                                                                                                                 |
-| :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
-| [get](#get)         | Obtain the lastest value for preference with specified 'key'                                                                |
-| [set](#set)         | Remove all previous values for specified 'key' and add a new value                                                          |
-| [all](#all)         | Obtain a list of all preferences with specified 'key'                                                                       |
-| [replace](#replace) | Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list |
-| [remove](#remove)   | Remove all values for specified 'key'                                                                                       |
+| Methods           | Description                                                                                                                 |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| [get](#get)       | Obtain the lastest value for preference with specified 'key'                                                                |
+| [set](#set)       | Remove all previous values for specified 'key' and add a new value                                                          |
+| [add](#add)       | Add a new value for specified 'key'                                                                                         |
+| [all](#all)       | Obtain a list of all preferences with specified 'key'                                                                       |
+| [update](#update) | Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list |
+| [remove](#remove) | Remove all values for specified 'key'                                                                                       |
 
 ## get
 
 Obtain the lastest value for preference with specified 'key'
 
 - HTTP Method: `GET`
-- Endpoint: `/properties/actual/{key}`
+- Endpoint: `/properties/actual/get`
 
 **Parameters**
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
 | key   | str  | ✅       |             |
-| pid   | str  | ❌       |             |
 | build | str  | ❌       |             |
 
 **Return Type**
 
-`Property`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -43,11 +43,11 @@ sdk = WebOtoDevSdk(
 
 result = sdk.properties.get(
     key="key",
-    pid="pid",
     build="build"
 )
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## set
@@ -55,7 +55,7 @@ print(result)
 Remove all previous values for specified 'key' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/actual/{key}`
+- Endpoint: `/properties/actual/set`
 
 **Parameters**
 
@@ -63,12 +63,11 @@ Remove all previous values for specified 'key' and add a new value
 | :---- | :--- | :------- | :---------- |
 | key   | str  | ✅       |             |
 | value | str  | ❌       |             |
-| pid   | str  | ❌       |             |
 | build | str  | ❌       |             |
 
 **Return Type**
 
-`Property`
+`any`
 
 **Example Usage Code Snippet**
 
@@ -85,7 +84,46 @@ sdk = WebOtoDevSdk(
 result = sdk.properties.set(
     key="key",
     value="value",
-    pid="pid",
+    build="build"
+)
+
+print(result)
+```
+
+## add
+
+Add a new value for specified 'key'
+
+- HTTP Method: `PUT`
+- Endpoint: `/properties/actual/add`
+
+**Parameters**
+
+| Name  | Type | Required | Description |
+| :---- | :--- | :------- | :---------- |
+| key   | str  | ✅       |             |
+| value | str  | ❌       |             |
+| build | str  | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.properties.add(
+    key="key",
+    value="value",
     build="build"
 )
 
@@ -97,14 +135,13 @@ print(result)
 Obtain a list of all preferences with specified 'key'
 
 - HTTP Method: `GET`
-- Endpoint: `/properties/all`
+- Endpoint: `/properties/all/get`
 
 **Parameters**
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
 | key   | str  | ❌       |             |
-| pid   | str  | ❌       |             |
 | build | str  | ❌       |             |
 
 **Return Type**
@@ -125,26 +162,24 @@ sdk = WebOtoDevSdk(
 
 result = sdk.properties.all(
     key="key",
-    pid="pid",
     build="build"
 )
 
 print(result)
 ```
 
-## replace
+## update
 
 Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/all`
+- Endpoint: `/properties/all/update`
 
 **Parameters**
 
 | Name         | Type                                    | Required | Description       |
 | :----------- | :-------------------------------------- | :------- | :---------------- |
 | request_body | [List[Property]](../models/Property.md) | ✅       | The request body. |
-| pid          | str                                     | ❌       |                   |
 | build        | str                                     | ❌       |                   |
 
 **Return Type**
@@ -170,9 +205,8 @@ request_body = [
     }
 ]
 
-result = sdk.properties.replace(
+result = sdk.properties.update(
     request_body=request_body,
-    pid="pid",
     build="build"
 )
 
@@ -184,7 +218,7 @@ print(result)
 Remove all values for specified 'key'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/properties/all/{key}`
+- Endpoint: `/properties/all/remove`
 
 **Parameters**
 
@@ -192,7 +226,6 @@ Remove all values for specified 'key'
 | :---- | :--- | :------- | :---------- |
 | key   | str  | ✅       |             |
 | value | str  | ❌       |             |
-| pid   | str  | ❌       |             |
 | build | str  | ❌       |             |
 
 **Return Type**
@@ -214,7 +247,6 @@ sdk = WebOtoDevSdk(
 result = sdk.properties.remove(
     key="key",
     value="value",
-    pid="pid",
     build="build"
 )
 
