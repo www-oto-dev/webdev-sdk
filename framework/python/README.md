@@ -105,6 +105,9 @@ The SDK provides various services to interact with the API.
 | [AdminService](documentation/services/AdminService.md)           |
 | [ProjectService](documentation/services/ProjectService.md)       |
 | [PropertiesService](documentation/services/PropertiesService.md) |
+| [MeaningsService](documentation/services/MeaningsService.md)     |
+| [FormulasService](documentation/services/FormulasService.md)     |
+| [ValuesService](documentation/services/ValuesService.md)         |
 
 </details>
 
@@ -119,6 +122,9 @@ The SDK includes several models that represent the data structures used in API r
 | :------------------------------------------- | :---------- |
 | [Project](documentation/models/Project.md)   |             |
 | [Property](documentation/models/Property.md) |             |
+| [Meaning](documentation/models/Meaning.md)   |             |
+| [Formula](documentation/models/Formula.md)   |             |
+| [Value](documentation/models/Value.md)       |             |
 
 </details>
 

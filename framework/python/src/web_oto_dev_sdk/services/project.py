@@ -10,11 +10,9 @@ from ..models import Project
 class ProjectService(BaseService):
 
     @cast_models
-    def get(self, pid: str = None) -> Project:
-        """Obtain project information by ID
+    def info(self) -> Project:
+        """Obtain project information
 
-        :param pid: pid, defaults to None
-        :type pid: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -22,11 +20,8 @@ class ProjectService(BaseService):
         :rtype: Project
         """
 
-        Validator(str).is_optional().validate(pid)
-
         serialized_request = (
-            Serializer(f"{self.base_url}/project/get", self.get_default_headers())
-            .add_query("pid", pid, nullable=True)
+            Serializer(f"{self.base_url}/project/info", self.get_default_headers())
             .serialize()
             .set_method("GET")
         )
@@ -35,23 +30,18 @@ class ProjectService(BaseService):
         return Project._unmap(response)
 
     @cast_models
-    def collect(self, pid: str = None) -> any:
+    def collect(self) -> any:
         """collect
 
-        :param pid: pid, defaults to None
-        :type pid: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
         :rtype: any
         """
-
-        Validator(str).is_optional().validate(pid)
 
         serialized_request = (
             Serializer(f"{self.base_url}/project/collect", self.get_default_headers())
-            .add_query("pid", pid, nullable=True)
             .serialize()
             .set_method("POST")
         )
@@ -60,23 +50,18 @@ class ProjectService(BaseService):
         return response
 
     @cast_models
-    def generate(self, pid: str = None) -> any:
+    def generate(self) -> any:
         """generate
 
-        :param pid: pid, defaults to None
-        :type pid: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
         :rtype: any
         """
-
-        Validator(str).is_optional().validate(pid)
 
         serialized_request = (
             Serializer(f"{self.base_url}/project/generate", self.get_default_headers())
-            .add_query("pid", pid, nullable=True)
             .serialize()
             .set_method("POST")
         )
@@ -85,11 +70,9 @@ class ProjectService(BaseService):
         return response
 
     @cast_models
-    def build(self, pid: str = None) -> any:
+    def build(self) -> any:
         """build
 
-        :param pid: pid, defaults to None
-        :type pid: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -97,11 +80,8 @@ class ProjectService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(pid)
-
         serialized_request = (
             Serializer(f"{self.base_url}/project/build", self.get_default_headers())
-            .add_query("pid", pid, nullable=True)
             .serialize()
             .set_method("POST")
         )
@@ -110,11 +90,9 @@ class ProjectService(BaseService):
         return response
 
     @cast_models
-    def view(self, pid: str = None) -> Project:
+    def view(self) -> Project:
         """view
 
-        :param pid: pid, defaults to None
-        :type pid: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -122,11 +100,8 @@ class ProjectService(BaseService):
         :rtype: Project
         """
 
-        Validator(str).is_optional().validate(pid)
-
         serialized_request = (
             Serializer(f"{self.base_url}/project/view", self.get_default_headers())
-            .add_query("pid", pid, nullable=True)
             .serialize()
             .set_method("POST")
         )

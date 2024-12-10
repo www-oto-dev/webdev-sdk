@@ -207,3 +207,38 @@ class PropertiesService(BaseService):
 
         response = self.send_request(serialized_request)
         return response
+
+    @cast_models
+    def display(self, key: str = None, build: str = None, format: str = None) -> any:
+        """Display a list of all preferences with specified 'key'
+
+        :param key: key, defaults to None
+        :type key: str, optional
+        :param build: build, defaults to None
+        :type build: str, optional
+        :param format: format, defaults to None
+        :type format: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(build)
+        Validator(str).is_optional().validate(format)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/properties/all/display", self.get_default_headers()
+            )
+            .add_query("key", key, nullable=True)
+            .add_query("build", build, nullable=True)
+            .add_query("format", format, nullable=True)
+            .serialize()
+            .set_method("GET")
+        )
+
+        response = self.send_request(serialized_request)
+        return response

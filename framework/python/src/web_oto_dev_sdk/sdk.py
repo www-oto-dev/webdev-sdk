@@ -4,6 +4,9 @@ from typing import Union
 from .services.admin import AdminService
 from .services.project import ProjectService
 from .services.properties import PropertiesService
+from .services.meanings import MeaningsService
+from .services.formulas import FormulasService
+from .services.values import ValuesService
 from .net.environment import Environment
 
 
@@ -26,6 +29,9 @@ class WebOtoDevSdk:
         self.admin = AdminService(base_url=self._base_url)
         self.project = ProjectService(base_url=self._base_url)
         self.properties = PropertiesService(base_url=self._base_url)
+        self.meanings = MeaningsService(base_url=self._base_url)
+        self.formulas = FormulasService(base_url=self._base_url)
+        self.values = ValuesService(base_url=self._base_url)
         self.set_api_key(api_key, api_key_header)
         self.set_additional_variables(project_id)
         self.set_timeout(timeout)
@@ -44,6 +50,9 @@ class WebOtoDevSdk:
         self.admin.set_base_url(self._base_url)
         self.project.set_base_url(self._base_url)
         self.properties.set_base_url(self._base_url)
+        self.meanings.set_base_url(self._base_url)
+        self.formulas.set_base_url(self._base_url)
+        self.values.set_base_url(self._base_url)
 
         return self
 
@@ -54,6 +63,9 @@ class WebOtoDevSdk:
         self.admin.set_api_key(api_key, api_key_header)
         self.project.set_api_key(api_key, api_key_header)
         self.properties.set_api_key(api_key, api_key_header)
+        self.meanings.set_api_key(api_key, api_key_header)
+        self.formulas.set_api_key(api_key, api_key_header)
+        self.values.set_api_key(api_key, api_key_header)
 
         return self
 
@@ -64,6 +76,9 @@ class WebOtoDevSdk:
         self.admin.set_additional_variables(project_id)
         self.project.set_additional_variables(project_id)
         self.properties.set_additional_variables(project_id)
+        self.meanings.set_additional_variables(project_id)
+        self.formulas.set_additional_variables(project_id)
+        self.values.set_additional_variables(project_id)
 
         return self
 
@@ -77,6 +92,9 @@ class WebOtoDevSdk:
         self.admin.set_timeout(timeout)
         self.project.set_timeout(timeout)
         self.properties.set_timeout(timeout)
+        self.meanings.set_timeout(timeout)
+        self.formulas.set_timeout(timeout)
+        self.values.set_timeout(timeout)
 
         return self
 

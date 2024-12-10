@@ -2,26 +2,20 @@
 
 A list of all methods in the `ProjectService` service. Click on the method name to view detailed information about that method.
 
-| Methods               | Description                      |
-| :-------------------- | :------------------------------- |
-| [get](#get)           | Obtain project information by ID |
-| [collect](#collect)   | collect                          |
-| [generate](#generate) | generate                         |
-| [build](#build)       | build                            |
-| [view](#view)         | view                             |
+| Methods               | Description                |
+| :-------------------- | :------------------------- |
+| [info](#info)         | Obtain project information |
+| [collect](#collect)   | collect                    |
+| [generate](#generate) | generate                   |
+| [build](#build)       | build                      |
+| [view](#view)         | view                       |
 
-## get
+## info
 
-Obtain project information by ID
+Obtain project information
 
 - HTTP Method: `GET`
-- Endpoint: `/project/get`
-
-**Parameters**
-
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ❌       |             |
+- Endpoint: `/project/info`
 
 **Return Type**
 
@@ -39,7 +33,7 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.project.get(pid="pid")
+result = sdk.project.info()
 
 print(result)
 ```
@@ -51,12 +45,6 @@ collect
 - HTTP Method: `POST`
 - Endpoint: `/project/collect`
 
-**Parameters**
-
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ❌       |             |
-
 **Return Type**
 
 `any`
@@ -73,7 +61,7 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.project.collect(pid="pid")
+result = sdk.project.collect()
 
 print(result)
 ```
@@ -85,12 +73,6 @@ generate
 - HTTP Method: `POST`
 - Endpoint: `/project/generate`
 
-**Parameters**
-
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ❌       |             |
-
 **Return Type**
 
 `any`
@@ -107,7 +89,7 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.project.generate(pid="pid")
+result = sdk.project.generate()
 
 print(result)
 ```
@@ -119,12 +101,6 @@ build
 - HTTP Method: `POST`
 - Endpoint: `/project/build`
 
-**Parameters**
-
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ❌       |             |
-
 **Return Type**
 
 `any`
@@ -141,7 +117,7 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.project.build(pid="pid")
+result = sdk.project.build()
 
 print(result)
 ```
@@ -152,12 +128,6 @@ view
 
 - HTTP Method: `POST`
 - Endpoint: `/project/view`
-
-**Parameters**
-
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| pid  | str  | ❌       |             |
 
 **Return Type**
 
@@ -175,7 +145,7 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.project.view(pid="pid")
+result = sdk.project.view()
 
 print(result)
 ```

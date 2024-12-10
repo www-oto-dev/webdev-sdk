@@ -105,6 +105,9 @@ The SDK provides various services to interact with the API.
 | admin      |
 | project    |
 | properties |
+| meanings   |
+| formulas   |
+| values     |
 
 </details>
 
@@ -119,6 +122,9 @@ The SDK includes several models that represent the data structures used in API r
 | :------- | :---------- |
 | Project  |             |
 | Property |             |
+| Meaning  |             |
+| Formula  |             |
+| Value    |             |
 
 </details>
 
