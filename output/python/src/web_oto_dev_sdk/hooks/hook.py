@@ -27,14 +27,14 @@ class Response:
 class CustomHook:
 
     def before_request(self, request: Request, **kwargs):
-        
+        print("before_request")
 
         request.headers["Project-Id"] = kwargs.get("project_id")
 
     def after_response(self, request: Request, response: Response, **kwargs):
-        pass
+        print("after_response")
 
     def on_error(
         self, error: Exception, request: Request, response: Response, **kwargs
     ):
-        pass
+        print("on_error")

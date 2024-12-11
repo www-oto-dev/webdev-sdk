@@ -28,7 +28,7 @@ Create new collection (default or specified settings) and return collections's h
 
 **Return Type**
 
-`str`
+`any`
 
 **Example Usage Code Snippet**
 
@@ -44,8 +44,7 @@ sdk = WebOtoDevSdk(
 
 result = sdk.meanings.new(init="init")
 
-with open("output-file.ext", "w") as f:
-    f.write(result)
+print(result)
 ```
 
 ## get
@@ -261,7 +260,7 @@ Remove all values for specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ✅       |             |
+| key        | str  | ❌       |             |
 | value      | str  | ❌       |             |
 | collection | str  | ❌       |             |
 

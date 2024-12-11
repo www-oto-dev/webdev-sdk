@@ -1,7 +1,6 @@
 [
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/collection/new",
@@ -9,22 +8,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 8106
-      },
       "end": {
         "line": 0,
         "character": 8116
+      },
+      "start": {
+        "line": 0,
+        "character": 8106
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/actual/get",
@@ -32,22 +30,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 8800
-      },
       "end": {
         "line": 0,
-        "character": 8810
+        "character": 8772
+      },
+      "start": {
+        "line": 0,
+        "character": 8762
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/actual/set",
@@ -55,22 +52,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 9556
-      },
       "end": {
         "line": 0,
-        "character": 9566
+        "character": 9528
+      },
+      "start": {
+        "line": 0,
+        "character": 9518
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/actual/add",
@@ -78,22 +74,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 10414
-      },
       "end": {
         "line": 0,
-        "character": 10424
+        "character": 10386
+      },
+      "start": {
+        "line": 0,
+        "character": 10376
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/all/get",
@@ -101,22 +96,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 11238
-      },
       "end": {
         "line": 0,
-        "character": 11248
+        "character": 11210
+      },
+      "start": {
+        "line": 0,
+        "character": 11200
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/all/update",
@@ -124,22 +118,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 12080
-      },
       "end": {
         "line": 0,
-        "character": 12090
+        "character": 12052
+      },
+      "start": {
+        "line": 0,
+        "character": 12042
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/all/remove",
@@ -147,22 +140,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 12948
-      },
       "end": {
         "line": 0,
-        "character": 12958
+        "character": 12920
+      },
+      "start": {
+        "line": 0,
+        "character": 12910
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/meanings/all/display",
@@ -170,22 +162,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 13775
-      },
       "end": {
         "line": 0,
-        "character": 13785
+        "character": 13776
+      },
+      "start": {
+        "line": 0,
+        "character": 13766
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/set/new",
@@ -193,22 +184,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 14671
-      },
       "end": {
         "line": 0,
-        "character": 14681
+        "character": 14672
+      },
+      "start": {
+        "line": 0,
+        "character": 14662
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/actual/get",
@@ -216,22 +206,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 15350
-      },
       "end": {
         "line": 0,
-        "character": 15360
+        "character": 15314
+      },
+      "start": {
+        "line": 0,
+        "character": 15304
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/actual/set",
@@ -239,22 +228,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 16092
-      },
       "end": {
         "line": 0,
-        "character": 16102
+        "character": 16059
+      },
+      "start": {
+        "line": 0,
+        "character": 16049
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/actual/add",
@@ -262,22 +250,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 16936
-      },
       "end": {
         "line": 0,
-        "character": 16946
+        "character": 16906
+      },
+      "start": {
+        "line": 0,
+        "character": 16896
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/all/get",
@@ -285,22 +272,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 17746
-      },
       "end": {
         "line": 0,
-        "character": 17756
+        "character": 17719
+      },
+      "start": {
+        "line": 0,
+        "character": 17709
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/all/update",
@@ -308,22 +294,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 18574
-      },
       "end": {
         "line": 0,
-        "character": 18584
+        "character": 18550
+      },
+      "start": {
+        "line": 0,
+        "character": 18540
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/all/remove",
@@ -331,22 +316,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 19428
-      },
       "end": {
         "line": 0,
-        "character": 19438
+        "character": 19405
+      },
+      "start": {
+        "line": 0,
+        "character": 19395
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/formulas/all/display",
@@ -354,22 +338,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 20241
-      },
       "end": {
         "line": 0,
-        "character": 20251
+        "character": 20250
+      },
+      "start": {
+        "line": 0,
+        "character": 20240
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/dataset/new",
@@ -377,22 +360,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 21125
-      },
       "end": {
         "line": 0,
-        "character": 21133
+        "character": 21135
+      },
+      "start": {
+        "line": 0,
+        "character": 21127
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/actual/get",
@@ -400,22 +382,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 21810
-      },
       "end": {
         "line": 0,
-        "character": 21818
+        "character": 21820
+      },
+      "start": {
+        "line": 0,
+        "character": 21812
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/actual/dataset",
@@ -423,22 +404,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 22558
-      },
       "end": {
         "line": 0,
-        "character": 22566
+        "character": 22568
+      },
+      "start": {
+        "line": 0,
+        "character": 22560
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/actual/add",
@@ -446,22 +426,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 23412
-      },
       "end": {
         "line": 0,
-        "character": 23420
+        "character": 23422
+      },
+      "start": {
+        "line": 0,
+        "character": 23414
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/all/get",
@@ -469,22 +448,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 24224
-      },
       "end": {
         "line": 0,
-        "character": 24232
+        "character": 24234
+      },
+      "start": {
+        "line": 0,
+        "character": 24226
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/all/update",
@@ -492,22 +470,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 25050
-      },
       "end": {
         "line": 0,
-        "character": 25058
+        "character": 25060
+      },
+      "start": {
+        "line": 0,
+        "character": 25052
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/all/remove",
@@ -515,22 +492,21 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 25904
-      },
       "end": {
         "line": 0,
-        "character": 25912
+        "character": 25914
+      },
+      "start": {
+        "line": 0,
+        "character": 25906
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   },
   {
     "code": "operation-tag-defined",
-    "message": "Operation tags must be defined in global tags.",
     "path": [
       "paths",
       "/values/all/display",
@@ -538,17 +514,17 @@
       "tags",
       "0"
     ],
-    "severity": 1,
-    "source": "openapi.json",
     "range": {
-      "start": {
-        "line": 0,
-        "character": 26719
-      },
       "end": {
         "line": 0,
-        "character": 26727
+        "character": 26729
+      },
+      "start": {
+        "line": 0,
+        "character": 26721
       }
-    }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
   }
 ]

@@ -11,8 +11,8 @@ from ..models import Formula
 class FormulasService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> str:
-        """Create new set (default or specified settings) and return set's hex string ID
+    def new(self, init: str = None) -> any:
+        """Create new set (default or specified settings) and return sets's hex string ID
 
         :param init: init, defaults to None
         :type init: str, optional
@@ -20,7 +20,7 @@ class FormulasService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
-        :rtype: str
+        :rtype: any
         """
 
         Validator(str).is_optional().validate(init)
@@ -36,11 +36,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def get(self, key: str, set: str = None) -> str:
-        """Obtain the lastest value for meaning with specified 'key'
+    def get(self, name: str, set: str = None) -> str:
+        """Obtain the lastest value for formula with specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param set: set, defaults to None
         :type set: str, optional
         ...
@@ -50,14 +50,14 @@ class FormulasService(BaseService):
         :rtype: str
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(set)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/formulas/actual/get", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("set", set, nullable=True)
             .serialize()
             .set_method("GET")
@@ -67,11 +67,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def set(self, key: str, value: str = None, set: str = None) -> any:
-        """Remove all previous values for specified 'key' and add a new value
+    def set(self, name: str, value: str = None, set: str = None) -> any:
+        """Remove all previous values for specified 'name' and add a new value
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param set: set, defaults to None
@@ -83,7 +83,7 @@ class FormulasService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(set)
 
@@ -91,7 +91,7 @@ class FormulasService(BaseService):
             Serializer(
                 f"{self.base_url}/formulas/actual/set", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
@@ -102,11 +102,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def add(self, key: str, value: str = None, set: str = None) -> any:
-        """Add a new value for specified 'key'
+    def add(self, name: str, value: str = None, set: str = None) -> any:
+        """Add a new value for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param set: set, defaults to None
@@ -118,7 +118,7 @@ class FormulasService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(set)
 
@@ -126,7 +126,7 @@ class FormulasService(BaseService):
             Serializer(
                 f"{self.base_url}/formulas/actual/add", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
@@ -137,11 +137,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def all(self, key: str = None, set: str = None) -> List[Formula]:
-        """Obtain a list of all formulas with specified 'key'
+    def all(self, name: str = None, set: str = None) -> List[Formula]:
+        """Obtain a list of all formulas with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param set: set, defaults to None
         :type set: str, optional
         ...
@@ -151,12 +151,12 @@ class FormulasService(BaseService):
         :rtype: List[Formula]
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(set)
 
         serialized_request = (
             Serializer(f"{self.base_url}/formulas/all/get", self.get_default_headers())
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
             .set_method("GET")
@@ -167,7 +167,7 @@ class FormulasService(BaseService):
 
     @cast_models
     def update(self, request_body: List[Formula], set: str = None) -> any:
-        """Remove previously set and add new formulas with specified 'key' fileds with values from 'values' fileds of provided list
+        """Remove previously set and add new formulas with specified 'name' fileds with values from 'values' fileds of provided list
 
         :param request_body: The request body.
         :type request_body: List[Formula]
@@ -197,11 +197,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def remove(self, key: str, value: str = None, set: str = None) -> any:
-        """Remove all values for specified 'key'
+    def remove(self, name: str = None, value: str = None, set: str = None) -> any:
+        """Remove all values for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name, defaults to None
+        :type name: str, optional
         :param value: value, defaults to None
         :type value: str, optional
         :param set: set, defaults to None
@@ -213,7 +213,7 @@ class FormulasService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(set)
 
@@ -221,7 +221,7 @@ class FormulasService(BaseService):
             Serializer(
                 f"{self.base_url}/formulas/all/remove", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
@@ -232,11 +232,11 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def display(self, key: str = None, set: str = None, format: str = None) -> any:
-        """Display a list of all formulas with specified 'key'
+    def display(self, name: str = None, set: str = None, format: str = None) -> any:
+        """Display a list of all formulas with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param set: set, defaults to None
         :type set: str, optional
         :param format: format, defaults to None
@@ -248,7 +248,7 @@ class FormulasService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(set)
         Validator(str).is_optional().validate(format)
 
@@ -256,7 +256,7 @@ class FormulasService(BaseService):
             Serializer(
                 f"{self.base_url}/formulas/all/display", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("set", set, nullable=True)
             .add_query("format", format, nullable=True)
             .serialize()

@@ -1,6 +1,6 @@
 {
-  "liblabVersion": "2.9.6",
-  "date": "2024-12-10T14:50:51.562Z",
+  "liblabVersion": "2.9.7",
+  "date": "2024-12-11T15:43:04.662Z",
   "config": {
     "apiId": 1515,
     "sdkName": "web-oto-dev-sdk",
@@ -86,7 +86,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "8369/hooks.zip",
+      "bucketKey": "8373/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,

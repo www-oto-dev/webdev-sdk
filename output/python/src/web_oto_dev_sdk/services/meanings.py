@@ -11,7 +11,7 @@ from ..models import Meaning
 class MeaningsService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> str:
+    def new(self, init: str = None) -> any:
         """Create new collection (default or specified settings) and return collections's hex string ID
 
         :param init: init, defaults to None
@@ -20,7 +20,7 @@ class MeaningsService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
-        :rtype: str
+        :rtype: any
         """
 
         Validator(str).is_optional().validate(init)
@@ -199,11 +199,11 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def remove(self, key: str, value: str = None, collection: str = None) -> any:
+    def remove(self, key: str = None, value: str = None, collection: str = None) -> any:
         """Remove all values for specified 'key'
 
-        :param key: key
-        :type key: str
+        :param key: key, defaults to None
+        :type key: str, optional
         :param value: value, defaults to None
         :type value: str, optional
         :param collection: collection, defaults to None
@@ -215,7 +215,7 @@ class MeaningsService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).is_optional().validate(key)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(collection)
 
@@ -223,7 +223,7 @@ class MeaningsService(BaseService):
             Serializer(
                 f"{self.base_url}/meanings/all/remove", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("key", key, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("collection", collection, nullable=True)
             .serialize()

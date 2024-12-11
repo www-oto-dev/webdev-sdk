@@ -2,20 +2,20 @@
 
 A list of all methods in the `FormulasService` service. Click on the method name to view detailed information about that method.
 
-| Methods             | Description                                                                                                              |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| [new](#new)         | Create new set (default or specified settings) and return set's hex string ID                                            |
-| [get](#get)         | Obtain the lastest value for meaning with specified 'key'                                                                |
-| [set](#set)         | Remove all previous values for specified 'key' and add a new value                                                       |
-| [add](#add)         | Add a new value for specified 'key'                                                                                      |
-| [all](#all)         | Obtain a list of all formulas with specified 'key'                                                                       |
-| [update](#update)   | Remove previously set and add new formulas with specified 'key' fileds with values from 'values' fileds of provided list |
-| [remove](#remove)   | Remove all values for specified 'key'                                                                                    |
-| [display](#display) | Display a list of all formulas with specified 'key'                                                                      |
+| Methods             | Description                                                                                                               |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------ |
+| [new](#new)         | Create new set (default or specified settings) and return sets's hex string ID                                            |
+| [get](#get)         | Obtain the lastest value for formula with specified 'name'                                                                |
+| [set](#set)         | Remove all previous values for specified 'name' and add a new value                                                       |
+| [add](#add)         | Add a new value for specified 'name'                                                                                      |
+| [all](#all)         | Obtain a list of all formulas with specified 'name'                                                                       |
+| [update](#update)   | Remove previously set and add new formulas with specified 'name' fileds with values from 'values' fileds of provided list |
+| [remove](#remove)   | Remove all values for specified 'name'                                                                                    |
+| [display](#display) | Display a list of all formulas with specified 'name'                                                                      |
 
 ## new
 
-Create new set (default or specified settings) and return set's hex string ID
+Create new set (default or specified settings) and return sets's hex string ID
 
 - HTTP Method: `PUT`
 - Endpoint: `/formulas/set/new`
@@ -28,7 +28,7 @@ Create new set (default or specified settings) and return set's hex string ID
 
 **Return Type**
 
-`str`
+`any`
 
 **Example Usage Code Snippet**
 
@@ -44,13 +44,12 @@ sdk = WebOtoDevSdk(
 
 result = sdk.formulas.new(init="init")
 
-with open("output-file.ext", "w") as f:
-    f.write(result)
+print(result)
 ```
 
 ## get
 
-Obtain the lastest value for meaning with specified 'key'
+Obtain the lastest value for formula with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/formulas/actual/get`
@@ -59,7 +58,7 @@ Obtain the lastest value for meaning with specified 'key'
 
 | Name | Type | Required | Description |
 | :--- | :--- | :------- | :---------- |
-| key  | str  | ✅       |             |
+| name | str  | ✅       |             |
 | set  | str  | ❌       |             |
 
 **Return Type**
@@ -79,7 +78,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.get(
-    key="key",
+    name="name",
     set="set"
 )
 
@@ -89,7 +88,7 @@ with open("output-file.ext", "w") as f:
 
 ## set
 
-Remove all previous values for specified 'key' and add a new value
+Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
 - Endpoint: `/formulas/actual/set`
@@ -98,7 +97,7 @@ Remove all previous values for specified 'key' and add a new value
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
-| key   | str  | ✅       |             |
+| name  | str  | ✅       |             |
 | value | str  | ❌       |             |
 | set   | str  | ❌       |             |
 
@@ -119,7 +118,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.set(
-    key="key",
+    name="name",
     value="value",
     set="set"
 )
@@ -129,7 +128,7 @@ print(result)
 
 ## add
 
-Add a new value for specified 'key'
+Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
 - Endpoint: `/formulas/actual/add`
@@ -138,7 +137,7 @@ Add a new value for specified 'key'
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
-| key   | str  | ✅       |             |
+| name  | str  | ✅       |             |
 | value | str  | ❌       |             |
 | set   | str  | ❌       |             |
 
@@ -159,7 +158,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.add(
-    key="key",
+    name="name",
     value="value",
     set="set"
 )
@@ -169,7 +168,7 @@ print(result)
 
 ## all
 
-Obtain a list of all formulas with specified 'key'
+Obtain a list of all formulas with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/formulas/all/get`
@@ -178,7 +177,7 @@ Obtain a list of all formulas with specified 'key'
 
 | Name | Type | Required | Description |
 | :--- | :--- | :------- | :---------- |
-| key  | str  | ❌       |             |
+| name | str  | ❌       |             |
 | set  | str  | ❌       |             |
 
 **Return Type**
@@ -198,7 +197,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.all(
-    key="key",
+    name="name",
     set="set"
 )
 
@@ -207,7 +206,7 @@ print(result)
 
 ## update
 
-Remove previously set and add new formulas with specified 'key' fileds with values from 'values' fileds of provided list
+Remove previously set and add new formulas with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
 - Endpoint: `/formulas/all/update`
@@ -252,7 +251,7 @@ print(result)
 
 ## remove
 
-Remove all values for specified 'key'
+Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
 - Endpoint: `/formulas/all/remove`
@@ -261,7 +260,7 @@ Remove all values for specified 'key'
 
 | Name  | Type | Required | Description |
 | :---- | :--- | :------- | :---------- |
-| key   | str  | ✅       |             |
+| name  | str  | ❌       |             |
 | value | str  | ❌       |             |
 | set   | str  | ❌       |             |
 
@@ -282,7 +281,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.remove(
-    key="key",
+    name="name",
     value="value",
     set="set"
 )
@@ -292,7 +291,7 @@ print(result)
 
 ## display
 
-Display a list of all formulas with specified 'key'
+Display a list of all formulas with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/formulas/all/display`
@@ -301,7 +300,7 @@ Display a list of all formulas with specified 'key'
 
 | Name   | Type | Required | Description |
 | :----- | :--- | :------- | :---------- |
-| key    | str  | ❌       |             |
+| name   | str  | ❌       |             |
 | set    | str  | ❌       |             |
 | format | str  | ❌       |             |
 
@@ -322,7 +321,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.formulas.display(
-    key="key",
+    name="name",
     set="set",
     format="format"
 )
