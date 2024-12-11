@@ -27,7 +27,7 @@ if [ -d "$PWD"/output ]; then
 	sed -i -e "s/$from/$to/g" "$PWD"/output/python/install.sh
 
 	if [ -d "$PWD"/framework ]; then
-		rm "$PWD"/framework
+		rm -fR "$PWD"/framework
 	fi
 
 	mv "$PWD"/output "$PWD"/framework
