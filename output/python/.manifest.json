@@ -1,0 +1,197 @@
+{
+  "liblabVersion": "2.9.7",
+  "date": "2024-12-11T16:37:49.681Z",
+  "config": {
+    "apiId": 1515,
+    "sdkName": "web-oto-dev-sdk",
+    "sdkVersion": "1.0.0",
+    "languages": ["python"],
+    "auth": ["apikey"],
+    "liblabVersion": "2",
+    "deliveryMethods": ["zip"],
+    "apiVersion": "1.0.0",
+    "apiName": "web-oto-dev-api",
+    "specFilePath": "http://localhost:8000/api/v1/openapi.json",
+    "languageOptions": {
+      "go": {
+        "goModuleName": "github.com/swagger-api/swagger-petstore",
+        "githubRepoName": "web-dev-sdk-ts",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "sdkVersion": "1.0.0"
+      },
+      "java": {
+        "groupId": "com.swagger",
+        "artifactId": "petstore",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "sdkVersion": "1.0.0"
+      },
+      "python": {
+        "alwaysInitializeOptionals": false,
+        "additionalConstructorParameters": [
+          {
+            "name": "project_id",
+            "example": "my-project-slug-or-uid"
+          }
+        ],
+        "pypiPackageName": "",
+        "githubRepoName": "web-dev-sdk-python",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "sdkVersion": "1.0.0"
+      },
+      "typescript": {
+        "bundle": true,
+        "exportClassDefault": false,
+        "httpClient": "fetch",
+        "npmName": "",
+        "npmOrg": "",
+        "githubRepoName": "web-dev-sdk-ts",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "sdkVersion": "1.0.0",
+        "generateEnumAs": "union"
+      }
+    },
+    "publishing": {
+      "githubOrg": "www-oto-dev"
+    },
+    "authentication": {
+      "apiKey": {
+        "header": "Access-Token"
+      }
+    },
+    "devContainer": true,
+    "generateEnv": true,
+    "includeOptionalSnippetParameters": true,
+    "inferServiceNames": false,
+    "injectedModels": [],
+    "license": {
+      "type": "MIT",
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT",
+      "path": "MIT.ejs"
+    },
+    "responseHeaders": false,
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "retryDelay": 150,
+      "maxDelay": 5000,
+      "retryDelayJitter": 50,
+      "backOffFactor": 2,
+      "httpCodesToRetry": [408, 429, 500, 502, 503, 504],
+      "httpMethodsToRetry": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
+    },
+    "multiTenant": true,
+    "hooksLocation": {
+      "bucketKey": "8374/hooks.zip",
+      "bucketName": "prod-liblab-api-stack-hooks"
+    },
+    "includeWatermark": true,
+    "alwaysInitializeOptionals": false,
+    "additionalConstructorParameters": [
+      {
+        "name": "project_id",
+        "example": "my-project-slug-or-uid"
+      }
+    ],
+    "pypiPackageName": "",
+    "githubRepoName": "web-dev-sdk-python",
+    "ignoreFiles": [],
+    "language": "python",
+    "deliveryMethod": "zip",
+    "hooks": {
+      "enabled": true,
+      "sourceDir": "/tmp/resources/hooks"
+    },
+    "usesFormData": false,
+    "environmentVariables": [],
+    "fileOutput": "/tmp",
+    "httpLibrary": {
+      "name": "axios",
+      "packages": {
+        "axios": "^1.7.7"
+      },
+      "languages": ["typescript"]
+    },
+    "customQueries": {
+      "paths": [],
+      "rawQueries": [],
+      "queriesData": []
+    },
+    "ai": false
+  },
+  "files": [
+    "src/web_oto_dev_sdk/models/utils/base_model.py",
+    "src/web_oto_dev_sdk/models/utils/json_map.py",
+    "src/web_oto_dev_sdk/models/__init__.py",
+    "src/web_oto_dev_sdk/services/__init__.py",
+    "src/web_oto_dev_sdk/services/utils/__init__.py",
+    "src/web_oto_dev_sdk/__init__.py",
+    "src/web_oto_dev_sdk/net/__init__.py",
+    "src/web_oto_dev_sdk/net/headers/__init__.py",
+    "src/web_oto_dev_sdk/net/transport/__init__.py",
+    "src/web_oto_dev_sdk/hooks/__init__.py",
+    "src/web_oto_dev_sdk/net/environment/__init__.py",
+    "src/web_oto_dev_sdk/net/request_chain/__init__.py",
+    "src/web_oto_dev_sdk/net/request_chain/handlers/__init__.py",
+    "src/web_oto_dev_sdk/models/utils/__init__.py",
+    "src/web_oto_dev_sdk/net/transport/request.py",
+    "src/web_oto_dev_sdk/net/transport/response.py",
+    "src/web_oto_dev_sdk/net/transport/request_error.py",
+    "src/web_oto_dev_sdk/sdk.py",
+    "src/web_oto_dev_sdk/net/transport/serializer.py",
+    "src/web_oto_dev_sdk/services/utils/validator.py",
+    "src/web_oto_dev_sdk/services/utils/base_service.py",
+    "pyproject.toml",
+    ".gitignore",
+    "src/web_oto_dev_sdk/models/utils/cast_models.py",
+    "src/web_oto_dev_sdk/net/transport/utils.py",
+    "src/web_oto_dev_sdk/hooks/hook.py",
+    "install.sh",
+    "install.cmd",
+    "examples/install.sh",
+    "examples/install.cmd",
+    "src/web_oto_dev_sdk/net/headers/base_header.py",
+    "src/web_oto_dev_sdk/net/headers/api_key_auth.py",
+    "src/web_oto_dev_sdk/net/environment/environment.py",
+    "src/web_oto_dev_sdk/net/request_chain/request_chain.py",
+    "src/web_oto_dev_sdk/net/request_chain/handlers/base_handler.py",
+    "src/web_oto_dev_sdk/net/request_chain/handlers/http_handler.py",
+    "src/web_oto_dev_sdk/net/request_chain/handlers/hook_handler.py",
+    "src/web_oto_dev_sdk/net/request_chain/handlers/retry_handler.py",
+    "examples/sample.py",
+    ".env.example",
+    "/examples/.env.example",
+    "src/web_oto_dev_sdk/services/utils/default_headers.py",
+    "./LICENSE",
+    ".devcontainer/devcontainer.json",
+    "documentation/models/Project.md",
+    "documentation/models/Property.md",
+    "documentation/models/Meaning.md",
+    "documentation/models/Formula.md",
+    "documentation/models/Value.md",
+    "src/web_oto_dev_sdk/models/utils/one_of_base_model.py",
+    "src/web_oto_dev_sdk/services/admin.py",
+    "documentation/services/AdminService.md",
+    "src/web_oto_dev_sdk/models/project.py",
+    "src/web_oto_dev_sdk/models/property.py",
+    "src/web_oto_dev_sdk/models/meaning.py",
+    "src/web_oto_dev_sdk/models/formula.py",
+    "src/web_oto_dev_sdk/models/value.py",
+    "documentation/services/ProjectService.md",
+    "src/web_oto_dev_sdk/services/project.py",
+    "documentation/services/PropertiesService.md",
+    "documentation/services/MeaningsService.md",
+    "documentation/services/FormulasService.md",
+    "documentation/services/ValuesService.md",
+    "README.md",
+    "PyPI_README.md",
+    "src/web_oto_dev_sdk/services/properties.py",
+    "src/web_oto_dev_sdk/services/meanings.py",
+    "src/web_oto_dev_sdk/services/formulas.py",
+    "src/web_oto_dev_sdk/services/values.py"
+  ]
+}
