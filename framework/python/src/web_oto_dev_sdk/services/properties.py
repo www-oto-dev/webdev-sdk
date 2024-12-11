@@ -11,11 +11,38 @@ from ..models import Property
 class PropertiesService(BaseService):
 
     @cast_models
-    def get(self, key: str, build: str = None) -> str:
-        """Obtain the lastest value for preference with specified 'key'
+    def new(self, init: str = None) -> any:
+        """Create new build (default or specified settings)
 
-        :param key: key
-        :type key: str
+        :param init: init, defaults to None
+        :type init: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).is_optional().validate(init)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/properties/revision/new", self.get_default_headers()
+            )
+            .add_query("init", init, nullable=True)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def get(self, name: str, build: str = None) -> str:
+        """Obtain the lastest value for formula with specified 'name'
+
+        :param name: name
+        :type name: str
         :param build: build, defaults to None
         :type build: str, optional
         ...
@@ -25,14 +52,14 @@ class PropertiesService(BaseService):
         :rtype: str
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(build)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/properties/actual/get", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("build", build, nullable=True)
             .serialize()
             .set_method("GET")
@@ -42,11 +69,11 @@ class PropertiesService(BaseService):
         return response
 
     @cast_models
-    def set(self, key: str, value: str = None, build: str = None) -> any:
-        """Remove all previous values for specified 'key' and add a new value
+    def set(self, name: str, value: str = None, build: str = None) -> any:
+        """Remove all previous values for specified 'name' and add a new value
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param build: build, defaults to None
@@ -58,7 +85,7 @@ class PropertiesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(build)
 
@@ -66,7 +93,7 @@ class PropertiesService(BaseService):
             Serializer(
                 f"{self.base_url}/properties/actual/set", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("build", build, nullable=True)
             .serialize()
@@ -77,11 +104,11 @@ class PropertiesService(BaseService):
         return response
 
     @cast_models
-    def add(self, key: str, value: str = None, build: str = None) -> any:
-        """Add a new value for specified 'key'
+    def add(self, name: str, value: str = None, build: str = None) -> any:
+        """Add a new value for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param build: build, defaults to None
@@ -93,7 +120,7 @@ class PropertiesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(build)
 
@@ -101,7 +128,7 @@ class PropertiesService(BaseService):
             Serializer(
                 f"{self.base_url}/properties/actual/add", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("build", build, nullable=True)
             .serialize()
@@ -112,11 +139,11 @@ class PropertiesService(BaseService):
         return response
 
     @cast_models
-    def all(self, key: str = None, build: str = None) -> List[Property]:
-        """Obtain a list of all preferences with specified 'key'
+    def all(self, name: str = None, build: str = None) -> List[Property]:
+        """Obtain a list of all properties with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param build: build, defaults to None
         :type build: str, optional
         ...
@@ -126,14 +153,14 @@ class PropertiesService(BaseService):
         :rtype: List[Property]
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(build)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/properties/all/get", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("build", build, nullable=True)
             .serialize()
             .set_method("GET")
@@ -144,7 +171,7 @@ class PropertiesService(BaseService):
 
     @cast_models
     def update(self, request_body: List[Property], build: str = None) -> any:
-        """Remove previously set and add new preferences with specified 'key' fileds with values from 'values' fileds of provided list
+        """Remove previously set and add new properties with specified 'name' fileds with values from 'values' fileds of provided list
 
         :param request_body: The request body.
         :type request_body: List[Property]
@@ -174,11 +201,11 @@ class PropertiesService(BaseService):
         return response
 
     @cast_models
-    def remove(self, key: str, value: str = None, build: str = None) -> any:
-        """Remove all values for specified 'key'
+    def remove(self, name: str = None, value: str = None, build: str = None) -> any:
+        """Remove all values for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name, defaults to None
+        :type name: str, optional
         :param value: value, defaults to None
         :type value: str, optional
         :param build: build, defaults to None
@@ -190,7 +217,7 @@ class PropertiesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(build)
 
@@ -198,7 +225,7 @@ class PropertiesService(BaseService):
             Serializer(
                 f"{self.base_url}/properties/all/remove", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("build", build, nullable=True)
             .serialize()
@@ -209,11 +236,11 @@ class PropertiesService(BaseService):
         return response
 
     @cast_models
-    def display(self, key: str = None, build: str = None, format: str = None) -> any:
-        """Display a list of all preferences with specified 'key'
+    def display(self, name: str = None, build: str = None, format: str = None) -> any:
+        """Display a list of all properties with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param build: build, defaults to None
         :type build: str, optional
         :param format: format, defaults to None
@@ -225,7 +252,7 @@ class PropertiesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(build)
         Validator(str).is_optional().validate(format)
 
@@ -233,7 +260,7 @@ class PropertiesService(BaseService):
             Serializer(
                 f"{self.base_url}/properties/all/display", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("build", build, nullable=True)
             .add_query("format", format, nullable=True)
             .serialize()

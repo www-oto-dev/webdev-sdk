@@ -2,23 +2,23 @@
 
 A list of all methods in the `ValuesService` service. Click on the method name to view detailed information about that method.
 
-| Methods             | Description                                                                                                                |
-| :------------------ | :------------------------------------------------------------------------------------------------------------------------- |
-| [new](#new)         | Create new dataset (default or specified datasettings) and return dataset's hex string ID                                  |
-| [get](#get)         | Obtain the lastest value for meaning with specified 'key'                                                                  |
-| [dataset](#dataset) | Remove all previous values for specified 'key' and add a new value                                                         |
-| [add](#add)         | Add a new value for specified 'key'                                                                                        |
-| [all](#all)         | Obtain a list of all values with specified 'key'                                                                           |
-| [update](#update)   | Remove previously dataset and add new values with specified 'key' fileds with values from 'values' fileds of provided list |
-| [remove](#remove)   | Remove all values for specified 'key'                                                                                      |
-| [display](#display) | Display a list of all values with specified 'key'                                                                          |
+| Methods             | Description                                                                                                             |
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| [new](#new)         | Create new dataset (default or specified settings)                                                                      |
+| [get](#get)         | Obtain the lastest value for variable with specified 'name'                                                             |
+| [set](#set)         | Remove all previous values for specified 'name' and add a new value                                                     |
+| [add](#add)         | Add a new value for specified 'name'                                                                                    |
+| [all](#all)         | Obtain a list of all values with specified 'name'                                                                       |
+| [update](#update)   | Remove previously set and add new values with specified 'name' fileds with values from 'values' fileds of provided list |
+| [remove](#remove)   | Remove all values for specified 'name'                                                                                  |
+| [display](#display) | Display a list of all values with specified 'name'                                                                      |
 
 ## new
 
-Create new dataset (default or specified datasettings) and return dataset's hex string ID
+Create new dataset (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/dataset/new`
+- Endpoint: `/values/revision/new`
 
 **Parameters**
 
@@ -28,7 +28,7 @@ Create new dataset (default or specified datasettings) and return dataset's hex 
 
 **Return Type**
 
-`str`
+`any`
 
 **Example Usage Code Snippet**
 
@@ -44,13 +44,12 @@ sdk = WebOtoDevSdk(
 
 result = sdk.values.new(init="init")
 
-with open("output-file.ext", "w") as f:
-    f.write(result)
+print(result)
 ```
 
 ## get
 
-Obtain the lastest value for meaning with specified 'key'
+Obtain the lastest value for variable with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/values/actual/get`
@@ -59,7 +58,7 @@ Obtain the lastest value for meaning with specified 'key'
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ✅       |             |
+| name    | str  | ✅       |             |
 | dataset | str  | ❌       |             |
 
 **Return Type**
@@ -79,7 +78,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.get(
-    key="key",
+    name="name",
     dataset="dataset"
 )
 
@@ -87,18 +86,18 @@ with open("output-file.ext", "w") as f:
     f.write(result)
 ```
 
-## dataset
+## set
 
-Remove all previous values for specified 'key' and add a new value
+Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/actual/dataset`
+- Endpoint: `/values/actual/set`
 
 **Parameters**
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ✅       |             |
+| name    | str  | ✅       |             |
 | value   | str  | ❌       |             |
 | dataset | str  | ❌       |             |
 
@@ -118,8 +117,8 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.values.dataset(
-    key="key",
+result = sdk.values.set(
+    name="name",
     value="value",
     dataset="dataset"
 )
@@ -129,7 +128,7 @@ print(result)
 
 ## add
 
-Add a new value for specified 'key'
+Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
 - Endpoint: `/values/actual/add`
@@ -138,7 +137,7 @@ Add a new value for specified 'key'
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ✅       |             |
+| name    | str  | ✅       |             |
 | value   | str  | ❌       |             |
 | dataset | str  | ❌       |             |
 
@@ -159,7 +158,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.add(
-    key="key",
+    name="name",
     value="value",
     dataset="dataset"
 )
@@ -169,7 +168,7 @@ print(result)
 
 ## all
 
-Obtain a list of all values with specified 'key'
+Obtain a list of all values with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/values/all/get`
@@ -178,7 +177,7 @@ Obtain a list of all values with specified 'key'
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ❌       |             |
+| name    | str  | ❌       |             |
 | dataset | str  | ❌       |             |
 
 **Return Type**
@@ -198,7 +197,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.all(
-    key="key",
+    name="name",
     dataset="dataset"
 )
 
@@ -207,7 +206,7 @@ print(result)
 
 ## update
 
-Remove previously dataset and add new values with specified 'key' fileds with values from 'values' fileds of provided list
+Remove previously set and add new values with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
 - Endpoint: `/values/all/update`
@@ -237,7 +236,7 @@ sdk = WebOtoDevSdk(
 
 request_body = [
     {
-        "key": "key",
+        "name": "name",
         "value": "value"
     }
 ]
@@ -252,7 +251,7 @@ print(result)
 
 ## remove
 
-Remove all values for specified 'key'
+Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
 - Endpoint: `/values/all/remove`
@@ -261,7 +260,7 @@ Remove all values for specified 'key'
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ✅       |             |
+| name    | str  | ❌       |             |
 | value   | str  | ❌       |             |
 | dataset | str  | ❌       |             |
 
@@ -282,7 +281,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.remove(
-    key="key",
+    name="name",
     value="value",
     dataset="dataset"
 )
@@ -292,7 +291,7 @@ print(result)
 
 ## display
 
-Display a list of all values with specified 'key'
+Display a list of all values with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/values/all/display`
@@ -301,7 +300,7 @@ Display a list of all values with specified 'key'
 
 | Name    | Type | Required | Description |
 | :------ | :--- | :------- | :---------- |
-| key     | str  | ❌       |             |
+| name    | str  | ❌       |             |
 | dataset | str  | ❌       |             |
 | format  | str  | ❌       |             |
 
@@ -322,7 +321,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.display(
-    key="key",
+    name="name",
     dataset="dataset",
     format="format"
 )

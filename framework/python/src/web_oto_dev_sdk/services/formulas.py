@@ -12,7 +12,7 @@ class FormulasService(BaseService):
 
     @cast_models
     def new(self, init: str = None) -> any:
-        """Create new set (default or specified settings) and return sets's hex string ID
+        """Create new set (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
@@ -26,7 +26,9 @@ class FormulasService(BaseService):
         Validator(str).is_optional().validate(init)
 
         serialized_request = (
-            Serializer(f"{self.base_url}/formulas/set/new", self.get_default_headers())
+            Serializer(
+                f"{self.base_url}/formulas/revision/new", self.get_default_headers()
+            )
             .add_query("init", init, nullable=True)
             .serialize()
             .set_method("PUT")

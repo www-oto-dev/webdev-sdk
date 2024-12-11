@@ -11,8 +11,8 @@ from ..models import Value
 class ValuesService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> str:
-        """Create new dataset (default or specified datasettings) and return dataset's hex string ID
+    def new(self, init: str = None) -> any:
+        """Create new dataset (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
@@ -20,14 +20,14 @@ class ValuesService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
-        :rtype: str
+        :rtype: any
         """
 
         Validator(str).is_optional().validate(init)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url}/values/dataset/new", self.get_default_headers()
+                f"{self.base_url}/values/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
             .serialize()
@@ -38,11 +38,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def get(self, key: str, dataset: str = None) -> str:
-        """Obtain the lastest value for meaning with specified 'key'
+    def get(self, name: str, dataset: str = None) -> str:
+        """Obtain the lastest value for variable with specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param dataset: dataset, defaults to None
         :type dataset: str, optional
         ...
@@ -52,12 +52,12 @@ class ValuesService(BaseService):
         :rtype: str
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
             Serializer(f"{self.base_url}/values/actual/get", self.get_default_headers())
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("dataset", dataset, nullable=True)
             .serialize()
             .set_method("GET")
@@ -67,11 +67,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def dataset(self, key: str, value: str = None, dataset: str = None) -> any:
-        """Remove all previous values for specified 'key' and add a new value
+    def set(self, name: str, value: str = None, dataset: str = None) -> any:
+        """Remove all previous values for specified 'name' and add a new value
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param dataset: dataset, defaults to None
@@ -83,15 +83,13 @@ class ValuesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
-            Serializer(
-                f"{self.base_url}/values/actual/dataset", self.get_default_headers()
-            )
-            .add_query("key", key)
+            Serializer(f"{self.base_url}/values/actual/set", self.get_default_headers())
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("dataset", dataset, nullable=True)
             .serialize()
@@ -102,11 +100,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def add(self, key: str, value: str = None, dataset: str = None) -> any:
-        """Add a new value for specified 'key'
+    def add(self, name: str, value: str = None, dataset: str = None) -> any:
+        """Add a new value for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param dataset: dataset, defaults to None
@@ -118,13 +116,13 @@ class ValuesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
             Serializer(f"{self.base_url}/values/actual/add", self.get_default_headers())
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("dataset", dataset, nullable=True)
             .serialize()
@@ -135,11 +133,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def all(self, key: str = None, dataset: str = None) -> List[Value]:
-        """Obtain a list of all values with specified 'key'
+    def all(self, name: str = None, dataset: str = None) -> List[Value]:
+        """Obtain a list of all values with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param dataset: dataset, defaults to None
         :type dataset: str, optional
         ...
@@ -149,12 +147,12 @@ class ValuesService(BaseService):
         :rtype: List[Value]
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
             Serializer(f"{self.base_url}/values/all/get", self.get_default_headers())
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("dataset", dataset, nullable=True)
             .serialize()
             .set_method("GET")
@@ -165,7 +163,7 @@ class ValuesService(BaseService):
 
     @cast_models
     def update(self, request_body: List[Value], dataset: str = None) -> any:
-        """Remove previously dataset and add new values with specified 'key' fileds with values from 'values' fileds of provided list
+        """Remove previously set and add new values with specified 'name' fileds with values from 'values' fileds of provided list
 
         :param request_body: The request body.
         :type request_body: List[Value]
@@ -193,11 +191,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def remove(self, key: str, value: str = None, dataset: str = None) -> any:
-        """Remove all values for specified 'key'
+    def remove(self, name: str = None, value: str = None, dataset: str = None) -> any:
+        """Remove all values for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name, defaults to None
+        :type name: str, optional
         :param value: value, defaults to None
         :type value: str, optional
         :param dataset: dataset, defaults to None
@@ -209,13 +207,13 @@ class ValuesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
             Serializer(f"{self.base_url}/values/all/remove", self.get_default_headers())
-            .add_query("key", key)
+            .add_query("name", name, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("dataset", dataset, nullable=True)
             .serialize()
@@ -226,11 +224,11 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
-    def display(self, key: str = None, dataset: str = None, format: str = None) -> any:
-        """Display a list of all values with specified 'key'
+    def display(self, name: str = None, dataset: str = None, format: str = None) -> any:
+        """Display a list of all values with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param dataset: dataset, defaults to None
         :type dataset: str, optional
         :param format: format, defaults to None
@@ -242,7 +240,7 @@ class ValuesService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(dataset)
         Validator(str).is_optional().validate(format)
 
@@ -250,7 +248,7 @@ class ValuesService(BaseService):
             Serializer(
                 f"{self.base_url}/values/all/display", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("dataset", dataset, nullable=True)
             .add_query("format", format, nullable=True)
             .serialize()

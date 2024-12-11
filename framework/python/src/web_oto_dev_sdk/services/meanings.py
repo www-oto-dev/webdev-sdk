@@ -12,7 +12,7 @@ class MeaningsService(BaseService):
 
     @cast_models
     def new(self, init: str = None) -> any:
-        """Create new collection (default or specified settings) and return collections's hex string ID
+        """Create new collection (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
@@ -27,7 +27,7 @@ class MeaningsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url}/meanings/collection/new", self.get_default_headers()
+                f"{self.base_url}/meanings/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
             .serialize()
@@ -38,11 +38,11 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def get(self, key: str, collection: str = None) -> str:
-        """Obtain the lastest value for meaning with specified 'key'
+    def get(self, name: str, collection: str = None) -> str:
+        """Obtain the lastest value for meaning with specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param collection: collection, defaults to None
         :type collection: str, optional
         ...
@@ -52,14 +52,14 @@ class MeaningsService(BaseService):
         :rtype: str
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(collection)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/meanings/actual/get", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("collection", collection, nullable=True)
             .serialize()
             .set_method("GET")
@@ -69,11 +69,11 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def set(self, key: str, value: str = None, collection: str = None) -> any:
-        """Remove all previous values for specified 'key' and add a new value
+    def set(self, name: str, value: str = None, collection: str = None) -> any:
+        """Remove all previous values for specified 'name' and add a new value
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param collection: collection, defaults to None
@@ -85,7 +85,7 @@ class MeaningsService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(collection)
 
@@ -93,7 +93,7 @@ class MeaningsService(BaseService):
             Serializer(
                 f"{self.base_url}/meanings/actual/set", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("collection", collection, nullable=True)
             .serialize()
@@ -104,11 +104,11 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def add(self, key: str, value: str = None, collection: str = None) -> any:
-        """Add a new value for specified 'key'
+    def add(self, name: str, value: str = None, collection: str = None) -> any:
+        """Add a new value for specified 'name'
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         :param collection: collection, defaults to None
@@ -120,7 +120,7 @@ class MeaningsService(BaseService):
         :rtype: any
         """
 
-        Validator(str).validate(key)
+        Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(collection)
 
@@ -128,7 +128,7 @@ class MeaningsService(BaseService):
             Serializer(
                 f"{self.base_url}/meanings/actual/add", self.get_default_headers()
             )
-            .add_query("key", key)
+            .add_query("name", name)
             .add_query("value", value, nullable=True)
             .add_query("collection", collection, nullable=True)
             .serialize()
@@ -139,11 +139,11 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def all(self, key: str = None, collection: str = None) -> List[Meaning]:
-        """Obtain a list of all meanings with specified 'key'
+    def all(self, name: str = None, collection: str = None) -> List[Meaning]:
+        """Obtain a list of all meanings with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param collection: collection, defaults to None
         :type collection: str, optional
         ...
@@ -153,12 +153,12 @@ class MeaningsService(BaseService):
         :rtype: List[Meaning]
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(collection)
 
         serialized_request = (
             Serializer(f"{self.base_url}/meanings/all/get", self.get_default_headers())
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("collection", collection, nullable=True)
             .serialize()
             .set_method("GET")
@@ -169,7 +169,7 @@ class MeaningsService(BaseService):
 
     @cast_models
     def update(self, request_body: List[Meaning], collection: str = None) -> any:
-        """Remove previously set and add new meanings with specified 'key' fileds with values from 'values' fileds of provided list
+        """Remove previously set and add new meanings with specified 'name' fileds with values from 'values' fileds of provided list
 
         :param request_body: The request body.
         :type request_body: List[Meaning]
@@ -199,11 +199,13 @@ class MeaningsService(BaseService):
         return response
 
     @cast_models
-    def remove(self, key: str = None, value: str = None, collection: str = None) -> any:
-        """Remove all values for specified 'key'
+    def remove(
+        self, name: str = None, value: str = None, collection: str = None
+    ) -> any:
+        """Remove all values for specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param value: value, defaults to None
         :type value: str, optional
         :param collection: collection, defaults to None
@@ -215,7 +217,7 @@ class MeaningsService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(value)
         Validator(str).is_optional().validate(collection)
 
@@ -223,7 +225,7 @@ class MeaningsService(BaseService):
             Serializer(
                 f"{self.base_url}/meanings/all/remove", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("collection", collection, nullable=True)
             .serialize()
@@ -235,12 +237,12 @@ class MeaningsService(BaseService):
 
     @cast_models
     def display(
-        self, key: str = None, collection: str = None, format: str = None
+        self, name: str = None, collection: str = None, format: str = None
     ) -> any:
-        """Display a list of all meanings with specified 'key'
+        """Display a list of all meanings with specified 'name'
 
-        :param key: key, defaults to None
-        :type key: str, optional
+        :param name: name, defaults to None
+        :type name: str, optional
         :param collection: collection, defaults to None
         :type collection: str, optional
         :param format: format, defaults to None
@@ -252,7 +254,7 @@ class MeaningsService(BaseService):
         :rtype: any
         """
 
-        Validator(str).is_optional().validate(key)
+        Validator(str).is_optional().validate(name)
         Validator(str).is_optional().validate(collection)
         Validator(str).is_optional().validate(format)
 
@@ -260,7 +262,7 @@ class MeaningsService(BaseService):
             Serializer(
                 f"{self.base_url}/meanings/all/display", self.get_default_headers()
             )
-            .add_query("key", key, nullable=True)
+            .add_query("name", name, nullable=True)
             .add_query("collection", collection, nullable=True)
             .add_query("format", format, nullable=True)
             .serialize()

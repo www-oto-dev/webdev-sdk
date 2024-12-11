@@ -4,7 +4,7 @@ A list of all methods in the `FormulasService` service. Click on the method name
 
 | Methods             | Description                                                                                                               |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------ |
-| [new](#new)         | Create new set (default or specified settings) and return sets's hex string ID                                            |
+| [new](#new)         | Create new set (default or specified settings)                                                                            |
 | [get](#get)         | Obtain the lastest value for formula with specified 'name'                                                                |
 | [set](#set)         | Remove all previous values for specified 'name' and add a new value                                                       |
 | [add](#add)         | Add a new value for specified 'name'                                                                                      |
@@ -15,10 +15,10 @@ A list of all methods in the `FormulasService` service. Click on the method name
 
 ## new
 
-Create new set (default or specified settings) and return sets's hex string ID
+Create new set (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/formulas/set/new`
+- Endpoint: `/formulas/revision/new`
 
 **Parameters**
 
@@ -236,7 +236,7 @@ sdk = WebOtoDevSdk(
 
 request_body = [
     {
-        "key": "key",
+        "name": "name",
         "value": "value"
     }
 ]

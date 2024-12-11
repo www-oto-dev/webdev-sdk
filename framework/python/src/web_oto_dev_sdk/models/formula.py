@@ -8,20 +8,20 @@ from .utils.base_model import BaseModel
 class Formula(BaseModel):
     """Formula
 
-    :param key: key
-    :type key: str
+    :param name: name
+    :type name: str
     :param value: value, defaults to None
     :type value: str, optional
     """
 
-    def __init__(self, key: str, value: str = None):
+    def __init__(self, name: str, value: str = None):
         """Formula
 
-        :param key: key
-        :type key: str
+        :param name: name
+        :type name: str
         :param value: value, defaults to None
         :type value: str, optional
         """
-        self.key = key
+        self.name = name
         if value is not None:
             self.value = self._define_str("value", value, nullable=True)

@@ -2,23 +2,23 @@
 
 A list of all methods in the `MeaningsService` service. Click on the method name to view detailed information about that method.
 
-| Methods             | Description                                                                                                              |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| [new](#new)         | Create new collection (default or specified settings) and return collections's hex string ID                             |
-| [get](#get)         | Obtain the lastest value for meaning with specified 'key'                                                                |
-| [set](#set)         | Remove all previous values for specified 'key' and add a new value                                                       |
-| [add](#add)         | Add a new value for specified 'key'                                                                                      |
-| [all](#all)         | Obtain a list of all meanings with specified 'key'                                                                       |
-| [update](#update)   | Remove previously set and add new meanings with specified 'key' fileds with values from 'values' fileds of provided list |
-| [remove](#remove)   | Remove all values for specified 'key'                                                                                    |
-| [display](#display) | Display a list of all meanings with specified 'key'                                                                      |
+| Methods             | Description                                                                                                               |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------ |
+| [new](#new)         | Create new collection (default or specified settings)                                                                     |
+| [get](#get)         | Obtain the lastest value for meaning with specified 'name'                                                                |
+| [set](#set)         | Remove all previous values for specified 'name' and add a new value                                                       |
+| [add](#add)         | Add a new value for specified 'name'                                                                                      |
+| [all](#all)         | Obtain a list of all meanings with specified 'name'                                                                       |
+| [update](#update)   | Remove previously set and add new meanings with specified 'name' fileds with values from 'values' fileds of provided list |
+| [remove](#remove)   | Remove all values for specified 'name'                                                                                    |
+| [display](#display) | Display a list of all meanings with specified 'name'                                                                      |
 
 ## new
 
-Create new collection (default or specified settings) and return collections's hex string ID
+Create new collection (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/meanings/collection/new`
+- Endpoint: `/meanings/revision/new`
 
 **Parameters**
 
@@ -49,7 +49,7 @@ print(result)
 
 ## get
 
-Obtain the lastest value for meaning with specified 'key'
+Obtain the lastest value for meaning with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/meanings/actual/get`
@@ -58,7 +58,7 @@ Obtain the lastest value for meaning with specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ✅       |             |
+| name       | str  | ✅       |             |
 | collection | str  | ❌       |             |
 
 **Return Type**
@@ -78,7 +78,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.get(
-    key="key",
+    name="name",
     collection="collection"
 )
 
@@ -88,7 +88,7 @@ with open("output-file.ext", "w") as f:
 
 ## set
 
-Remove all previous values for specified 'key' and add a new value
+Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
 - Endpoint: `/meanings/actual/set`
@@ -97,7 +97,7 @@ Remove all previous values for specified 'key' and add a new value
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ✅       |             |
+| name       | str  | ✅       |             |
 | value      | str  | ❌       |             |
 | collection | str  | ❌       |             |
 
@@ -118,7 +118,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.set(
-    key="key",
+    name="name",
     value="value",
     collection="collection"
 )
@@ -128,7 +128,7 @@ print(result)
 
 ## add
 
-Add a new value for specified 'key'
+Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
 - Endpoint: `/meanings/actual/add`
@@ -137,7 +137,7 @@ Add a new value for specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ✅       |             |
+| name       | str  | ✅       |             |
 | value      | str  | ❌       |             |
 | collection | str  | ❌       |             |
 
@@ -158,7 +158,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.add(
-    key="key",
+    name="name",
     value="value",
     collection="collection"
 )
@@ -168,7 +168,7 @@ print(result)
 
 ## all
 
-Obtain a list of all meanings with specified 'key'
+Obtain a list of all meanings with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/meanings/all/get`
@@ -177,7 +177,7 @@ Obtain a list of all meanings with specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ❌       |             |
+| name       | str  | ❌       |             |
 | collection | str  | ❌       |             |
 
 **Return Type**
@@ -197,7 +197,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.all(
-    key="key",
+    name="name",
     collection="collection"
 )
 
@@ -206,7 +206,7 @@ print(result)
 
 ## update
 
-Remove previously set and add new meanings with specified 'key' fileds with values from 'values' fileds of provided list
+Remove previously set and add new meanings with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
 - Endpoint: `/meanings/all/update`
@@ -236,7 +236,7 @@ sdk = WebOtoDevSdk(
 
 request_body = [
     {
-        "key": "key",
+        "name": "name",
         "value": "value"
     }
 ]
@@ -251,7 +251,7 @@ print(result)
 
 ## remove
 
-Remove all values for specified 'key'
+Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
 - Endpoint: `/meanings/all/remove`
@@ -260,7 +260,7 @@ Remove all values for specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ❌       |             |
+| name       | str  | ❌       |             |
 | value      | str  | ❌       |             |
 | collection | str  | ❌       |             |
 
@@ -281,7 +281,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.remove(
-    key="key",
+    name="name",
     value="value",
     collection="collection"
 )
@@ -291,7 +291,7 @@ print(result)
 
 ## display
 
-Display a list of all meanings with specified 'key'
+Display a list of all meanings with specified 'name'
 
 - HTTP Method: `GET`
 - Endpoint: `/meanings/all/display`
@@ -300,7 +300,7 @@ Display a list of all meanings with specified 'key'
 
 | Name       | Type | Required | Description |
 | :--------- | :--- | :------- | :---------- |
-| key        | str  | ❌       |             |
+| name       | str  | ❌       |             |
 | collection | str  | ❌       |             |
 | format     | str  | ❌       |             |
 
@@ -321,7 +321,7 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.meanings.display(
-    key="key",
+    name="name",
     collection="collection",
     format="format"
 )
