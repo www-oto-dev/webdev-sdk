@@ -11,11 +11,13 @@ from ..models import Property
 class PropertiesService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> any:
+    def new(self, init: str = None, build: str = None) -> any:
         """Create new build (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
+        :param build: build, defaults to None
+        :type build: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -24,12 +26,14 @@ class PropertiesService(BaseService):
         """
 
         Validator(str).is_optional().validate(init)
+        Validator(str).is_optional().validate(build)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/properties/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
+            .add_query("build", build, nullable=True)
             .serialize()
             .set_method("PUT")
         )

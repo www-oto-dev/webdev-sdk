@@ -22,9 +22,10 @@ Create new dataset (default or specified settings)
 
 **Parameters**
 
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| init | str  | ❌       |             |
+| Name    | Type | Required | Description |
+| :------ | :--- | :------- | :---------- |
+| init    | str  | ❌       |             |
+| dataset | str  | ❌       |             |
 
 **Return Type**
 
@@ -42,7 +43,10 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.values.new(init="init")
+result = sdk.values.new(
+    init="init",
+    dataset="dataset"
+)
 
 print(result)
 ```

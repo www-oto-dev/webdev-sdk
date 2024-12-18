@@ -11,11 +11,13 @@ from ..models import Meaning
 class MeaningsService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> any:
+    def new(self, init: str = None, collection: str = None) -> any:
         """Create new collection (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
+        :param collection: collection, defaults to None
+        :type collection: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -24,12 +26,14 @@ class MeaningsService(BaseService):
         """
 
         Validator(str).is_optional().validate(init)
+        Validator(str).is_optional().validate(collection)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/meanings/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
+            .add_query("collection", collection, nullable=True)
             .serialize()
             .set_method("PUT")
         )

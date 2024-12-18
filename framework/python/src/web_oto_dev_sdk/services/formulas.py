@@ -11,11 +11,13 @@ from ..models import Formula
 class FormulasService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> any:
+    def new(self, init: str = None, set: str = None) -> any:
         """Create new set (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -24,12 +26,14 @@ class FormulasService(BaseService):
         """
 
         Validator(str).is_optional().validate(init)
+        Validator(str).is_optional().validate(set)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/formulas/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
+            .add_query("set", set, nullable=True)
             .serialize()
             .set_method("PUT")
         )

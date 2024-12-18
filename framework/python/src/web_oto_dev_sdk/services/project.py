@@ -108,3 +108,28 @@ class ProjectService(BaseService):
 
         response = self.send_request(serialized_request)
         return Project._unmap(response)
+
+    @cast_models
+    def imagine(self, target: str = None) -> any:
+        """imagine
+
+        :param target: target, defaults to None
+        :type target: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).is_optional().validate(target)
+
+        serialized_request = (
+            Serializer(f"{self.base_url}/project/imagine", self.get_default_headers())
+            .add_query("target", target, nullable=True)
+            .serialize()
+            .set_method("POST")
+        )
+
+        response = self.send_request(serialized_request)
+        return response

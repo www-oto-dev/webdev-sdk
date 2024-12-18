@@ -22,9 +22,10 @@ Create new build (default or specified settings)
 
 **Parameters**
 
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| init | str  | ❌       |             |
+| Name  | Type | Required | Description |
+| :---- | :--- | :------- | :---------- |
+| init  | str  | ❌       |             |
+| build | str  | ❌       |             |
 
 **Return Type**
 
@@ -42,7 +43,10 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.properties.new(init="init")
+result = sdk.properties.new(
+    init="init",
+    build="build"
+)
 
 print(result)
 ```

@@ -11,11 +11,13 @@ from ..models import Value
 class LayoutsService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> any:
+    def new(self, init: str = None, version: str = None) -> any:
         """Create new version (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
+        :param version: version, defaults to None
+        :type version: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -24,12 +26,14 @@ class LayoutsService(BaseService):
         """
 
         Validator(str).is_optional().validate(init)
+        Validator(str).is_optional().validate(version)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/layouts/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
+            .add_query("version", version, nullable=True)
             .serialize()
             .set_method("PUT")
         )

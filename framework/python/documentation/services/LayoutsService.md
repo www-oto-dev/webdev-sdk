@@ -22,9 +22,10 @@ Create new version (default or specified settings)
 
 **Parameters**
 
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| init | str  | ❌       |             |
+| Name    | Type | Required | Description |
+| :------ | :--- | :------- | :---------- |
+| init    | str  | ❌       |             |
+| version | str  | ❌       |             |
 
 **Return Type**
 
@@ -42,7 +43,10 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.layouts.new(init="init")
+result = sdk.layouts.new(
+    init="init",
+    version="version"
+)
 
 print(result)
 ```

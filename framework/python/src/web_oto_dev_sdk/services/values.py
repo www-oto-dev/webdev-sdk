@@ -11,11 +11,13 @@ from ..models import Value
 class ValuesService(BaseService):
 
     @cast_models
-    def new(self, init: str = None) -> any:
+    def new(self, init: str = None, dataset: str = None) -> any:
         """Create new dataset (default or specified settings)
 
         :param init: init, defaults to None
         :type init: str, optional
+        :param dataset: dataset, defaults to None
+        :type dataset: str, optional
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
@@ -24,12 +26,14 @@ class ValuesService(BaseService):
         """
 
         Validator(str).is_optional().validate(init)
+        Validator(str).is_optional().validate(dataset)
 
         serialized_request = (
             Serializer(
                 f"{self.base_url}/values/revision/new", self.get_default_headers()
             )
             .add_query("init", init, nullable=True)
+            .add_query("dataset", dataset, nullable=True)
             .serialize()
             .set_method("PUT")
         )

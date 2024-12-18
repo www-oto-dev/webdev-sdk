@@ -115,6 +115,56 @@ class AdminService(BaseService):
         return response
 
     @cast_models
+    def change_project(
+        self,
+        slug: str = None,
+        uid: str = None,
+        new_slug: str = None,
+        new_title: str = None,
+        internal: bool = None,
+    ) -> any:
+        """Change options [ADMIN RIGHTS REQUIRED]
+
+        :param slug: slug, defaults to None
+        :type slug: str, optional
+        :param uid: uid, defaults to None
+        :type uid: str, optional
+        :param new_slug: new_slug, defaults to None
+        :type new_slug: str, optional
+        :param new_title: new_title, defaults to None
+        :type new_title: str, optional
+        :param internal: internal, defaults to None
+        :type internal: bool, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).is_optional().validate(slug)
+        Validator(str).is_optional().validate(uid)
+        Validator(str).is_optional().validate(new_slug)
+        Validator(str).is_optional().validate(new_title)
+        Validator(bool).is_optional().validate(internal)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/admin/projects/change", self.get_default_headers()
+            )
+            .add_query("slug", slug, nullable=True)
+            .add_query("uid", uid, nullable=True)
+            .add_query("new_slug", new_slug, nullable=True)
+            .add_query("new_title", new_title, nullable=True)
+            .add_query("internal", internal, nullable=True)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response = self.send_request(serialized_request)
+        return response
+
+    @cast_models
     def change_project_slug(
         self,
         slug: str = None,
@@ -152,6 +202,52 @@ class AdminService(BaseService):
             .add_query("slug", slug, nullable=True)
             .add_query("uid", uid, nullable=True)
             .add_query("new_slug", new_slug, nullable=True)
+            .add_query("internal", internal, nullable=True)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def change_project_title(
+        self,
+        slug: str = None,
+        uid: str = None,
+        new_title: str = None,
+        internal: bool = None,
+    ) -> any:
+        """Change project title [ADMIN RIGHTS REQUIRED]
+
+        :param slug: slug, defaults to None
+        :type slug: str, optional
+        :param uid: uid, defaults to None
+        :type uid: str, optional
+        :param new_title: new_title, defaults to None
+        :type new_title: str, optional
+        :param internal: internal, defaults to None
+        :type internal: bool, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: Successful Response
+        :rtype: any
+        """
+
+        Validator(str).is_optional().validate(slug)
+        Validator(str).is_optional().validate(uid)
+        Validator(str).is_optional().validate(new_title)
+        Validator(bool).is_optional().validate(internal)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url}/admin/projects/change/title",
+                self.get_default_headers(),
+            )
+            .add_query("slug", slug, nullable=True)
+            .add_query("uid", uid, nullable=True)
+            .add_query("new_title", new_title, nullable=True)
             .add_query("internal", internal, nullable=True)
             .serialize()
             .set_method("PUT")

@@ -4,7 +4,7 @@ from .utils.json_map import JsonMap
 from .utils.base_model import BaseModel
 
 
-@JsonMap({})
+@JsonMap({"type_": "type"})
 class Formula(BaseModel):
     """Formula
 
@@ -12,16 +12,30 @@ class Formula(BaseModel):
     :type name: str
     :param value: value, defaults to None
     :type value: str, optional
+    :param type_: type_, defaults to None
+    :type type_: str, optional
+    :param group: group, defaults to None
+    :type group: str, optional
     """
 
-    def __init__(self, name: str, value: str = None):
+    def __init__(
+        self, name: str, value: str = None, type_: str = None, group: str = None
+    ):
         """Formula
 
         :param name: name
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
+        :param type_: type_, defaults to None
+        :type type_: str, optional
+        :param group: group, defaults to None
+        :type group: str, optional
         """
         self.name = name
         if value is not None:
             self.value = self._define_str("value", value, nullable=True)
+        if type_ is not None:
+            self.type_ = self._define_str("type_", type_, nullable=True)
+        if group is not None:
+            self.group = self._define_str("group", group, nullable=True)

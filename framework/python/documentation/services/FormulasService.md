@@ -25,6 +25,7 @@ Create new set (default or specified settings)
 | Name | Type | Required | Description |
 | :--- | :--- | :------- | :---------- |
 | init | str  | ❌       |             |
+| set  | str  | ❌       |             |
 
 **Return Type**
 
@@ -42,7 +43,10 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.formulas.new(init="init")
+result = sdk.formulas.new(
+    init="init",
+    set="set"
+)
 
 print(result)
 ```
@@ -237,7 +241,9 @@ sdk = WebOtoDevSdk(
 request_body = [
     {
         "name": "name",
-        "value": "value"
+        "value": "value",
+        "type_": "type",
+        "group": "group"
     }
 ]
 

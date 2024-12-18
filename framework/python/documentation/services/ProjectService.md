@@ -9,6 +9,7 @@ A list of all methods in the `ProjectService` service. Click on the method name 
 | [generate](#generate) | generate                   |
 | [build](#build)       | build                      |
 | [view](#view)         | view                       |
+| [imagine](#imagine)   | imagine                    |
 
 ## info
 
@@ -146,6 +147,40 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.project.view()
+
+print(result)
+```
+
+## imagine
+
+imagine
+
+- HTTP Method: `POST`
+- Endpoint: `/project/imagine`
+
+**Parameters**
+
+| Name   | Type | Required | Description |
+| :----- | :--- | :------- | :---------- |
+| target | str  | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.project.imagine(target="target")
 
 print(result)
 ```

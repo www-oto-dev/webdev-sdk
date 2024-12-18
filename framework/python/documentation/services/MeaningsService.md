@@ -22,9 +22,10 @@ Create new collection (default or specified settings)
 
 **Parameters**
 
-| Name | Type | Required | Description |
-| :--- | :--- | :------- | :---------- |
-| init | str  | ❌       |             |
+| Name       | Type | Required | Description |
+| :--------- | :--- | :------- | :---------- |
+| init       | str  | ❌       |             |
+| collection | str  | ❌       |             |
 
 **Return Type**
 
@@ -42,7 +43,10 @@ sdk = WebOtoDevSdk(
     timeout=10000
 )
 
-result = sdk.meanings.new(init="init")
+result = sdk.meanings.new(
+    init="init",
+    collection="collection"
+)
 
 print(result)
 ```

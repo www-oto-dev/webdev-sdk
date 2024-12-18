@@ -1,6 +1,6 @@
 {
   "liblabVersion": "2.9.7",
-  "date": "2024-12-18T10:43:25.917Z",
+  "date": "2024-12-18T16:49:24.913Z",
   "config": {
     "apiId": 1515,
     "sdkName": "web-oto-dev-sdk",
@@ -86,7 +86,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "8506/hooks.zip",
+      "bucketKey": "8513/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,
@@ -181,8 +181,6 @@
     "src/web_oto_dev_sdk/models/value.py",
     "documentation/services/AdminService.md",
     "documentation/services/ProjectService.md",
-    "src/web_oto_dev_sdk/services/admin.py",
-    "src/web_oto_dev_sdk/services/project.py",
     "documentation/services/PropertiesService.md",
     "documentation/services/MeaningsService.md",
     "documentation/services/FormulasService.md",
@@ -190,6 +188,8 @@
     "documentation/services/LayoutsService.md",
     "README.md",
     "PyPI_README.md",
+    "src/web_oto_dev_sdk/services/admin.py",
+    "src/web_oto_dev_sdk/services/project.py",
     "src/web_oto_dev_sdk/services/properties.py",
     "src/web_oto_dev_sdk/services/meanings.py",
     "src/web_oto_dev_sdk/services/formulas.py",
