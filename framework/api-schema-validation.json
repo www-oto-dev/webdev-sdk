@@ -11,11 +11,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 8776
+        "character": 11771
       },
       "start": {
         "line": 0,
-        "character": 8766
+        "character": 11761
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -33,11 +33,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 9393
+        "character": 12388
       },
       "start": {
         "line": 0,
-        "character": 9383
+        "character": 12378
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -55,11 +55,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 10152
+        "character": 13147
       },
       "start": {
         "line": 0,
-        "character": 10142
+        "character": 13137
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -77,11 +77,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 11013
+        "character": 14008
       },
       "start": {
         "line": 0,
-        "character": 11003
+        "character": 13998
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -99,11 +99,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 11840
+        "character": 14835
       },
       "start": {
         "line": 0,
-        "character": 11830
+        "character": 14825
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -121,11 +121,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 12685
+        "character": 15680
       },
       "start": {
         "line": 0,
-        "character": 12675
+        "character": 15670
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -143,11 +143,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 13554
+        "character": 16549
       },
       "start": {
         "line": 0,
-        "character": 13544
+        "character": 16539
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -165,11 +165,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 14413
+        "character": 17408
       },
       "start": {
         "line": 0,
-        "character": 14403
+        "character": 17398
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -187,11 +187,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 15317
+        "character": 18312
       },
       "start": {
         "line": 0,
-        "character": 15307
+        "character": 18302
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -209,11 +209,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 15927
+        "character": 18922
       },
       "start": {
         "line": 0,
-        "character": 15917
+        "character": 18912
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -231,11 +231,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 16672
+        "character": 19667
       },
       "start": {
         "line": 0,
-        "character": 16662
+        "character": 19657
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -253,11 +253,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 17519
+        "character": 20514
       },
       "start": {
         "line": 0,
-        "character": 17509
+        "character": 20504
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -275,11 +275,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 18332
+        "character": 21327
       },
       "start": {
         "line": 0,
-        "character": 18322
+        "character": 21317
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -297,11 +297,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 19163
+        "character": 22158
       },
       "start": {
         "line": 0,
-        "character": 19153
+        "character": 22148
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -319,11 +319,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 20018
+        "character": 23013
       },
       "start": {
         "line": 0,
-        "character": 20008
+        "character": 23003
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -341,11 +341,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 20863
+        "character": 23858
       },
       "start": {
         "line": 0,
-        "character": 20853
+        "character": 23848
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -363,11 +363,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 21749
+        "character": 24744
       },
       "start": {
         "line": 0,
-        "character": 21741
+        "character": 24736
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -385,11 +385,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 22357
+        "character": 25352
       },
       "start": {
         "line": 0,
-        "character": 22349
+        "character": 25344
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -407,11 +407,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 23105
+        "character": 26100
       },
       "start": {
         "line": 0,
-        "character": 23097
+        "character": 26092
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -429,11 +429,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 23954
+        "character": 26949
       },
       "start": {
         "line": 0,
-        "character": 23946
+        "character": 26941
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -451,11 +451,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 24769
+        "character": 27764
       },
       "start": {
         "line": 0,
-        "character": 24761
+        "character": 27756
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -473,11 +473,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 25598
+        "character": 28593
       },
       "start": {
         "line": 0,
-        "character": 25590
+        "character": 28585
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -495,11 +495,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 26449
+        "character": 29444
       },
       "start": {
         "line": 0,
-        "character": 26441
+        "character": 29436
       }
     },
     "message": "Operation tags must be defined in global tags.",
@@ -517,11 +517,187 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 27296
+        "character": 30291
       },
       "start": {
         "line": 0,
-        "character": 27288
+        "character": 30283
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/revision/new",
+      "put",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 31183
+      },
+      "start": {
+        "line": 0,
+        "character": 31174
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/actual/get",
+      "get",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 31794
+      },
+      "start": {
+        "line": 0,
+        "character": 31785
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/actual/set",
+      "put",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 32542
+      },
+      "start": {
+        "line": 0,
+        "character": 32533
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/actual/add",
+      "put",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 33405
+      },
+      "start": {
+        "line": 0,
+        "character": 33396
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/all/get",
+      "get",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 34231
+      },
+      "start": {
+        "line": 0,
+        "character": 34222
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/all/update",
+      "put",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 35064
+      },
+      "start": {
+        "line": 0,
+        "character": 35055
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/all/remove",
+      "delete",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 35922
+      },
+      "start": {
+        "line": 0,
+        "character": 35913
+      }
+    },
+    "message": "Operation tags must be defined in global tags.",
+    "severity": "warning"
+  },
+  {
+    "code": "operation-tag-defined",
+    "path": [
+      "paths",
+      "/layouts/all/display",
+      "get",
+      "tags",
+      "0"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 36773
+      },
+      "start": {
+        "line": 0,
+        "character": 36764
       }
     },
     "message": "Operation tags must be defined in global tags.",

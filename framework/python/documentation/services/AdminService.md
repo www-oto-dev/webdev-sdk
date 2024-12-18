@@ -2,16 +2,19 @@
 
 A list of all methods in the `AdminService` service. Click on the method name to view detailed information about that method.
 
-| Methods               | Description                                           |
-| :-------------------- | :---------------------------------------------------- |
-| [projects](#projects) | Obtain a list of all projects [ADMIN RIGHTS REQUIRED] |
+| Methods                                     | Description                                              |
+| :------------------------------------------ | :------------------------------------------------------- |
+| [projects](#projects)                       | Obtain a list of all projects [ADMIN RIGHTS REQUIRED]    |
+| [new_project](#new_project)                 | Create project [ADMIN RIGHTS REQUIRED]                   |
+| [remove_project](#remove_project)           | Remove project with specified ID [ADMIN RIGHTS REQUIRED] |
+| [change_project_slug](#change_project_slug) | Change project slug [ADMIN RIGHTS REQUIRED]              |
 
 ## projects
 
 Obtain a list of all projects [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `GET`
-- Endpoint: `/admin/projects`
+- Endpoint: `/admin/projects/all`
 
 **Return Type**
 
@@ -30,6 +33,130 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.admin.projects()
+
+print(result)
+```
+
+## new_project
+
+Create project [ADMIN RIGHTS REQUIRED]
+
+- HTTP Method: `PUT`
+- Endpoint: `/admin/projects/new`
+
+**Parameters**
+
+| Name     | Type | Required | Description |
+| :------- | :--- | :------- | :---------- |
+| title    | str  | ❌       |             |
+| slug     | str  | ❌       |             |
+| init     | str  | ❌       |             |
+| internal | bool | ❌       |             |
+
+**Return Type**
+
+`bool`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.admin.new_project(
+    title="title",
+    slug="slug",
+    init="init",
+    internal=True
+)
+
+print(result)
+```
+
+## remove_project
+
+Remove project with specified ID [ADMIN RIGHTS REQUIRED]
+
+- HTTP Method: `DELETE`
+- Endpoint: `/admin/projects/remove`
+
+**Parameters**
+
+| Name     | Type | Required | Description |
+| :------- | :--- | :------- | :---------- |
+| slug     | str  | ❌       |             |
+| uid      | str  | ❌       |             |
+| internal | bool | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.admin.remove_project(
+    slug="slug",
+    uid="uid",
+    internal=True
+)
+
+print(result)
+```
+
+## change_project_slug
+
+Change project slug [ADMIN RIGHTS REQUIRED]
+
+- HTTP Method: `PUT`
+- Endpoint: `/admin/projects/change/slug`
+
+**Parameters**
+
+| Name     | Type | Required | Description |
+| :------- | :--- | :------- | :---------- |
+| slug     | str  | ❌       |             |
+| uid      | str  | ❌       |             |
+| new_slug | str  | ❌       |             |
+| internal | bool | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.admin.change_project_slug(
+    slug="slug",
+    uid="uid",
+    new_slug="new_slug",
+    internal=True
+)
 
 print(result)
 ```

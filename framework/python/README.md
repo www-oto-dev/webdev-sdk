@@ -110,6 +110,7 @@ The SDK provides various services to interact with the API.
 | [MeaningsService](documentation/services/MeaningsService.md)     |
 | [FormulasService](documentation/services/FormulasService.md)     |
 | [ValuesService](documentation/services/ValuesService.md)         |
+| [LayoutsService](documentation/services/LayoutsService.md)       |
 
 </details>
 

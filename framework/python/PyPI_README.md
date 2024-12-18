@@ -110,6 +110,7 @@ The SDK provides various services to interact with the API.
 | meanings   |
 | formulas   |
 | values     |
+| layouts    |
 
 </details>
 
