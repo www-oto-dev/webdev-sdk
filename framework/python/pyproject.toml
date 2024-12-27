@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "web_oto_dev_sdk"
-version = "1.0.0"
+version = "1.0.1"
 license = { text = "MIT" }
 description = """API v1 for web.oto.dev service"""
 readme = "PyPI_README.md"

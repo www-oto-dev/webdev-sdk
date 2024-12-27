@@ -73,13 +73,24 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def set(self, name: str, value: str = None, set: str = None) -> any:
+    def set(
+        self,
+        name: str,
+        value: str = None,
+        type_: str = None,
+        engine: str = None,
+        set: str = None,
+    ) -> any:
         """Remove all previous values for specified 'name' and add a new value
 
         :param name: name
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
+        :param type_: type_, defaults to None
+        :type type_: str, optional
+        :param engine: engine, defaults to None
+        :type engine: str, optional
         :param set: set, defaults to None
         :type set: str, optional
         ...
@@ -91,6 +102,8 @@ class FormulasService(BaseService):
 
         Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
+        Validator(str).is_optional().validate(type_)
+        Validator(str).is_optional().validate(engine)
         Validator(str).is_optional().validate(set)
 
         serialized_request = (
@@ -99,6 +112,8 @@ class FormulasService(BaseService):
             )
             .add_query("name", name)
             .add_query("value", value, nullable=True)
+            .add_query("type", type_, nullable=True)
+            .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
             .set_method("PUT")
@@ -108,13 +123,24 @@ class FormulasService(BaseService):
         return response
 
     @cast_models
-    def add(self, name: str, value: str = None, set: str = None) -> any:
+    def add(
+        self,
+        name: str,
+        value: str = None,
+        type_: str = None,
+        engine: str = None,
+        set: str = None,
+    ) -> any:
         """Add a new value for specified 'name'
 
         :param name: name
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
+        :param type_: type_, defaults to None
+        :type type_: str, optional
+        :param engine: engine, defaults to None
+        :type engine: str, optional
         :param set: set, defaults to None
         :type set: str, optional
         ...
@@ -126,6 +152,8 @@ class FormulasService(BaseService):
 
         Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
+        Validator(str).is_optional().validate(type_)
+        Validator(str).is_optional().validate(engine)
         Validator(str).is_optional().validate(set)
 
         serialized_request = (
@@ -134,6 +162,8 @@ class FormulasService(BaseService):
             )
             .add_query("name", name)
             .add_query("value", value, nullable=True)
+            .add_query("type", type_, nullable=True)
+            .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
             .set_method("PUT")

@@ -115,7 +115,7 @@ sdk = WebOtoDevSdk(
 result = sdk.admin.remove_project(
     slug="slug",
     uid="uid",
-    internal=False
+    internal=True
 )
 
 print(result)
@@ -159,7 +159,7 @@ result = sdk.admin.change_project(
     uid="uid",
     new_slug="new_slug",
     new_title="new_title",
-    internal=False
+    internal=True
 )
 
 print(result)
@@ -201,7 +201,7 @@ result = sdk.admin.change_project_slug(
     slug="slug",
     uid="uid",
     new_slug="new_slug",
-    internal=True
+    internal=False
 )
 
 print(result)
@@ -243,7 +243,7 @@ result = sdk.admin.change_project_title(
     slug="slug",
     uid="uid",
     new_title="new_title",
-    internal=True
+    internal=False
 )
 
 print(result)

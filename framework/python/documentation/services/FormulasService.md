@@ -99,11 +99,13 @@ Remove all previous values for specified 'name' and add a new value
 
 **Parameters**
 
-| Name  | Type | Required | Description |
-| :---- | :--- | :------- | :---------- |
-| name  | str  | ✅       |             |
-| value | str  | ❌       |             |
-| set   | str  | ❌       |             |
+| Name   | Type | Required | Description |
+| :----- | :--- | :------- | :---------- |
+| name   | str  | ✅       |             |
+| value  | str  | ❌       |             |
+| type\_ | str  | ❌       |             |
+| engine | str  | ❌       |             |
+| set    | str  | ❌       |             |
 
 **Return Type**
 
@@ -124,6 +126,8 @@ sdk = WebOtoDevSdk(
 result = sdk.formulas.set(
     name="name",
     value="value",
+    type_="type",
+    engine="engine",
     set="set"
 )
 
@@ -139,11 +143,13 @@ Add a new value for specified 'name'
 
 **Parameters**
 
-| Name  | Type | Required | Description |
-| :---- | :--- | :------- | :---------- |
-| name  | str  | ✅       |             |
-| value | str  | ❌       |             |
-| set   | str  | ❌       |             |
+| Name   | Type | Required | Description |
+| :----- | :--- | :------- | :---------- |
+| name   | str  | ✅       |             |
+| value  | str  | ❌       |             |
+| type\_ | str  | ❌       |             |
+| engine | str  | ❌       |             |
+| set    | str  | ❌       |             |
 
 **Return Type**
 
@@ -164,6 +170,8 @@ sdk = WebOtoDevSdk(
 result = sdk.formulas.add(
     name="name",
     value="value",
+    type_="type",
+    engine="engine",
     set="set"
 )
 
