@@ -45,4 +45,7 @@ pip install dist/web_oto_dev_sdk-1.0.1-py3-none-any.whl --force-reinstall
 cd ../..
 
 
-
+# Publishing
+cd "$PWD"/framework/python/
+python3 -m twine upload dist/web_oto_dev_sdk-1.0.1-py3-none-any.whl
+cd ../..
