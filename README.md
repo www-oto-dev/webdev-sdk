@@ -7,13 +7,43 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 1. First, you need to **register on the [hub.oto.dev](https://hub.oto.dev/) service and copy an `API Key`** from the Dashboard
 2. **Create a project and copy project ID** which is necessary for using the SDK
+3. **Install SDK by using pip `pip install web_oto_dev_sdk`**
+4. Use python project, console or [jupyter notebooks](https://jupyter.org/) to call SDK functions
+   
 
-## Project Settings
+## Creating a website by using the SDK
 
+### Settings and SDK initialization
+
+Replace `YOU_PROJECT_ID` with project ID from the 'edit' project screen and `YOUR_API_KEY` from the dashboard.
 
 ```
 project_id = 'YOU_PROJECT_ID'
 api_key = 'YOUR_API_KEY'
+```
+
+SDK initialization
+```
+from web_oto_dev_sdk import WebOtoDevSdk
+from web_oto_dev_sdk.models.property import Property
+from web_oto_dev_sdk.models.meaning import Meaning
+from web_oto_dev_sdk.models.formula import Formula
+from web_oto_dev_sdk.models.value import Value
+
+oto = WebOtoDevSdk(
+    project_id=project_id,
+    api_key=api_key,
+    base_url='https://web.oto.dev/openapi/api/v1',
+    timeout=10*60*1000
+)
+```
+
+If you are using Jupyter Notebooks, we recommend installing 'tabulate' and using it to display some SDK function results as tables.
+```
+from tabulate import tabulate
+
+def table(data):
+    return tabulate(data, tablefmt='html', showindex=False, stralign="right")
 ```
 
 
