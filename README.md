@@ -8,8 +8,8 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 1. First, you need to **register on the [hub.oto.dev](https://hub.oto.dev/) service and copy an `API Key`** from the Dashboard
 2. **Create a project and copy project ID** which is necessary for using the SDK
 3. **Install SDK by using pip `pip install web_oto_dev_sdk`**
-4. Use python project, console or [jupyter notebooks](https://jupyter.org/) to call SDK functions
-   
+4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
+
 
 ## Creating a website by using the SDK
 
@@ -45,5 +45,21 @@ from tabulate import tabulate
 def table(data):
     return tabulate(data, tablefmt='html', showindex=False, stralign="right")
 ```
+
+
+### Properties
+```
+oto.properties.set('supported-language', 'ru')
+oto.properties.set('reference-website-url', 'https://your-old-website-to-collect-meanings.com')
+oto.properties.set('branding-color', '#40C3E4')
+oto.properties.set('light-color-threshold', '0.65')
+oto.properties.set('website-skin', 'softcorners')
+oto.properties.set('background-decoration', 'circle')
+oto.properties.set('branding-gradient', 'linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);')
+oto.properties.add('branding-gradient', '')
+oto.properties.update([Property(key='supported-language', value='en')])
+table(oto.properties.display())
+```
+
 
 
