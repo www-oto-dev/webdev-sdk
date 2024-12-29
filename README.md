@@ -44,7 +44,7 @@ oto.project.build()
 # Done
 print(oto.project.view())
 # Output: https://we.oto.dev/-/<YOU_PROJECT_ID>
-
+```
 
 
 ## Full Сapabilities
