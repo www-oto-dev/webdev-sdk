@@ -13,7 +13,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 ## What we have as an INPUT
 
-```
+
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | What products and services do you have?                             | We provide an SDK for Python to simplify building websites by using AI               |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -24,11 +24,14 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |                                                                     | - Websites have build-it speed and SEO optimization (Comming Soon)                   |
 |                                                                     | - Calling one function will keep your website up-to-date                             |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-```
 
-## What we get as an OUTPUT
 
-![Main Screen](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
+## What we get as a RESULT
+
+![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
+![Advantages](examples/webdev-sdk/webdev-sdk--advantages.png?raw=true "Advantages")
+![About](examples/webdev-sdk/webdev-sdk--about.png?raw=true "About")
+![Action](examples/webdev-sdk/webdev-sdk--action.png?raw=true "Action")
 
 
 
