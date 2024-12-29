@@ -39,11 +39,11 @@ Information required to build your website
 ```
 oto.meanings.set('mm-products-and-services', 'We provide an SDK for Python to simplify building websites by using AI')
 oto.meanings.set('mm-free-first-step', 'You can quickly build a website by following the Quick Start guide located on https://github.com/www-oto-dev/webdev-sdk/')
-oto.meanings.set('mm-product-usage-advantages', 'You can build websites in minutes')
-oto.meanings.set('mm-product-usage-advantages', 'Use your social media, websites, and blogs as a source of information')
-oto.meanings.set('mm-product-usage-advantages', 'Websites have build-it speed and SEO optimization (Comming Soon)')
-oto.meanings.set('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
-# ...
+oto.meanings.remove('mm-product-usage-advantages') # In case if they were set previously
+oto.meanings.add('mm-product-usage-advantages', 'You can build websites in minutes')
+oto.meanings.add('mm-product-usage-advantages', 'Use your social media, websites, and blogs as a source of information')
+oto.meanings.add('mm-product-usage-advantages', 'Websites have build-it speed and SEO optimization (Comming Soon)')
+oto.meanings.add('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
 ```
 
 Generating content & Building layout
