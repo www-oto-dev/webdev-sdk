@@ -11,6 +11,9 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
 
 
+
+
+
 ## Quick Start
 
 Installing
@@ -52,7 +55,7 @@ oto.project.generate()
 oto.project.build()
 ```
 
-# Done
+Done!
 ```
 print(oto.project.view())
 ```
@@ -91,14 +94,9 @@ def table(data):
 
 
 
-
-
-
-
-
 ### Project Properties
 
-The following code sets some properties (not required) you may need. You can find a list of all available options in PROPERTIES [definition](definitions.py)
+The following code sets some properties (not required) you may need. You can find a list of all available options in PROPERTIES [definition](information/definitions.py)
 
 ```
 oto.properties.set('supported-language', 'en')
@@ -112,6 +110,11 @@ oto.properties.add('branding-gradient', '')
 oto.properties.update([Property(key='supported-language', value='en')])
 table(oto.properties.display())
 ```
+
+## Example
+
+
+
 
 
 
