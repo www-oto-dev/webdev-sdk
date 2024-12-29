@@ -13,7 +13,12 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 ## Quick Start
 
-Configuring SDK. Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
+Installing
+```
+pip install web_oto_dev_sdk
+```
+
+Configuring the SDK. Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
 
 ```
 from web_oto_dev_sdk import WebOtoDevSdk
