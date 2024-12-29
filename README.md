@@ -131,7 +131,7 @@ table(oto.properties.display())
 
 ## Example
 
-
+[Jupyter Notebook example](examples/webdev-sdk/webdev-sdk-example.ipynb)
 
 
 
