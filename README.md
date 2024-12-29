@@ -13,10 +13,9 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 ## Quick Start
 
-Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
+Configuring SDK. Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
 
 ```
-# Configuring SDK
 from web_oto_dev_sdk import WebOtoDevSdk
 oto = WebOtoDevSdk(
     project_id=<YOU_PROJECT_ID>,
@@ -24,11 +23,15 @@ oto = WebOtoDevSdk(
     base_url='https://web.oto.dev/openapi/api/v1',
     timeout=10*60*1000
 )
+```
 
-# Your project basic settings
+Your project basic settings
+```
 oto.properties.set('supported-language', 'en')
+```
 
-# Information required to build your website
+Information required to build your website
+```
 oto.meanings.set('mm-products-and-services', 'We provide an SDK for Python to simplify building websites by using AI')
 oto.meanings.set('mm-free-first-step', 'You can quickly build a website by following the Quick Start guide located on https://github.com/www-oto-dev/webdev-sdk/')
 oto.meanings.set('mm-product-usage-advantages', 'You can build websites in minutes')
@@ -36,15 +39,20 @@ oto.meanings.set('mm-product-usage-advantages', 'Use your social media, websites
 oto.meanings.set('mm-product-usage-advantages', 'Websites have build-it speed and SEO optimization (Comming Soon)')
 oto.meanings.set('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
 # ...
+```
 
-# Generating content & Building layout
+Generating content & Building layout
+```
 oto.project.generate()
 oto.project.build()
+```
 
 # Done
-print(oto.project.view())
-# Output: https://we.oto.dev/-/<YOU_PROJECT_ID>
 ```
+print(oto.project.view())
+```
+Output: https://we.oto.dev/-/<YOU_PROJECT_ID>
+
 
 
 ## Full Сapabilities
