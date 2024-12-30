@@ -94,18 +94,9 @@ The concept of our project is to create [a website builder based on artificial i
 | Layer | Stage of website creation | Problems we solve |
 |------|-------------------------------------------|----------------------------------------------------------------------------------------------|
 | **Semantic** | ♻️ Collecting *meanings* | ☑️ Collecting information from previous website version <br> ☑️ Collecting meanings by answering questions <br> 🔜 Collecting information from social media <br> |
-| **Content** | 🪄 Generating a *content* | ☑️ Generating contents using 'formulas' (set of queries) for GTP models <br> 
-☑️ Generating images using 'formulas' for graphical generative AI <br> 
-🔜 Generating icons and sets of images in one style <br> 
-🔜 Using provided by user graphics and materials <br> 
-🔜 Text SEO optimization <br> |
-| **Design** | 🎨 Creating *layouts*, a *structure* and an *UI* | [☑️] Creating a webpage layout \ |
-|  |  | [🔜] Creating a website structure and the ability to manage it \ |
-|  |  | [☑️] Website templates (limited right now, can not generate new) |
-| **Technical** | 🧱 Building *web pages* by using HTML/JS/CSS.. | [☑️] Displaying a result as a website published on our domain \ |
-|  |  | [🔜] An ability to download a result as HTML/JS/CSS code \ |
-|  |  | [☑️] Adaptive web pages for all devices: desktops and mobile phones.. \ |
-|  |  | [🔜] Technical optimization for Search Engines (SEO): page loading speed |
+| **Content** | 🪄 Generating a *content* | ☑️ Generating contents using 'formulas' (set of queries) for GTP models <br> ☑️ Generating images using 'formulas' for graphical generative AI <br> 🔜 Generating icons and sets of images in one style <br> 🔜 Using provided by user graphics and materials <br> 🔜 Text SEO optimization <br> |
+| **Design** | 🎨 Creating *layouts*, a *structure* and an *UI* | ☑️ Creating a webpage layout <br> 🔜 Creating a website structure and the ability to manage it <br> ☑️ Website templates (limited right now, can not generate new) <br> |
+| **Technical** | 🧱 Building *web pages* by using HTML/JS/CSS.. | ☑️ Displaying a result as a website published on our domain <br> 🔜 An ability to download a result as HTML/JS/CSS code <br> ☑️ Adaptive web pages for all devices: desktops and mobile phones... <br> 🔜 Technical optimization for Search Engines (SEO): page loading speed <br> |
 
 
 
