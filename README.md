@@ -303,7 +303,7 @@ oto.formulas.set('about.title', 'Create a Title the following text: {about.text}
 oto.formulas.set('action.button.title', 'Same in a couple of words: {main.button.title}')
 ```
 
-Do not forget to generate values and build the website to apply changes
+Do not forget to generate values and build the website to apply changes:
 ```
 oto.project.generate() # Takes up to 10 mins
 oto.project.build()
@@ -328,9 +328,7 @@ Do not forget to build the website to apply changes in 'layouts'.
 oto.project.build()
 ```
 
-<br><br>
-
-(Refer to formula by its 'name')
+(Refer to the formula by its 'name')
 ![Values](examples/service_values_display.png?raw=true "Values")
 
 
@@ -339,9 +337,9 @@ oto.project.build()
 Service: [Layouts](framework/python/documentation/services/LayoutsService.md) | Model: [Layout](framework/python/documentation/models/Layout.md)
 
 
-Setting a layout for the default page (if parameter 'name' is '') in a simplified way by using only section names (engine will go throw the 'values' list and will try to build proper sections):
+Setting a layout for the default page (if parameter 'name' is '') in a simplified way by using only section names (engine will go through the 'values' list and will try to build proper sections):
 ```
-oto.layouts.set('', '["main", "advantages", "about", "action"]')
+oto.layouts.set('', '["main", "advantages", "about", "action"]') # New layout (using latest 'values')
 ```
 
 
