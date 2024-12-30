@@ -67,7 +67,7 @@ oto.meanings.add('mm-product-usage-advantages', 'Websites have build-it speed an
 oto.meanings.add('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
 ```
 
-⚡️ Generating content & Building layout
+🪄 Generating content & Building webpage
 ```
 oto.project.generate()
 oto.project.build()
@@ -80,8 +80,34 @@ print(oto.project.view())
 Output: https://we.oto.dev/-/<YOU_PROJECT_ID>
 
 
+## 🌟 Concept
 
-## 💫 Full Сapabilities
+When a customer contacts a website creation agency, the process is broken down into several key stages: collecting information about the product, company, and target audience; writing marketing materials; designing the design and structure; writing code; and optimizing for search engines.
+
+The concept of our project is to create [a website builder based on artificial intelligence](https://web.oto.dev/) without losing sight of the entire process of creating a website by professionals, but on the contrary, implementing the best solutions for each stage of the tasks automatically with the ability to intervene and make changes if necessary.
+
+
+| Layer | Stage of website creation | Problems we solve ([v] = Released) |
+|------|-------------------------------------------|----------------------------------------------------------------------------------------------|
+| **Semantic** | ♻️ Collecting *meanings* | [+] Collecting information from previous website version |
+|  |  | [+] Collecting meanings by answering questions |
+|  |  | [ ] Collecting information from social media  |
+| **Content** | 🪄 Generating a *content* | [+] Generating contents using 'formulas' (set of queries) for GTP models |
+|  |  | [+] Generating images using 'formulas' for graphical generative AI |
+|  |  | [ ] Generating icons and sets of images in one style |
+|  |  | [ ] Using provided by user graphics and materials |
+|  |  | [ ] Text SEO optimization |
+| **Design** | 🎨 Creating *layouts*, a *structure* and an *UI* | [+] Creating a webpage layout |
+|  |  | [ ] Creating a website structure and the ability to manage it |
+|  |  | [+] Website templates (limited right now, can not generate new) |
+| **Technical** | 🧱 Building *web pages* by using HTML/JS/CSS.. | [+] Displaying a result as a website published on our domain|
+|  |  | [ ] An ability to download a result as HTML/JS/CSS code |
+|  |  | [+] Adaptive web pages for all devices: desktops and mobile phones.. |
+|  |  | [ ] Technical optimization for Search Engines (SEO): page loading speed |
+
+
+
+## 🌀 Full Сapabilities
 
 ### Full SDK imports
 
