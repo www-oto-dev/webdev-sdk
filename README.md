@@ -297,6 +297,9 @@ oto.project.generate() # Takes up to 10 mins
 oto.project.build()
 ```
 
+![Formulas](examples/service_formulas_display.png?raw=true "Formulas")
+
+
 ### Values
 Service: [Values](framework/python/documentation/services/ValuesService.md) | Model: [Value](framework/python/documentation/models/Value.md)
 
@@ -312,6 +315,9 @@ Do not forget to build the website to apply changes in 'layouts'.
 ```
 oto.project.build()
 ```
+
+![Values](examples/service_values_display.png?raw=true "Values")
+
 
 
 ### Layout
