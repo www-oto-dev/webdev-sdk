@@ -11,9 +11,14 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
 
 
-## 📝🔜 🎁 A bit of INFORMATION --> Transforms to a WEBSITE
 
-.                                              **What you have as an INPUT** 
+
+
+
+
+## A bit of ℹ️ INFORMATION 🔜 Transforms to a 🌐 WEBSITE
+
+**What you have as an INPUT** 
 
 | Questions                             | Information               |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -25,9 +30,9 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |                                                                     | - Calling one function will keep your website up-to-date                             |
 
 
-.                                                      ↘️⬇️↙️
+                                                      ↘️⬇️↙️
 
-.                                              **🔥 What you get as a RESULT 🔥**
+**🔥 What you get as a RESULT 🔥**
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
 ![Advantages](examples/webdev-sdk/webdev-sdk--advantages.png?raw=true "Advantages")
