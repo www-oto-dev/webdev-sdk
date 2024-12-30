@@ -298,7 +298,7 @@ oto.project.build()
 ```
 
 ![Formulas](examples/service_formulas_display.png?raw=true "Formulas")
-
+(Reference from values)
 
 ### Values
 Service: [Values](framework/python/documentation/services/ValuesService.md) | Model: [Value](framework/python/documentation/models/Value.md)
@@ -316,6 +316,9 @@ Do not forget to build the website to apply changes in 'layouts'.
 oto.project.build()
 ```
 
+<br><br>
+
+(Refer to formula by its 'name')
 ![Values](examples/service_values_display.png?raw=true "Values")
 
 
@@ -345,6 +348,8 @@ Do not forget to build the website to apply changes in 'values' and 'layout.
 oto.project.build()
 ```
 
+
+<br><br>
 
 
 ## ➡️  Examples
