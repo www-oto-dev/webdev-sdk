@@ -15,7 +15,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 .
 
 
-## A bit of ℹ️ INFORMATION 🔜 Transforms to a 🌐 WEBSITE
+## A bit of ℹ️ INFO 🔜 transforms to a 🌐 WEBSITE
 
 ### 👌 What you have as an INPUT
 
@@ -23,14 +23,13 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | What products and services do you have?                             | We provide an SDK for Python to simplify building websites by using AI               |
 | Does your business offer a free first step for customers?           | You can quickly build a website by following the Quick Start guide located on github |
-| What are the positive aspects when using the product by the client? | - You can build websites in minutes                                                  |
-|                                                                     | - Use your social media, websites, and blogs as a source of information              |
-|                                                                     | - Websites have build-it speed and SEO optimization (Comming Soon)                   |
+| What are the positive aspects when using the product by the client? | - You can build websites in minutes \                                                |
+|                                                                     | - Use your social media, websites, and blogs as a source of information \            |
+|                                                                     | - Websites have build-it speed and SEO optimization (Comming Soon) \                 |
 |                                                                     | - Calling one function will keep your website up-to-date                             |
+| ...                                                                 | ...                                                                                  |
 
-
-###                                                      ↘️⬇️↙️
-
+### ↘️⬇️⬇️⬇️⬇️⬇️⬇️↙️
 ### 🔥 What you get as a RESULT
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
@@ -97,20 +96,24 @@ The concept of our project is to create [a website builder based on artificial i
 
 | Layer | Stage of website creation | Problems we solve |
 |------|-------------------------------------------|----------------------------------------------------------------------------------------------|
-| **Semantic** | ♻️ Collecting *meanings* | [☑️] Collecting information from previous website version |
-|  |  | [☑️] Collecting meanings by answering questions |
+
+| **Semantic** | ♻️ Collecting *meanings* | [☑️] Collecting information from previous website version \ |
+|  |  | [☑️] Collecting meanings by answering questions \ |
 |  |  | [🔜] Collecting information from social media  |
-| **Content** | 🪄 Generating a *content* | [☑️] Generating contents using 'formulas' (set of queries) for GTP models |
-|  |  | [☑️] Generating images using 'formulas' for graphical generative AI |
-|  |  | [🔜] Generating icons and sets of images in one style |
-|  |  | [🔜] Using provided by user graphics and materials |
+
+| **Content** | 🪄 Generating a *content* | [☑️] Generating contents using 'formulas' (set of queries) for GTP models \ |
+|  |  | [☑️] Generating images using 'formulas' for graphical generative AI \ |
+|  |  | [🔜] Generating icons and sets of images in one style \ |
+|  |  | [🔜] Using provided by user graphics and materials \ |
 |  |  | [🔜] Text SEO optimization |
-| **Design** | 🎨 Creating *layouts*, a *structure* and an *UI* | [☑️] Creating a webpage layout |
-|  |  | [🔜] Creating a website structure and the ability to manage it |
+
+| **Design** | 🎨 Creating *layouts*, a *structure* and an *UI* | [☑️] Creating a webpage layout \ |
+|  |  | [🔜] Creating a website structure and the ability to manage it \ |
 |  |  | [☑️] Website templates (limited right now, can not generate new) |
-| **Technical** | 🧱 Building *web pages* by using HTML/JS/CSS.. | [☑️] Displaying a result as a website published on our domain|
-|  |  | [🔜] An ability to download a result as HTML/JS/CSS code |
-|  |  | [☑️] Adaptive web pages for all devices: desktops and mobile phones.. |
+
+| **Technical** | 🧱 Building *web pages* by using HTML/JS/CSS.. | [☑️] Displaying a result as a website published on our domain \ |
+|  |  | [🔜] An ability to download a result as HTML/JS/CSS code \ |
+|  |  | [☑️] Adaptive web pages for all devices: desktops and mobile phones.. \ |
 |  |  | [🔜] Technical optimization for Search Engines (SEO): page loading speed |
 
 
