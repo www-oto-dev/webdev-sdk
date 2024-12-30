@@ -10,9 +10,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 3. **Install SDK by using pip `pip install web_oto_dev_sdk`**
 4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
 
-.
-.
-.
+<br><br><br>
 
 
 ## A bit of [ ℹ️ INFO ] 🔜 turns into a [ 🌐 WEBSITE ]
@@ -141,14 +139,13 @@ There are several services available in SDK. The following services work on the 
 | [oto.values](framework/python/documentation/services/ValuesService.md) | [Formula](framework/python/documentation/models/Value.md) | Each formula will turn into one of several values after calling `oto.project.generate()` | ☑️ Use `dataset` parameter to refer for specified version by textual ID | 
 | [oto.layouts](framework/python/documentation/services/LayoutsService.md) | [Formula](framework/python/documentation/models/Layout.md) | Controls page layouts by setting it by calling `oto.layouts.set` where `name` is a page textual ID (slug) function or generating `oto.layouts.new(init="imagine")` | ✖️ No version support, planned for later | 
 
-...
 
-...
+
+<br><br><br>
 
 **⚠️ Please note that the examples below are relevant to most of the key-value services but can have slightly different parameters and can also result in different behaviors.**
 
-
-...
+<br>
 
 
 #### Setting values by 'name'
