@@ -141,11 +141,14 @@ There are several services available in SDK. The following services work on the 
 | [oto.values](framework/python/documentation/services/ValuesService.md) | [Formula](framework/python/documentation/models/Value.md) | Each formula will turn into one of several values after calling `oto.project.generate()` | ☑️ Use `dataset` parameter to refer for specified version by textual ID | 
 | [oto.layouts](framework/python/documentation/services/LayoutsService.md) | [Formula](framework/python/documentation/models/Layout.md) | Controls page layouts by setting it by calling `oto.layouts.set` where `name` is a page textual ID (slug) function or generating `oto.layouts.new(init="imagine")` | ✖️ No version support, planned for later | 
 
+...
 
-#### Functions for Name-Value Services
+...
 
-** ⚠️ Please note that the examples below are relevant to most of the key-value services but can have slightly different parameters and can also result in different behaviors. **
+**⚠️ Please note that the examples below are relevant to most of the key-value services but can have slightly different parameters and can also result in different behaviors.**
 
+
+...
 
 
 #### Setting values by 'name'
