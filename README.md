@@ -14,7 +14,9 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 
 ## A bit of [ ℹ️ INFO ] &nbsp; 🔜 &nbsp; turns into a [ 🌐 WEBSITE ]
+
 <br>
+
 ### 💡 What you have as an ℹ️INPUT
 
 | Questions                             | Information               |
@@ -25,6 +27,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 | ... <be> *(You can add more Q&As you want)* ... | ... |
 
 <br>
+
 ### 🔥 What you get as a 🌐RESULT
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
