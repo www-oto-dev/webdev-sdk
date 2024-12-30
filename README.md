@@ -11,7 +11,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
 
 
-## What we have as an INPUT
+## 👌 What we have as an INPUT
 
 | Questions                             | Information               |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |                                                                     | - Calling one function will keep your website up-to-date                             |
 
 
-## What we get as a RESULT
+## 🔥 What we get as a RESULT
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
 ![Advantages](examples/webdev-sdk/webdev-sdk--advantages.png?raw=true "Advantages")
@@ -32,14 +32,14 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 
 
-## Quick Start
+## 🚀 Quick Start
 
 Installing
 ```
 pip install web_oto_dev_sdk
 ```
 
-Configuring the SDK. Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
+🔑 Configuring the SDK. Replace `<YOU_PROJECT_ID>` with project ID from the [create a website](https://hub.oto.dev/app/websites/create/) (or edit) screen and `<YOUR_API_KEY>` from the [dashboard](https://hub.oto.dev/app/dashboard/)
 
 ```
 from web_oto_dev_sdk import WebOtoDevSdk
@@ -51,7 +51,7 @@ oto = WebOtoDevSdk(
 )
 ```
 
-Your project basic settings
+🛠 Your project basic settings
 ```
 oto.properties.set('supported-language', 'en')
 ```
@@ -67,13 +67,13 @@ oto.meanings.add('mm-product-usage-advantages', 'Websites have build-it speed an
 oto.meanings.add('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
 ```
 
-Generating content & Building layout
+⚡️ Generating content & Building layout
 ```
 oto.project.generate()
 oto.project.build()
 ```
 
-Done!
+✅ Done!
 ```
 print(oto.project.view())
 ```
@@ -81,7 +81,7 @@ Output: https://we.oto.dev/-/<YOU_PROJECT_ID>
 
 
 
-## Full Сapabilities
+## 💫 Full Сapabilities
 
 ### Full SDK imports
 
@@ -129,7 +129,7 @@ oto.properties.update([Property(key='supported-language', value='en')])
 table(oto.properties.display())
 ```
 
-## Example
+## ➡️ Example
 
 [Jupyter Notebook example](examples/webdev-sdk/webdev-sdk-example.ipynb?raw=true)
 
