@@ -15,7 +15,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 .
 
 
-## A bit of 💡ℹ️ INFO 🔜 becomes a 🔥 🌐 WEBSITE
+## A bit of ℹ️ INFO 🔜 becomes a 🌐 WEBSITE
 
 ### 💡 What you have as an INPUT
 
