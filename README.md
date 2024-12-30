@@ -211,15 +211,14 @@ table(oto.formulas.display())
 
 Some services support version control. Please have a look at the details in the table in this section.
 
-** To init new set of values: **
+**To init new set of values:**
 
 You can use a `new` function to create a new set of values. By specifying the `init` parameter (`empty`, `default`, `imagine`), you can control whether will the function return an empty list (`init="empty"`), a list filled with default (`init="default"`) values or the one that will be set random or by using an AI (`init="imagine"`).
 ```
 oto.formulas.new(init='default')
-
 ```
 
-The following functions can also result in creating a new list of values:
+The following functions **can also result in creating a new list of values**:
 ```
 oto.project.collect() # Adds new values to 'meanings' from a specified source (for example, an html page)
 oto.project.generate() # Creates a new 'dataset' and generates new 'values' by solving 'formulas'
@@ -247,13 +246,104 @@ oto.properties.update([Property(key='supported-language', value='en')])
 table(oto.properties.display())
 ```
 
+
+### Meanings
+Service: [Meanings](framework/python/documentation/services/MeaningsService.md) | Model: [Meaning](framework/python/documentation/models/Meaning.md)
+
+Controls project semantic layer, or "meanings" by setting them with `oto.meanings.set("My Question", "My answer")` and `oto.meanings.add("Same Question", "Another answer")`. You can collect meanings from the URL set in `reference-website-url` property by calling `oto.project.collect()`
+
+Adding 'meanings' for predefined questions:
+```
+oto.meanings.set('mm-products-and-services', 'We provide an SDK for Python to simplify building websites by using AI')
+oto.meanings.set('mm-free-first-step', 'You can quickly build a website by following the Quick Start guide located on https://github.com/www-oto-dev/webdev-sdk/')
+oto.meanings.remove('mm-product-usage-advantages') # In case if they were set previously
+oto.meanings.add('mm-product-usage-advantages', 'You can build websites in minutes')
+oto.meanings.add('mm-product-usage-advantages', 'Use your social media, websites, and blogs as a source of information')
+oto.meanings.add('mm-product-usage-advantages', 'Websites have build-it speed and SEO optimization (Comming Soon)')
+oto.meanings.add('mm-product-usage-advantages', 'Calling one function will keep your website up-to-date')
+```
+
+Adding 'meanings' for your own question list:
+```
+oto.meanings.set("My Question", "My answer")
+oto.meanings.add("Same Question", "Another answer")
+```
+
+Collecting 'meanings' from a webpage:
+
+```
+oto.properties.set('reference-website-url', 'https://web.oto.dev')
+oto.meanings.new(init="empty")
+oto.project.collect() # Takes some time
+```
+
+
 ### Formulas
 Service: [Formulas](framework/python/documentation/services/FormulasService.md) | Model: [Formula](framework/python/documentation/models/Formula.md)
 
-By using formulas, you control how generative AI (ChatGPT, MidJourney, ..) will generate content. Inside formulas, values in square brackets `[some-value]` will be replaced with pre-defined shortcuts. You can use just a plain text in your formulas. Values in `{some-value-name}` refer to generated VALUE for a formula with the specified in brackets name. You can use *engine* parameter to specify what content you would like to generate (`gpt` for text and `mj` for images). You can also set *type* to `list` (instead of `text`) to make AI return a list of values (like several advantages of the product will be treated as several different cards on the resulted web page
+Using formulas lets you control how generative AI (ChatGPT, MidJourney, ..) generates content. Inside formulas, values in square brackets `[some-value]` will be replaced with pre-defined shortcuts. You can use just a plain text in your formulas. Values in `{some-value-name}` refer to generated VALUE for a formula with the specified in brackets name. You can use the *engine* parameter to specify what content you want to generate (`gpt` for text and `mj` for images). You can also set *type* to `list` (instead of `text`) to make AI return a list of values (like several advantages of the product will be treated as several different cards on the resulting web page
+
+```
+oto.formulas.new(init='default')
+
+oto.formulas.set('about.text', 'Imagine how useful this product can be for end-users and write an article with examples about that')
+oto.formulas.set('about.title', 'Create a Title the following text: {about.text}')
+oto.formulas.set('action.button.title', 'Same in a couple of words: {main.button.title}')
+```
+
+Do not forget to generate values and build the website to apply changes
+```
+oto.project.generate() # Takes up to 10 mins
+oto.project.build()
+```
+
+### Values
+Service: [Values](framework/python/documentation/services/ValuesService.md) | Model: [Value](framework/python/documentation/models/Value.md)
+
+```
+# Generate values
+oto.project.generate() # Takes up to 10 mins
+
+# We would like to change something
+oto.values.set('main.title', 'WebDev SDK')
+```
+
+Do not forget to build the website to apply changes in 'layouts'.
+```
+oto.project.build()
+```
 
 
-## ➡️ Example
+### Layout
+Service: [Layouts](framework/python/documentation/services/LayoutsService.md) | Model: [Layout](framework/python/documentation/models/Layout.md)
+
+
+Setting a layout for the default page (if parameter 'name' is '') in a simplified way by using only section names (engine will go throw the 'values' list and will try to build proper sections):
+```
+oto.layouts.set('', '["main", "advantages", "about", "action"]')
+```
+
+
+Do not forget to build the website to apply changes in 'layouts':
+```
+oto.project.build()
+```
+
+
+
+
+### Building the website
+
+Do not forget to build the website to apply changes in 'values' and 'layout.
+```
+oto.project.build()
+```
+
+
+
+## ➡️  Example
+
+You can use the following notebook as a starting point for your product (do not forget to replace project_id and api_key vales):
 
 [Jupyter Notebook example](examples/webdev-sdk/webdev-sdk-example.ipynb?raw=true)
 
