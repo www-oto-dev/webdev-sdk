@@ -345,9 +345,9 @@ oto.project.build()
 
 You can use the following notebook as a starting point for your product (do not forget to replace project_id and api_key vales):
 
-| Example | Download | Result |
+| Example | Download | Format | Result |
 |---------------------|-------------------------------------------|---------------------|
-| WebDev example page | Download [Jupyter Notebook example](examples/webdev-sdk/webdev-sdk-example.ipynb) | [result](https://web.oto.dev/-/webdev-sdk/)
+| WebDev example page | 🪐 Jupyter Notebook | [WebDev example - Notebook](examples/webdev-sdk/webdev-sdk-example.ipynb) | Preview a [Result](https://web.oto.dev/-/webdev-sdk/)
 
 
 
