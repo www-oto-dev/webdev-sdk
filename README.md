@@ -13,7 +13,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 ## 📝🔜 🎁 A bit of INFORMATION --> Transforms to a WEBSITE
 
-**What you have as an INPUT** 
+.                                              **What you have as an INPUT** 
 
 | Questions                             | Information               |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -25,9 +25,9 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |                                                                     | - Calling one function will keep your website up-to-date                             |
 
 
-                                                                  ↘️⬇️↙️
-                                                                  
-**🔥 What you get as a RESULT 🔥**
+.                                                      ↘️⬇️↙️
+
+.                                              **🔥 What you get as a RESULT 🔥**
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
 ![Advantages](examples/webdev-sdk/webdev-sdk--advantages.png?raw=true "Advantages")
