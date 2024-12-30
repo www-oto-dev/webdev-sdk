@@ -343,7 +343,7 @@ oto.project.build()
 
 ## ➡️  Examples
 
-You can use the following notebook as a starting point for your product (do not forget to replace project_id and api_key vales):
+You can use the following notebooks as a starting point for your product  (⚠️ Do not forget to replace `project_id` and `api_key`):
 
 | Example | Download | Format | Result |
 |---------------------|-------------------------------------------|---------------------|---------------------|
