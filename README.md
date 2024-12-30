@@ -23,11 +23,8 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | What products and services do you have?                             | We provide an SDK for Python to simplify building websites by using AI               |
 | Does your business offer a free first step for customers?           | You can quickly build a website by following the Quick Start guide located on github |
-| What are the positive aspects of the client using the product?      | - You can build websites in minutes <br> - Use your social media, websites, and blogs as a source of information                                               |
-|                                                                     |  \            |
-|                                                                     | - Websites have build-it speed and SEO optimization (Comming Soon) \                 |
-|                                                                     | - Calling one function will keep your website up-to-date                             |
-| ...                                                                 | ...                                                                                  |
+| What are the positive aspects of the client using the product?      | - You can build websites in minutes <br> - Use your social media, websites, and blogs as a source of information <br> - Websites have build-it speed and SEO optimization (Comming Soon) <br> - Calling one function will keep your website up-to-date |
+| ... <be> *(You can add more Q&As you want)* ... | ... |
 
 ### ↘️⬇️⬇️⬇️⬇️⬇️⬇️↙️
 ### 🔥 What you get as a RESULT
