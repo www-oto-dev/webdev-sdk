@@ -227,6 +227,18 @@ oto.project.build() # Create new 'pages' (Pages do not have a key/value access b
 
 
 
+### Building the project
+
+To build project you need to use [Project Service](framework/python/documentation/services/ProjectService.md)
+
+| Order | Function                             | Action               |
+|---|---|---|
+| 1️⃣ | `oto.project.collect()` | Collecting 'meanings' from the URL set by 'reference-website-url' property |
+| 2️⃣ | `oto.project.generate()` | Generate new 'values' based on 'formulas' |
+| 3️⃣ | `oto.project.build()` | Build new version of the website with the latest 'values' and 'layouts' |
+| 4️⃣ | `oto.project.view()` | Return a full webpage preview URL with an access token |
+
+
 
 ### Project Properties
 Service: [Properties](framework/python/documentation/services/PropertiesService.md) | Model: [Property](framework/python/documentation/models/Property.md)
