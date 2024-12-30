@@ -13,7 +13,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 <br><br><br>
 
 
-## A bit of [ ℹ️ INFO ] 🔜 turns into a [ 🌐 WEBSITE ]
+## A bit of [ ℹ️ INFO ] &nbsp; 🔜 &nbsp; turns into a [ 🌐 WEBSITE ]
 
 ### 💡 What you have as an INPUT
 
