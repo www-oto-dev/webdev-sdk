@@ -94,8 +94,7 @@ The concept of our project is to create [a website builder based on artificial i
 | Layer | Stage of website creation | Problems we solve |
 |------|-------------------------------------------|----------------------------------------------------------------------------------------------|
 | **Semantic** | ♻️ Collecting *meanings* | ☑️ Collecting information from previous website version <br> ☑️ Collecting meanings by answering questions <br> 🔜 Collecting information from social media <br> |
-| **Content** | 🪄 Generating a *content* | 
-☑️ Generating contents using 'formulas' (set of queries) for GTP models <br> 
+| **Content** | 🪄 Generating a *content* | ☑️ Generating contents using 'formulas' (set of queries) for GTP models <br> 
 ☑️ Generating images using 'formulas' for graphical generative AI <br> 
 🔜 Generating icons and sets of images in one style <br> 
 🔜 Using provided by user graphics and materials <br> 
