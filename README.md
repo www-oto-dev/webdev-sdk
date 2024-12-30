@@ -188,12 +188,21 @@ oto.properties.update([Property(key='supported-language', value='en'), Property(
 
 #### Obtaining values by 'name'
 
-Get a last value for 'specified' key by its 'name'
+**Get a last value** for the specified key by its 'name'
 ```
 oto.properties.get('supported-language')
 ```
 
+**Obtaining all values** as a list of models (find in proper Model the table above) for the specified key by 'name'
+```
+oto.values.all('cases.cards.text')
+oto.values.all()
+```
 
+**Displaying all values as a table** (for Jupyter Notabook with defined 'table' function)
+```
+table(oto.formulas.display())
+```
 
 
 
