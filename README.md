@@ -14,7 +14,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 
 ## A bit of [ ℹ️ INFO ] &nbsp; 🔜 &nbsp; turns into a [ 🌐 WEBSITE ]
-
+<br>
 ### 💡 What you have as an ℹ️INPUT
 
 | Questions                             | Information               |
@@ -24,7 +24,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 | What are the positive aspects of the client using the product?      | - You can build websites in minutes <br> - Use your social media, websites, and blogs as a source of information <br> - Websites have build-it speed and SEO optimization (Comming Soon) <br> - Calling one function will keep your website up-to-date |
 | ... <be> *(You can add more Q&As you want)* ... | ... |
 
-
+<br>
 ### 🔥 What you get as a 🌐RESULT
 
 ![Main](examples/webdev-sdk/webdev-sdk--main.png?raw=true "Main")
