@@ -82,7 +82,7 @@ oto.project.build()
 ```
 print(oto.project.view())
 ```
-Output: https://we.oto.dev/-/you-project-id
+Output: https://we.oto.dev/-/your-project-id
 
 
 ## 🌟 Concept
