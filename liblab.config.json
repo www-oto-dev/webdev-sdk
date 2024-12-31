@@ -4,9 +4,7 @@
   "apiName": "web-oto-dev-api",
   "specFilePath": "http://localhost:8000/api/v1/openapi.json",
   "languages": [
-    "python",
-    "typescript",
-    "go"
+    "python"
   ],
   "auth": [
     "apikey"
