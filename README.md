@@ -301,6 +301,7 @@ oto.formulas.new(init='default')
 oto.formulas.set('about.text', 'Imagine how useful this product can be for end-users and write an article with examples about that')
 oto.formulas.set('about.title', 'Create a Title the following text: {about.text}')
 oto.formulas.set('action.button.title', 'Same in a couple of words: {main.button.title}')
+oto.formulas.set('main.image', 'A plain in a sky [white-bg] [flat-vector-illustraton] [cartoon-style]', 'id', 'mj')
 ```
 
 Do not forget to generate values and build the website to apply changes:
