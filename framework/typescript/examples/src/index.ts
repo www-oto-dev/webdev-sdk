@@ -5,6 +5,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.projects();

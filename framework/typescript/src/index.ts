@@ -106,6 +106,16 @@ export class WebOtoDevSdk {
     this.values.apiKeyHeader = apiKeyHeader;
     this.layouts.apiKeyHeader = apiKeyHeader;
   }
+
+  set projectId(projectId: string) {
+    this.admin.projectId = projectId;
+    this.project.projectId = projectId;
+    this.properties.projectId = projectId;
+    this.meanings.projectId = projectId;
+    this.formulas.projectId = projectId;
+    this.values.projectId = projectId;
+    this.layouts.projectId = projectId;
+  }
 }
 
 // c029837e0e474b76bc487506e8799df5e3335891efe4fb02bda7a1441840310c

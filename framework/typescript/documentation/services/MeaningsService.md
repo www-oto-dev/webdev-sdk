@@ -39,6 +39,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.new_({
@@ -76,6 +77,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.get_({
@@ -114,6 +116,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.set_({
@@ -153,6 +156,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.add({
@@ -191,6 +195,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.all({
@@ -228,6 +233,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.update({
@@ -265,6 +271,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.remove({
@@ -304,6 +311,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.meanings.display({

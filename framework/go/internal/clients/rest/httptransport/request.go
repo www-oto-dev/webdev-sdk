@@ -11,9 +11,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/swagger-api/swagger-petstore/internal/contenttypes"
-	"github.com/swagger-api/swagger-petstore/internal/utils"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+	"web-dev-sdk/internal/contenttypes"
+	"web-dev-sdk/internal/utils"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type paramMap struct {

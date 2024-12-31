@@ -4,7 +4,7 @@ package contenttypes
 
 import (
 	"fmt"
-	"github.com/swagger-api/swagger-petstore/internal/unmarshal"
+	"web-dev-sdk/internal/unmarshal"
 )
 
 func FromJson(data []byte, target any) error {

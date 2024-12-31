@@ -5,7 +5,7 @@ package httptransport
 import (
 	"context"
 
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type RequestBuilder struct {

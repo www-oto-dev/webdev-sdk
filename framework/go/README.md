@@ -43,8 +43,8 @@ When you initialize the SDK, you can set the API key as follows:
 
 ```go
 import (
-    "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-    "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+    "web-dev-sdk/pkg/webotodevsdk"
+    "web-dev-sdk/pkg/webotodevsdkconfig"
   )
 
 config := webotodevsdkconfig.NewConfig()
@@ -57,8 +57,8 @@ If you need to set or update the API key after initializing the SDK, you can use
 
 ```go
 import (
-    "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-    "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+    "web-dev-sdk/pkg/webotodevsdk"
+    "web-dev-sdk/pkg/webotodevsdkconfig"
   )
 
 config := webotodevsdkconfig.NewConfig()

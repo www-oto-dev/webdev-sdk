@@ -5,9 +5,9 @@ package contenttypes
 import (
 	"bytes"
 	"fmt"
-	"github.com/swagger-api/swagger-petstore/internal/utils"
 	"net/url"
 	"reflect"
+	"web-dev-sdk/internal/utils"
 )
 
 func ToFormUrlEncoded(data any) (*bytes.Reader, error) {

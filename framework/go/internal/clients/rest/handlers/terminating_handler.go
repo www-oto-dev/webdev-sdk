@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/clients/rest/httptransport"
 )
 
 type TerminatingHandler[T any] struct{}

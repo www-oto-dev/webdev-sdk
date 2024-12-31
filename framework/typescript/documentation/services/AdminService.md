@@ -30,6 +30,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.projects();
@@ -66,6 +67,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.newProject({
@@ -106,6 +108,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.removeProject({
@@ -147,6 +150,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.changeProject({
@@ -189,6 +193,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.changeProjectSlug({
@@ -230,6 +235,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.admin.changeProjectTitle({

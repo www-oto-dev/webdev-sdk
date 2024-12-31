@@ -4,12 +4,12 @@ package project
 
 import (
 	"context"
-	restClient "github.com/swagger-api/swagger-petstore/internal/clients/rest"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/internal/configmanager"
-	"github.com/swagger-api/swagger-petstore/pkg/shared"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
 	"time"
+	restClient "web-dev-sdk/internal/clients/rest"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/configmanager"
+	"web-dev-sdk/pkg/shared"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type ProjectService struct {
@@ -39,6 +39,11 @@ func (api *ProjectService) SetTimeout(timeout time.Duration) {
 func (api *ProjectService) SetApiKey(apiKey string) {
 	config := api.getConfig()
 	config.SetApiKey(apiKey)
+}
+
+func (api *ProjectService) SetProjectId(projectId string) {
+	config := api.getConfig()
+	config.SetProjectId(projectId)
 }
 
 // Obtain project information

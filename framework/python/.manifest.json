@@ -1,6 +1,6 @@
 {
   "liblabVersion": "2.9.7",
-  "date": "2024-12-31T13:13:59.937Z",
+  "date": "2024-12-31T13:20:06.042Z",
   "config": {
     "apiId": 1611,
     "sdkName": "web-oto-dev-sdk",
@@ -14,15 +14,21 @@
     "specFilePath": "http://localhost:8000/api/v1/openapi.json",
     "languageOptions": {
       "go": {
-        "goModuleName": "github.com/swagger-api/swagger-petstore",
-        "githubRepoName": "web-dev-sdk-ts",
+        "goModuleName": "web-dev-sdk",
+        "additionalConstructorParameters": [
+          {
+            "name": "project_id",
+            "example": "my-project-slug-or-uid"
+          }
+        ],
+        "githubRepoName": "web-dev-sdk-go",
         "ignoreFiles": [],
         "liblabVersion": "2",
         "sdkVersion": "1.0.3"
       },
       "java": {
-        "groupId": "com.swagger",
-        "artifactId": "petstore",
+        "groupId": "dev.oto",
+        "artifactId": "webdev",
         "ignoreFiles": [],
         "liblabVersion": "2",
         "sdkVersion": "1.0.3"
@@ -47,6 +53,12 @@
         "httpClient": "fetch",
         "npmName": "",
         "npmOrg": "",
+        "additionalConstructorParameters": [
+          {
+            "name": "project_id",
+            "example": "my-project-slug-or-uid"
+          }
+        ],
         "githubRepoName": "web-dev-sdk-ts",
         "ignoreFiles": [],
         "liblabVersion": "2",
@@ -86,7 +98,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "8676/hooks.zip",
+      "bucketKey": "8677/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,

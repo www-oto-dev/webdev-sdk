@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
-	"github.com/swagger-api/swagger-petstore/internal/validation"
+	"web-dev-sdk/internal/utils"
+	"web-dev-sdk/internal/validation"
 )
 
 type candidate struct {

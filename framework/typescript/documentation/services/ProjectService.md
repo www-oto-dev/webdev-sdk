@@ -30,6 +30,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.info();
@@ -57,6 +58,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.collect();
@@ -84,6 +86,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.generate();
@@ -111,6 +114,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.build();
@@ -138,6 +142,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.view();
@@ -171,6 +176,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.project.imagine({

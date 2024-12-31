@@ -4,12 +4,12 @@ package admin
 
 import (
 	"context"
-	restClient "github.com/swagger-api/swagger-petstore/internal/clients/rest"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/internal/configmanager"
-	"github.com/swagger-api/swagger-petstore/pkg/shared"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
 	"time"
+	restClient "web-dev-sdk/internal/clients/rest"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/configmanager"
+	"web-dev-sdk/pkg/shared"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type AdminService struct {
@@ -39,6 +39,11 @@ func (api *AdminService) SetTimeout(timeout time.Duration) {
 func (api *AdminService) SetApiKey(apiKey string) {
 	config := api.getConfig()
 	config.SetApiKey(apiKey)
+}
+
+func (api *AdminService) SetProjectId(projectId string) {
+	config := api.getConfig()
+	config.SetProjectId(projectId)
 }
 
 // Obtain a list of all projects [ADMIN RIGHTS REQUIRED]

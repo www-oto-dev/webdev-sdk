@@ -39,6 +39,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.new_({
@@ -76,6 +77,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.get_({
@@ -114,6 +116,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.set_({
@@ -153,6 +156,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.add({
@@ -191,6 +195,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.all({
@@ -228,6 +233,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.update({
@@ -265,6 +271,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.remove({
@@ -304,6 +311,7 @@ import { WebOtoDevSdk } from 'web-oto-dev-sdk';
 (async () => {
   const webOtoDevSdk = new WebOtoDevSdk({
     apiKey: 'YOUR_API_KEY',
+    projectId: 'my-project-slug-or-uid',
   });
 
   const { data } = await webOtoDevSdk.layouts.display({

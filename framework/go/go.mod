@@ -1,4 +1,4 @@
-module github.com/swagger-api/swagger-petstore
+module web-dev-sdk
 
 
 go 1.18

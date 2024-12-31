@@ -6,7 +6,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/clients/rest/httptransport"
 )
 
 const (

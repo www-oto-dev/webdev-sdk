@@ -37,9 +37,9 @@ Create new collection (default or specified settings)
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -81,9 +81,9 @@ Obtain the lastest value for meaning with specified 'name'
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -125,9 +125,9 @@ Remove all previous values for specified 'name' and add a new value
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -169,9 +169,9 @@ Add a new value for specified 'name'
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -213,9 +213,9 @@ Obtain a list of all meanings with specified 'name'
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -258,9 +258,9 @@ Remove previously set and add new meanings with specified 'name' fileds with val
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -302,9 +302,9 @@ Remove all values for specified 'name'
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -346,9 +346,9 @@ Display a list of all meanings with specified 'name'
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/meanings"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/meanings"
 )
 
 config := webotodevsdkconfig.NewConfig()

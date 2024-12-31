@@ -4,12 +4,12 @@ package values
 
 import (
 	"context"
-	restClient "github.com/swagger-api/swagger-petstore/internal/clients/rest"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/internal/configmanager"
-	"github.com/swagger-api/swagger-petstore/pkg/shared"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
 	"time"
+	restClient "web-dev-sdk/internal/clients/rest"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/configmanager"
+	"web-dev-sdk/pkg/shared"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type ValuesService struct {
@@ -39,6 +39,11 @@ func (api *ValuesService) SetTimeout(timeout time.Duration) {
 func (api *ValuesService) SetApiKey(apiKey string) {
 	config := api.getConfig()
 	config.SetApiKey(apiKey)
+}
+
+func (api *ValuesService) SetProjectId(projectId string) {
+	config := api.getConfig()
+	config.SetProjectId(projectId)
 }
 
 // Create new dataset (default or specified settings)

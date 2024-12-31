@@ -3,16 +3,16 @@
 package webotodevsdk
 
 import (
-	"github.com/swagger-api/swagger-petstore/internal/configmanager"
-	"github.com/swagger-api/swagger-petstore/pkg/admin"
-	"github.com/swagger-api/swagger-petstore/pkg/formulas"
-	"github.com/swagger-api/swagger-petstore/pkg/layouts"
-	"github.com/swagger-api/swagger-petstore/pkg/meanings"
-	"github.com/swagger-api/swagger-petstore/pkg/project"
-	"github.com/swagger-api/swagger-petstore/pkg/properties"
-	"github.com/swagger-api/swagger-petstore/pkg/values"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
 	"time"
+	"web-dev-sdk/internal/configmanager"
+	"web-dev-sdk/pkg/admin"
+	"web-dev-sdk/pkg/formulas"
+	"web-dev-sdk/pkg/layouts"
+	"web-dev-sdk/pkg/meanings"
+	"web-dev-sdk/pkg/project"
+	"web-dev-sdk/pkg/properties"
+	"web-dev-sdk/pkg/values"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type WebOtoDevSdk struct {
@@ -50,6 +50,10 @@ func (w *WebOtoDevSdk) SetTimeout(timeout time.Duration) {
 
 func (w *WebOtoDevSdk) SetApiKey(apiKey string) {
 	w.manager.SetApiKey(apiKey)
+}
+
+func (w *WebOtoDevSdk) SetProjectId(projectId string) {
+	w.manager.SetProjectId(projectId)
 }
 
 // c029837e0e474b76bc487506e8799df5e3335891efe4fb02bda7a1441840310c

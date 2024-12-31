@@ -52,8 +52,9 @@ export class HookHandler implements RequestHandler {
     }
   }
 
-  private getHookParams<T>(_request: Request<T>): Map<string, string> {
+  private getHookParams<T>(request: Request<T>): Map<string, string> {
     const hookParams: Map<string, string> = new Map();
+    hookParams.set('project_id', request.config.projectId || '');
     return hookParams;
   }
 }

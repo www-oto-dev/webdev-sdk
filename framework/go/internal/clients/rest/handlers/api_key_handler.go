@@ -5,7 +5,7 @@ package handlers
 import (
 	"errors"
 
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/clients/rest/httptransport"
 )
 
 type ApiKeyHandler[T any] struct {

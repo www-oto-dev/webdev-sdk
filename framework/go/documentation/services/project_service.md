@@ -34,8 +34,8 @@ Obtain project information
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -72,8 +72,8 @@ collect
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -110,8 +110,8 @@ generate
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -148,8 +148,8 @@ build
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -186,8 +186,8 @@ view
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -225,9 +225,9 @@ imagine
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/project"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/project"
 )
 
 config := webotodevsdkconfig.NewConfig()

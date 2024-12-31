@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
+	"web-dev-sdk/internal/utils"
 )
 
 func validateMax(field reflect.StructField, value reflect.Value) error {

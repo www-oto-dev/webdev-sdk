@@ -5,7 +5,7 @@ package validation
 import (
 	"reflect"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
+	"web-dev-sdk/internal/utils"
 )
 
 type validatorFunc = func(fieldType reflect.StructField, fieldValue reflect.Value) error

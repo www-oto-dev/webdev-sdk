@@ -12,6 +12,7 @@ export interface SdkConfig {
   timeoutMs?: number;
   apiKey?: string;
   apiKeyHeader?: string;
+  projectId?: string;
   retry?: RetryOptions;
   validation?: ValidationOptions;
 }

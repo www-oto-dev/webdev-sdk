@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
+	"web-dev-sdk/internal/utils"
 )
 
 func Unmarshal(source []byte, target any) error {

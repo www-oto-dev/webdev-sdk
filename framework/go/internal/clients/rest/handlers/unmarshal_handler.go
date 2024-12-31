@@ -5,8 +5,8 @@ package handlers
 import (
 	"errors"
 
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/internal/contenttypes"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/contenttypes"
 )
 
 type UnmarshalHandler[T any] struct {

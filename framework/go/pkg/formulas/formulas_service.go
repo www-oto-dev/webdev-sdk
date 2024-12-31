@@ -4,12 +4,12 @@ package formulas
 
 import (
 	"context"
-	restClient "github.com/swagger-api/swagger-petstore/internal/clients/rest"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/internal/configmanager"
-	"github.com/swagger-api/swagger-petstore/pkg/shared"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
 	"time"
+	restClient "web-dev-sdk/internal/clients/rest"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/configmanager"
+	"web-dev-sdk/pkg/shared"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type FormulasService struct {
@@ -39,6 +39,11 @@ func (api *FormulasService) SetTimeout(timeout time.Duration) {
 func (api *FormulasService) SetApiKey(apiKey string) {
 	config := api.getConfig()
 	config.SetApiKey(apiKey)
+}
+
+func (api *FormulasService) SetProjectId(projectId string) {
+	config := api.getConfig()
+	config.SetProjectId(projectId)
 }
 
 // Create new set (default or specified settings)

@@ -34,8 +34,8 @@ Obtain a list of all projects [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -73,9 +73,9 @@ Create project [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/admin"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/admin"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -117,9 +117,9 @@ Remove project with specified ID [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/admin"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/admin"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -161,9 +161,9 @@ Change options [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/admin"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/admin"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -205,9 +205,9 @@ Change project slug [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/admin"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/admin"
 )
 
 config := webotodevsdkconfig.NewConfig()
@@ -249,9 +249,9 @@ Change project title [ADMIN RIGHTS REQUIRED]
 import (
   "fmt"
   "encoding/json"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
-  "github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-  "github.com/swagger-api/swagger-petstore/pkg/admin"
+  "web-dev-sdk/pkg/webotodevsdkconfig"
+  "web-dev-sdk/pkg/webotodevsdk"
+  "web-dev-sdk/pkg/admin"
 )
 
 config := webotodevsdkconfig.NewConfig()

@@ -7,7 +7,7 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
+	"web-dev-sdk/internal/utils"
 )
 
 func FromComplexObject(obj any) ([]byte, error) {

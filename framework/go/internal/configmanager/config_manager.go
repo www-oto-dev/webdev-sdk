@@ -5,7 +5,7 @@ package configmanager
 import (
 	"time"
 
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type ConfigManager struct {
@@ -58,6 +58,16 @@ func (c *ConfigManager) SetApiKey(apiKey string) {
 	c.Formulas.SetApiKey(apiKey)
 	c.Values.SetApiKey(apiKey)
 	c.Layouts.SetApiKey(apiKey)
+}
+
+func (c *ConfigManager) SetProjectId(projectId string) {
+	c.Admin.SetProjectId(projectId)
+	c.Project.SetProjectId(projectId)
+	c.Properties.SetProjectId(projectId)
+	c.Meanings.SetProjectId(projectId)
+	c.Formulas.SetProjectId(projectId)
+	c.Values.SetProjectId(projectId)
+	c.Layouts.SetProjectId(projectId)
 }
 
 func (c *ConfigManager) GetAdmin() *webotodevsdkconfig.Config {

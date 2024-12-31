@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/swagger-api/swagger-petstore/internal/utils"
+	"web-dev-sdk/internal/utils"
 )
 
 func validatePattern(field reflect.StructField, value reflect.Value) error {

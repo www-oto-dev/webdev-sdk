@@ -9,8 +9,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdk"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+	"web-dev-sdk/pkg/webotodevsdk"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 func main() {

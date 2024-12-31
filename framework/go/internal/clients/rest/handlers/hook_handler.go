@@ -5,8 +5,8 @@ package handlers
 import (
 	"errors"
 
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/hooks"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/clients/rest/hooks"
+	"web-dev-sdk/internal/clients/rest/httptransport"
 )
 
 type HookHandler[T any] struct {

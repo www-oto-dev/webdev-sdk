@@ -3,7 +3,7 @@
 package shared
 
 import (
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
+	"web-dev-sdk/internal/clients/rest/httptransport"
 )
 
 type WebOtoDevSdkError struct {

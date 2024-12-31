@@ -30,4 +30,8 @@ export class BaseService {
   set apiKeyHeader(apiKeyHeader: string) {
     this.config.apiKeyHeader = apiKeyHeader;
   }
+
+  set projectId(projectId: string) {
+    this.config.projectId = projectId;
+  }
 }

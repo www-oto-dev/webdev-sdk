@@ -3,10 +3,10 @@
 package rest
 
 import (
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/handlers"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/hooks"
-	"github.com/swagger-api/swagger-petstore/internal/clients/rest/httptransport"
-	"github.com/swagger-api/swagger-petstore/pkg/webotodevsdkconfig"
+	"web-dev-sdk/internal/clients/rest/handlers"
+	"web-dev-sdk/internal/clients/rest/hooks"
+	"web-dev-sdk/internal/clients/rest/httptransport"
+	"web-dev-sdk/pkg/webotodevsdkconfig"
 )
 
 type RestClient[T any] struct {

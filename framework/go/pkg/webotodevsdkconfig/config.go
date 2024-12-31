@@ -46,3 +46,11 @@ func (c *Config) SetApiKey(apiKey string) {
 func (c *Config) GetApiKey() string {
 	return *c.ApiKey
 }
+
+func (c *Config) SetProjectId(projectId string) {
+	c.HookParams["project_id"] = projectId
+}
+
+func (c *Config) GetProjectId() string {
+	return c.HookParams["project_id"]
+}
