@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.2
+# WebOtoDevSdk Python SDK 1.0.3
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -7,7 +7,7 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 ## Versions
 
 - API version: `1.0.1`
-- SDK version: `1.0.2`
+- SDK version: `1.0.3`
 
 ## About the API
 

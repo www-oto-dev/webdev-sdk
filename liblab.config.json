@@ -1,10 +1,12 @@
 {
   "sdkName": "web-oto-dev-sdk",
-  "apiVersion": "1.0.2",
+  "apiVersion": "1.0.3",
   "apiName": "web-oto-dev-api",
   "specFilePath": "http://localhost:8000/api/v1/openapi.json",
   "languages": [
-    "python"
+    "python",
+    "typescript",
+    "go"
   ],
   "auth": [
     "apikey"
@@ -36,7 +38,7 @@
       "pypiPackageName": "",
       "githubRepoName": "web-dev-sdk-python",
       "ignoreFiles": [],
-      "sdkVersion": "1.0.2",
+      "sdkVersion": "1.0.3",
       "liblabVersion": "2",
       "additionalConstructorParameters": [
           {
@@ -53,7 +55,7 @@
       "npmOrg": "",
       "githubRepoName": "web-dev-sdk-ts",
       "ignoreFiles": [],
-      "sdkVersion": "1.0.2",
+      "sdkVersion": "1.0.3",
       "liblabVersion": "2",
       "generateEnumAs": "union"
     },
@@ -61,14 +63,14 @@
       "goModuleName": "github.com/swagger-api/swagger-petstore",
       "githubRepoName": "web-dev-sdk-ts",
       "ignoreFiles": [],
-      "sdkVersion": "1.0.2",
+      "sdkVersion": "1.0.3",
       "liblabVersion": "2"
     },
     "java": {
       "groupId": "com.swagger",
       "artifactId": "petstore",
       "ignoreFiles": [],
-      "sdkVersion": "1.0.2",
+      "sdkVersion": "1.0.3",
       "liblabVersion": "2"
     }
   },
