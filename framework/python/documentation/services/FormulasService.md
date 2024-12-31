@@ -103,7 +103,7 @@ Remove all previous values for specified 'name' and add a new value
 | :----- | :--- | :------- | :---------- |
 | name   | str  | ✅       |             |
 | value  | str  | ❌       |             |
-| type\_ | str  | ❌       |             |
+| form   | str  | ❌       |             |
 | engine | str  | ❌       |             |
 | set    | str  | ❌       |             |
 
@@ -126,7 +126,7 @@ sdk = WebOtoDevSdk(
 result = sdk.formulas.set(
     name="name",
     value="value",
-    type_="type",
+    form="form",
     engine="engine",
     set="set"
 )
@@ -147,7 +147,7 @@ Add a new value for specified 'name'
 | :----- | :--- | :------- | :---------- |
 | name   | str  | ✅       |             |
 | value  | str  | ❌       |             |
-| type\_ | str  | ❌       |             |
+| form   | str  | ❌       |             |
 | engine | str  | ❌       |             |
 | set    | str  | ❌       |             |
 
@@ -170,7 +170,7 @@ sdk = WebOtoDevSdk(
 result = sdk.formulas.add(
     name="name",
     value="value",
-    type_="type",
+    form="form",
     engine="engine",
     set="set"
 )
@@ -250,8 +250,8 @@ request_body = [
     {
         "name": "name",
         "value": "value",
-        "type_": "type",
-        "group": "group"
+        "form": "form",
+        "engine": "engine"
     }
 ]
 

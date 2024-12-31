@@ -90,14 +90,14 @@ class ProjectService(BaseService):
         return response
 
     @cast_models
-    def view(self) -> Project:
+    def view(self) -> any:
         """view
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: Successful Response
-        :rtype: Project
+        :rtype: any
         """
 
         serialized_request = (
@@ -107,7 +107,7 @@ class ProjectService(BaseService):
         )
 
         response = self.send_request(serialized_request)
-        return Project._unmap(response)
+        return response
 
     @cast_models
     def imagine(self, target: str = None) -> any:

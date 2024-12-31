@@ -132,7 +132,7 @@ view
 
 **Return Type**
 
-`Project`
+`any`
 
 **Example Usage Code Snippet**
 

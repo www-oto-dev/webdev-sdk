@@ -4,7 +4,7 @@ from .utils.json_map import JsonMap
 from .utils.base_model import BaseModel
 
 
-@JsonMap({"type_": "type"})
+@JsonMap({})
 class Formula(BaseModel):
     """Formula
 
@@ -12,14 +12,14 @@ class Formula(BaseModel):
     :type name: str
     :param value: value, defaults to None
     :type value: str, optional
-    :param type_: type_, defaults to None
-    :type type_: str, optional
-    :param group: group, defaults to None
-    :type group: str, optional
+    :param form: form, defaults to None
+    :type form: str, optional
+    :param engine: engine, defaults to None
+    :type engine: str, optional
     """
 
     def __init__(
-        self, name: str, value: str = None, type_: str = None, group: str = None
+        self, name: str, value: str = None, form: str = None, engine: str = None
     ):
         """Formula
 
@@ -27,15 +27,15 @@ class Formula(BaseModel):
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
-        :param type_: type_, defaults to None
-        :type type_: str, optional
-        :param group: group, defaults to None
-        :type group: str, optional
+        :param form: form, defaults to None
+        :type form: str, optional
+        :param engine: engine, defaults to None
+        :type engine: str, optional
         """
         self.name = name
         if value is not None:
             self.value = self._define_str("value", value, nullable=True)
-        if type_ is not None:
-            self.type_ = self._define_str("type_", type_, nullable=True)
-        if group is not None:
-            self.group = self._define_str("group", group, nullable=True)
+        if form is not None:
+            self.form = self._define_str("form", form, nullable=True)
+        if engine is not None:
+            self.engine = self._define_str("engine", engine, nullable=True)

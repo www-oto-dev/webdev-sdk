@@ -77,7 +77,7 @@ class FormulasService(BaseService):
         self,
         name: str,
         value: str = None,
-        type_: str = None,
+        form: str = None,
         engine: str = None,
         set: str = None,
     ) -> any:
@@ -87,8 +87,8 @@ class FormulasService(BaseService):
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
-        :param type_: type_, defaults to None
-        :type type_: str, optional
+        :param form: form, defaults to None
+        :type form: str, optional
         :param engine: engine, defaults to None
         :type engine: str, optional
         :param set: set, defaults to None
@@ -102,7 +102,7 @@ class FormulasService(BaseService):
 
         Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
-        Validator(str).is_optional().validate(type_)
+        Validator(str).is_optional().validate(form)
         Validator(str).is_optional().validate(engine)
         Validator(str).is_optional().validate(set)
 
@@ -112,7 +112,7 @@ class FormulasService(BaseService):
             )
             .add_query("name", name)
             .add_query("value", value, nullable=True)
-            .add_query("type", type_, nullable=True)
+            .add_query("form", form, nullable=True)
             .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()
@@ -127,7 +127,7 @@ class FormulasService(BaseService):
         self,
         name: str,
         value: str = None,
-        type_: str = None,
+        form: str = None,
         engine: str = None,
         set: str = None,
     ) -> any:
@@ -137,8 +137,8 @@ class FormulasService(BaseService):
         :type name: str
         :param value: value, defaults to None
         :type value: str, optional
-        :param type_: type_, defaults to None
-        :type type_: str, optional
+        :param form: form, defaults to None
+        :type form: str, optional
         :param engine: engine, defaults to None
         :type engine: str, optional
         :param set: set, defaults to None
@@ -152,7 +152,7 @@ class FormulasService(BaseService):
 
         Validator(str).validate(name)
         Validator(str).is_optional().validate(value)
-        Validator(str).is_optional().validate(type_)
+        Validator(str).is_optional().validate(form)
         Validator(str).is_optional().validate(engine)
         Validator(str).is_optional().validate(set)
 
@@ -162,7 +162,7 @@ class FormulasService(BaseService):
             )
             .add_query("name", name)
             .add_query("value", value, nullable=True)
-            .add_query("type", type_, nullable=True)
+            .add_query("form", form, nullable=True)
             .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
             .serialize()

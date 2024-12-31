@@ -41,11 +41,11 @@ fi
 cd "$PWD"/framework/python/
 pip install build
 python -m build --outdir dist .
-pip install dist/web_oto_dev_sdk-1.0.1-py3-none-any.whl --force-reinstall
+pip install dist/web_oto_dev_sdk-1.0.2-py3-none-any.whl --force-reinstall
 cd ../..
 
 
 # Publishing
 cd "$PWD"/framework/python/
-python3 -m twine upload dist/web_oto_dev_sdk-1.0.1-py3-none-any.whl
+python3 -m twine upload dist/web_oto_dev_sdk-1.0.2-py3-none-any.whl
 cd ../..
