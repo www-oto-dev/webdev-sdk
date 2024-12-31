@@ -165,7 +165,7 @@ oto.layouts.set('', '["main", "advantages", "about", "action"]')
 oto.meanings.remove('mm-product-usage-advantages')
 ```
 
-**Adding a value** for a key with a same 'name'. That will create several values (For example, engine generates several values by solving formulas with a 'list' representation)
+**Adding a value** for a key with a same 'name'. That will create several values (For example, engine generates several values by solving formulas with a 'list' form)
 ```
 oto.meanings.add('mm-product-usage-advantages', 'You can build websites in minutes')
 oto.meanings.add('mm-product-usage-advantages', 'Use your social media, websites, and blogs as a source of information')
