@@ -7,7 +7,7 @@ SDK is using the [web.oto.dev](https://web.oto.dev/) service. Please note that t
 
 1. First, you need to **register on the [hub.oto.dev](https://hub.oto.dev/) service and copy an `API Key`** from the Dashboard
 2. **Create a project and copy project ID** which is necessary for using the SDK
-3. **Install SDK by using pip `pip install web_oto_dev_sdk`**
+3. **Install SDK by using pip `pip install --upgrade web_oto_dev_sdk`**
 4. We recommend to use [jupyter notebooks](https://jupyter.org/) to call SDK functions instead of a regular .py file (but it will also work with Python projects)
 
 <br><br><br>
