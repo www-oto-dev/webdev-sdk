@@ -51,7 +51,7 @@ from web_oto_dev_sdk import WebOtoDevSdk
 oto = WebOtoDevSdk(
     project_id=<YOU_PROJECT_ID>,
     api_key=<YOUR_API_KEY>,
-    base_url='https://web.oto.dev/openapi/api/v1',
+    base_url='https://site.oto.dev/openapi/api/v1',
     timeout=10*60*1000
 )
 ```
