@@ -2,7 +2,7 @@
   "sdkName": "web-oto-dev-sdk",
   "apiVersion": "1.0.3",
   "apiName": "web-oto-dev-api",
-  "specFilePath": "http://localhost:8000/api/v1/openapi.json",
+  "specFilePath": "http://localhost:9999/api/v1/openapi.json",
   "languages": [
     "python"
   ],
