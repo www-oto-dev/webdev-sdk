@@ -7,8 +7,8 @@ from .utils.sentinel import SENTINEL
 
 
 @JsonMap({})
-class Value(BaseModel):
-    """Value
+class FormField(BaseModel):
+    """FormField
 
     :param name: name
     :type name: str
@@ -17,7 +17,7 @@ class Value(BaseModel):
     """
 
     def __init__(self, name: str, value: Union[str, None] = SENTINEL, **kwargs):
-        """Value
+        """FormField
 
         :param name: name
         :type name: str

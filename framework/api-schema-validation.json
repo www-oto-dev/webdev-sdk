@@ -1,706 +1,1047 @@
 [
   {
-    "code": "operation-tag-defined",
+    "code": "invalid-server-url",
+    "path": [
+      "servers",
+      "0",
+      "url"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 222
+      },
+      "start": {
+        "line": 0,
+        "character": 213
+      }
+    },
+    "message": "Invalid server URL: /api/v1",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/admin/projects/remove",
+      "delete",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 2440
+      },
+      "start": {
+        "line": 0,
+        "character": 2438
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/admin/projects/change",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 3604
+      },
+      "start": {
+        "line": 0,
+        "character": 3602
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/admin/projects/change/slug",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 4642
+      },
+      "start": {
+        "line": 0,
+        "character": 4640
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/admin/projects/change/title",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 5686
+      },
+      "start": {
+        "line": 0,
+        "character": 5684
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/project/collect",
+      "post",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 6424
+      },
+      "start": {
+        "line": 0,
+        "character": 6422
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/project/generate",
+      "post",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 6723
+      },
+      "start": {
+        "line": 0,
+        "character": 6721
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/project/build",
+      "post",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 7010
+      },
+      "start": {
+        "line": 0,
+        "character": 7008
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/project/view",
+      "post",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 7293
+      },
+      "start": {
+        "line": 0,
+        "character": 7291
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/project/imagine",
+      "post",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 7769
+      },
+      "start": {
+        "line": 0,
+        "character": 7767
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/revision/new",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 8520
+      },
+      "start": {
+        "line": 0,
+        "character": 8518
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/actual/set",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 10132
+      },
+      "start": {
+        "line": 0,
+        "character": 10130
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/actual/add",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 10958
+      },
+      "start": {
+        "line": 0,
+        "character": 10956
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/all/update",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 12666
+      },
+      "start": {
+        "line": 0,
+        "character": 12664
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/all/remove",
+      "delete",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 13523
+      },
+      "start": {
+        "line": 0,
+        "character": 13521
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/properties/all/display",
+      "get",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 14424
+      },
+      "start": {
+        "line": 0,
+        "character": 14422
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/revision/new",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 14651
+        "character": 15184
       },
       "start": {
         "line": 0,
-        "character": 14641
+        "character": 15182
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/meanings/actual/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 15409
-      },
-      "start": {
-        "line": 0,
-        "character": 15399
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/actual/set",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 16168
+        "character": 16804
       },
       "start": {
         "line": 0,
-        "character": 16158
+        "character": 16802
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/actual/add",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 17029
+        "character": 17634
       },
       "start": {
         "line": 0,
-        "character": 17019
+        "character": 17632
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/meanings/all/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 17856
-      },
-      "start": {
-        "line": 0,
-        "character": 17846
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/all/update",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 18701
+        "character": 19342
       },
       "start": {
         "line": 0,
-        "character": 18691
+        "character": 19340
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/all/remove",
       "delete",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 19570
+        "character": 20203
       },
       "start": {
         "line": 0,
-        "character": 19560
+        "character": 20201
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/meanings/all/display",
       "get",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 20429
+        "character": 21106
       },
       "start": {
         "line": 0,
-        "character": 20419
+        "character": 21104
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/revision/new",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 21333
+        "character": 21845
       },
       "start": {
         "line": 0,
-        "character": 21323
+        "character": 21843
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/formulas/actual/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 22070
-      },
-      "start": {
-        "line": 0,
-        "character": 22060
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/actual/set",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 22815
+        "character": 23699
       },
       "start": {
         "line": 0,
-        "character": 22805
+        "character": 23697
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/actual/add",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 23924
+        "character": 24777
       },
       "start": {
         "line": 0,
-        "character": 23914
+        "character": 24775
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/formulas/all/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 24999
-      },
-      "start": {
-        "line": 0,
-        "character": 24989
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/all/update",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 25830
+        "character": 26457
       },
       "start": {
         "line": 0,
-        "character": 25820
+        "character": 26455
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/all/remove",
       "delete",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 26685
+        "character": 27304
       },
       "start": {
         "line": 0,
-        "character": 26675
+        "character": 27302
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/formulas/all/display",
       "get",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 27530
+        "character": 28193
       },
       "start": {
         "line": 0,
-        "character": 27520
+        "character": 28191
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/revision/new",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 28416
+        "character": 28938
       },
       "start": {
         "line": 0,
-        "character": 28408
+        "character": 28936
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/values/actual/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 29159
-      },
-      "start": {
-        "line": 0,
-        "character": 29151
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/actual/set",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 29907
+        "character": 30535
       },
       "start": {
         "line": 0,
-        "character": 29899
+        "character": 30533
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/actual/add",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 30756
+        "character": 31353
       },
       "start": {
         "line": 0,
-        "character": 30748
+        "character": 31351
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/values/all/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 31571
-      },
-      "start": {
-        "line": 0,
-        "character": 31563
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/all/update",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 32400
+        "character": 33027
       },
       "start": {
         "line": 0,
-        "character": 32392
+        "character": 33025
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/all/remove",
       "delete",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 33251
+        "character": 33876
       },
       "start": {
         "line": 0,
-        "character": 33243
+        "character": 33874
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/values/all/display",
       "get",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 34098
+        "character": 34765
       },
       "start": {
         "line": 0,
-        "character": 34090
+        "character": 34763
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/values/all/move",
+      "delete",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 35717
+      },
+      "start": {
+        "line": 0,
+        "character": 35715
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/revision/new",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 34990
+        "character": 36465
       },
       "start": {
         "line": 0,
-        "character": 34981
+        "character": 36463
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/layouts/actual/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 35736
-      },
-      "start": {
-        "line": 0,
-        "character": 35727
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/actual/set",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 36484
+        "character": 38076
       },
       "start": {
         "line": 0,
-        "character": 36475
+        "character": 38074
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/actual/add",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 37347
+        "character": 38905
       },
       "start": {
         "line": 0,
-        "character": 37338
+        "character": 38903
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
-    "path": [
-      "paths",
-      "/layouts/all/get",
-      "get",
-      "tags",
-      "0"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 38173
-      },
-      "start": {
-        "line": 0,
-        "character": 38164
-      }
-    },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
-  },
-  {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/all/update",
       "put",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 39006
+        "character": 40590
       },
       "start": {
         "line": 0,
-        "character": 38997
+        "character": 40588
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/all/remove",
       "delete",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 39864
+        "character": 41443
       },
       "start": {
         "line": 0,
-        "character": 39855
+        "character": 41441
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   },
   {
-    "code": "operation-tag-defined",
+    "code": "schema-exclusive-properties",
     "path": [
       "paths",
       "/layouts/all/display",
       "get",
-      "tags",
-      "0"
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 40715
+        "character": 42336
       },
       "start": {
         "line": 0,
-        "character": 40706
+        "character": 42334
       }
     },
-    "message": "Operation tags must be defined in global tags.",
-    "severity": "warning"
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/crm/deals/new",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 42882
+      },
+      "start": {
+        "line": 0,
+        "character": 42880
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
   }
 ]

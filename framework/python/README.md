@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.3
+# WebOtoDevSdk Python SDK 1.0.4
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.0.1`
-- SDK version: `1.0.3`
+- API version: `1.0.4`
+- SDK version: `1.0.4`
 
 ## About the API
 
@@ -22,6 +22,7 @@ API v1 for web.oto.dev service
   - [API Key Authentication](#api-key-authentication)
 - [Setting a Custom Timeout](#setting-a-custom-timeout)
 - [Sample Usage](#sample-usage)
+- [Async Usage](#async-usage)
 - [Services](#services)
 - [Models](#models)
 - [License](#license)
@@ -95,6 +96,29 @@ print(result)
 
 ```
 
+# Async Usage
+
+The SDK includes an Async Client for making asynchronous API requests. This is useful for applications that need non-blocking operations, like web servers or apps with a graphical user interface.
+
+```py
+import asyncio
+from web_oto_dev_sdk import WebOtoDevSdkAsync
+
+sdk = WebOtoDevSdkAsync(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+
+async def main():
+  result = await sdk.admin.projects()
+  print(result)
+
+asyncio.run(main())
+```
+
 ## Services
 
 The SDK provides various services to interact with the API.
@@ -111,6 +135,7 @@ The SDK provides various services to interact with the API.
 | [FormulasService](documentation/services/FormulasService.md)     |
 | [ValuesService](documentation/services/ValuesService.md)         |
 | [LayoutsService](documentation/services/LayoutsService.md)       |
+| [CrmService](documentation/services/CrmService.md)               |
 
 </details>
 
@@ -121,13 +146,14 @@ The SDK includes several models that represent the data structures used in API r
 <details> 
 <summary>Below is a list of all available models with links to their detailed documentation:</summary>
 
-| Name                                         | Description |
-| :------------------------------------------- | :---------- |
-| [Project](documentation/models/Project.md)   |             |
-| [Property](documentation/models/Property.md) |             |
-| [Meaning](documentation/models/Meaning.md)   |             |
-| [Formula](documentation/models/Formula.md)   |             |
-| [Value](documentation/models/Value.md)       |             |
+| Name                                           | Description |
+| :--------------------------------------------- | :---------- |
+| [Project](documentation/models/Project.md)     |             |
+| [Property](documentation/models/Property.md)   |             |
+| [Meaning](documentation/models/Meaning.md)     |             |
+| [Formula](documentation/models/Formula.md)     |             |
+| [Value](documentation/models/Value.md)         |             |
+| [FormField](documentation/models/FormField.md) |             |
 
 </details>
 

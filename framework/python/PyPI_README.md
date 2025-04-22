@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.3<a id="webotodevsdk-python-sdk-103"></a>
+# WebOtoDevSdk Python SDK 1.0.4<a id="webotodevsdk-python-sdk-104"></a>
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions<a id="versions"></a>
 
-- API version: `1.0.1`
-- SDK version: `1.0.3`
+- API version: `1.0.4`
+- SDK version: `1.0.4`
 
 ## About the API<a id="about-the-api"></a>
 
@@ -95,6 +95,29 @@ print(result)
 
 ```
 
+# Async Usage<a id="async-usage"></a>
+
+The SDK includes an Async Client for making asynchronous API requests. This is useful for applications that need non-blocking operations, like web servers or apps with a graphical user interface.
+
+```py
+import asyncio
+from web_oto_dev_sdk import WebOtoDevSdkAsync
+
+sdk = WebOtoDevSdkAsync(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+
+async def main():
+  result = await sdk.admin.projects()
+  print(result)
+
+asyncio.run(main())
+```
+
 ## Services<a id="services"></a>
 
 The SDK provides various services to interact with the API.
@@ -111,6 +134,7 @@ The SDK provides various services to interact with the API.
 | formulas   |
 | values     |
 | layouts    |
+| crm        |
 
 </details>
 
@@ -121,13 +145,14 @@ The SDK includes several models that represent the data structures used in API r
 <details> 
 <summary>Below is a list of all available models:</summary>
 
-| Name     | Description |
-| :------- | :---------- |
-| Project  |             |
-| Property |             |
-| Meaning  |             |
-| Formula  |             |
-| Value    |             |
+| Name      | Description |
+| :-------- | :---------- |
+| Project   |             |
+| Property  |             |
+| Meaning   |             |
+| Formula   |             |
+| Value     |             |
+| FormField |             |
 
 </details>
 

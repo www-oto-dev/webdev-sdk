@@ -1,15 +1,101 @@
 {
-  "liblabVersion": "2.9.7",
-  "date": "2024-12-31T13:20:06.042Z",
+  "liblabVersion": "2.25.9",
+  "date": "2025-04-22T15:21:13.483Z",
   "config": {
-    "apiId": 1611,
+    "apiId": 2034,
     "sdkName": "web-oto-dev-sdk",
-    "sdkVersion": "1.0.3",
+    "sdkVersion": "1.0.4",
     "languages": ["python"],
     "auth": ["apikey"],
     "liblabVersion": "2",
     "deliveryMethods": ["zip"],
-    "apiVersion": "1.0.3",
+    "rawConfig": {
+      "sdkName": "web-oto-dev-sdk",
+      "apiVersion": "1.0.4",
+      "apiName": "web-oto-dev-api",
+      "specFilePath": "http://localhost:9999/api/v1/openapi.json",
+      "languages": ["python"],
+      "auth": ["apikey"],
+      "customizations": {
+        "includeOptionalSnippetParameters": true,
+        "authentication": {
+          "apiKey": {
+            "header": "Access-Token"
+          }
+        },
+        "devContainer": true,
+        "generateEnv": true,
+        "inferServiceNames": false,
+        "injectedModels": [],
+        "license": {
+          "type": "MIT"
+        },
+        "responseHeaders": false,
+        "retry": {
+          "enabled": true,
+          "maxAttempts": 3,
+          "retryDelay": 150
+        }
+      },
+      "languageOptions": {
+        "python": {
+          "alwaysInitializeOptionals": false,
+          "pypiPackageName": "",
+          "githubRepoName": "web-dev-sdk-python",
+          "ignoreFiles": [],
+          "sdkVersion": "1.0.4",
+          "liblabVersion": "2",
+          "additionalConstructorParameters": [
+            {
+              "name": "project_id",
+              "example": "my-project-slug-or-uid"
+            }
+          ]
+        },
+        "typescript": {
+          "bundle": true,
+          "exportClassDefault": false,
+          "httpClient": "fetch",
+          "npmName": "",
+          "npmOrg": "",
+          "githubRepoName": "web-dev-sdk-ts",
+          "ignoreFiles": [],
+          "sdkVersion": "1.0.4",
+          "liblabVersion": "2",
+          "generateEnumAs": "union",
+          "additionalConstructorParameters": [
+            {
+              "name": "project_id",
+              "example": "my-project-slug-or-uid"
+            }
+          ]
+        },
+        "go": {
+          "goModuleName": "web-dev-sdk",
+          "githubRepoName": "web-dev-sdk-go",
+          "ignoreFiles": [],
+          "sdkVersion": "1.0.4",
+          "liblabVersion": "2",
+          "additionalConstructorParameters": [
+            {
+              "name": "project_id",
+              "example": "my-project-slug-or-uid"
+            }
+          ]
+        },
+        "java": {
+          "groupId": "dev.oto",
+          "artifactId": "webdev",
+          "ignoreFiles": [],
+          "sdkVersion": "1.0.4",
+          "liblabVersion": "2"
+        }
+      },
+      "publishing": {
+        "githubOrg": "www-oto-dev"
+      }
+    },
+    "apiVersion": "1.0.4",
     "apiName": "web-oto-dev-api",
     "specFilePath": "http://localhost:9999/api/v1/openapi.json",
     "languageOptions": {
@@ -24,14 +110,15 @@
         "githubRepoName": "web-dev-sdk-go",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.3"
+        "sdkVersion": "1.0.4"
       },
       "java": {
         "groupId": "dev.oto",
         "artifactId": "webdev",
+        "includeKotlinSnippets": false,
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.3"
+        "sdkVersion": "1.0.4"
       },
       "python": {
         "alwaysInitializeOptionals": false,
@@ -45,7 +132,7 @@
         "githubRepoName": "web-dev-sdk-python",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.3"
+        "sdkVersion": "1.0.4"
       },
       "typescript": {
         "bundle": true,
@@ -62,7 +149,7 @@
         "githubRepoName": "web-dev-sdk-ts",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.3",
+        "sdkVersion": "1.0.4",
         "generateEnumAs": "union"
       }
     },
@@ -86,6 +173,7 @@
       "path": "MIT.ejs"
     },
     "responseHeaders": false,
+    "generateMCP": false,
     "retry": {
       "enabled": true,
       "maxAttempts": 3,
@@ -98,7 +186,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "8677/hooks.zip",
+      "bucketKey": "10601/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,
@@ -124,7 +212,7 @@
     "httpLibrary": {
       "name": "axios",
       "packages": {
-        "axios": "^1.7.7"
+        "axios": "^1.7.9"
       },
       "languages": ["typescript"]
     },
@@ -133,7 +221,8 @@
       "rawQueries": [],
       "queriesData": []
     },
-    "ai": false
+    "ai": false,
+    "specType": "openapi"
   },
   "files": [
     "src/web_oto_dev_sdk/models/utils/base_model.py",
@@ -150,6 +239,8 @@
     "src/web_oto_dev_sdk/net/request_chain/__init__.py",
     "src/web_oto_dev_sdk/net/request_chain/handlers/__init__.py",
     "src/web_oto_dev_sdk/models/utils/__init__.py",
+    "src/web_oto_dev_sdk/services/async_/__init__.py",
+    "src/web_oto_dev_sdk/services/async_/utils/__init__.py",
     "src/web_oto_dev_sdk/net/transport/request.py",
     "src/web_oto_dev_sdk/net/transport/response.py",
     "src/web_oto_dev_sdk/net/transport/request_error.py",
@@ -185,27 +276,42 @@
     "documentation/models/Meaning.md",
     "documentation/models/Formula.md",
     "documentation/models/Value.md",
+    "documentation/models/FormField.md",
     "src/web_oto_dev_sdk/models/utils/one_of_base_model.py",
+    "src/web_oto_dev_sdk/services/async_/utils/to_async.py",
+    "src/web_oto_dev_sdk/services/async_/admin.py",
+    "src/web_oto_dev_sdk/services/async_/project.py",
+    "src/web_oto_dev_sdk/services/async_/properties.py",
+    "src/web_oto_dev_sdk/services/async_/meanings.py",
+    "src/web_oto_dev_sdk/services/async_/formulas.py",
+    "src/web_oto_dev_sdk/services/async_/values.py",
+    "src/web_oto_dev_sdk/services/async_/layouts.py",
+    "src/web_oto_dev_sdk/services/async_/crm.py",
+    "src/web_oto_dev_sdk/sdk_async.py",
+    "src/web_oto_dev_sdk/models/utils/sentinel.py",
+    "src/web_oto_dev_sdk/services/crm.py",
+    "documentation/services/CrmService.md",
     "src/web_oto_dev_sdk/models/project.py",
     "src/web_oto_dev_sdk/models/property.py",
     "src/web_oto_dev_sdk/models/meaning.py",
     "src/web_oto_dev_sdk/models/formula.py",
     "src/web_oto_dev_sdk/models/value.py",
+    "src/web_oto_dev_sdk/models/form_field.py",
     "documentation/services/AdminService.md",
     "documentation/services/ProjectService.md",
     "documentation/services/PropertiesService.md",
     "documentation/services/MeaningsService.md",
     "documentation/services/FormulasService.md",
-    "documentation/services/ValuesService.md",
     "documentation/services/LayoutsService.md",
-    "README.md",
-    "PyPI_README.md",
+    "documentation/services/ValuesService.md",
     "src/web_oto_dev_sdk/services/admin.py",
     "src/web_oto_dev_sdk/services/project.py",
+    "README.md",
+    "PyPI_README.md",
     "src/web_oto_dev_sdk/services/properties.py",
     "src/web_oto_dev_sdk/services/meanings.py",
     "src/web_oto_dev_sdk/services/formulas.py",
-    "src/web_oto_dev_sdk/services/values.py",
-    "src/web_oto_dev_sdk/services/layouts.py"
+    "src/web_oto_dev_sdk/services/layouts.py",
+    "src/web_oto_dev_sdk/services/values.py"
   ]
 }

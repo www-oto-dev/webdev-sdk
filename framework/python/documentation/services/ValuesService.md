@@ -12,6 +12,7 @@ A list of all methods in the `ValuesService` service. Click on the method name t
 | [update](#update)   | Remove previously set and add new values with specified 'name' fileds with values from 'values' fileds of provided list |
 | [remove](#remove)   | Remove all values for specified 'name'                                                                                  |
 | [display](#display) | Display a list of all values with specified 'name'                                                                      |
+| [move](#move)       | Move all values with 'name'                                                                                             |
 
 ## new
 
@@ -328,6 +329,48 @@ result = sdk.values.display(
     name="name",
     dataset="dataset",
     format="format"
+)
+
+print(result)
+```
+
+## move
+
+Move all values with 'name'
+
+- HTTP Method: `DELETE`
+- Endpoint: `/values/all/move`
+
+**Parameters**
+
+| Name    | Type | Required | Description |
+| :------ | :--- | :------- | :---------- |
+| name    | str  | ❌       |             |
+| before  | str  | ❌       |             |
+| after   | str  | ❌       |             |
+| dataset | str  | ❌       |             |
+
+**Return Type**
+
+`any`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.values.move(
+    name="name",
+    before="before",
+    after="after",
+    dataset="dataset"
 )
 
 print(result)

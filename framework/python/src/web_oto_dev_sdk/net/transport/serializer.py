@@ -3,9 +3,10 @@
 from typing import Any, List
 from urllib.parse import quote
 
-from ...net.headers.base_header import BaseHeader
 from .request import Request
 from .utils import extract_original_data
+from ...models.utils.sentinel import was_value_set
+from ...net.headers.base_header import BaseHeader
 
 
 class Serializer:
@@ -51,6 +52,9 @@ class Serializer:
         if not nullable and data is None:
             return self
 
+        if not was_value_set(data):
+            return self
+
         data = extract_original_data(data)
 
         self.headers[key] = self._serialize_value(
@@ -71,6 +75,9 @@ class Serializer:
         :rtype: Serializer
         """
         if not nullable and data is None:
+            return self
+
+        if not was_value_set(data):
             return self
 
         data = extract_original_data(data)
@@ -99,6 +106,9 @@ class Serializer:
         :rtype: Serializer
         """
         if not nullable and data is None:
+            return self
+
+        if not was_value_set(data):
             return self
 
         data = extract_original_data(data)
@@ -146,6 +156,9 @@ class Serializer:
         :rtype: Serializer
         """
         if not nullable and data is None:
+            return self
+
+        if not was_value_set(data):
             return self
 
         data = extract_original_data(data)
