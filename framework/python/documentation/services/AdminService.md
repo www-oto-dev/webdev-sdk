@@ -16,7 +16,7 @@ A list of all methods in the `AdminService` service. Click on the method name to
 Obtain a list of all projects [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `GET`
-- Endpoint: `/admin/projects/all`
+- Endpoint: `/api/v1/admin/projects/all`
 
 **Return Type**
 
@@ -44,7 +44,7 @@ print(result)
 Create project [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `PUT`
-- Endpoint: `/admin/projects/new`
+- Endpoint: `/api/v1/admin/projects/new`
 
 **Parameters**
 
@@ -86,7 +86,7 @@ print(result)
 Remove project with specified ID [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `DELETE`
-- Endpoint: `/admin/projects/remove`
+- Endpoint: `/api/v1/admin/projects/remove`
 
 **Parameters**
 
@@ -98,7 +98,7 @@ Remove project with specified ID [ADMIN RIGHTS REQUIRED]
 
 **Return Type**
 
-`any`
+`bool`
 
 **Example Usage Code Snippet**
 
@@ -126,7 +126,7 @@ print(result)
 Change options [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `PUT`
-- Endpoint: `/admin/projects/change`
+- Endpoint: `/api/v1/admin/projects/change`
 
 **Parameters**
 
@@ -140,7 +140,7 @@ Change options [ADMIN RIGHTS REQUIRED]
 
 **Return Type**
 
-`any`
+`bool`
 
 **Example Usage Code Snippet**
 
@@ -159,7 +159,7 @@ result = sdk.admin.change_project(
     uid="uid",
     new_slug="new_slug",
     new_title="new_title",
-    internal=True
+    internal=False
 )
 
 print(result)
@@ -170,7 +170,7 @@ print(result)
 Change project slug [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `PUT`
-- Endpoint: `/admin/projects/change/slug`
+- Endpoint: `/api/v1/admin/projects/change/slug`
 
 **Parameters**
 
@@ -183,7 +183,7 @@ Change project slug [ADMIN RIGHTS REQUIRED]
 
 **Return Type**
 
-`any`
+`bool`
 
 **Example Usage Code Snippet**
 
@@ -201,7 +201,7 @@ result = sdk.admin.change_project_slug(
     slug="slug",
     uid="uid",
     new_slug="new_slug",
-    internal=False
+    internal=True
 )
 
 print(result)
@@ -212,7 +212,7 @@ print(result)
 Change project title [ADMIN RIGHTS REQUIRED]
 
 - HTTP Method: `PUT`
-- Endpoint: `/admin/projects/change/title`
+- Endpoint: `/api/v1/admin/projects/change/title`
 
 **Parameters**
 
@@ -225,7 +225,7 @@ Change project title [ADMIN RIGHTS REQUIRED]
 
 **Return Type**
 
-`any`
+`bool`
 
 **Example Usage Code Snippet**
 

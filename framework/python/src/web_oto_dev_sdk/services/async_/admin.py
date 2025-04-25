@@ -29,7 +29,7 @@ class AdminServiceAsync(AdminService):
         slug: Union[str, None] = SENTINEL,
         uid: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> Awaitable[any]:
+    ) -> Awaitable[bool]:
         return to_async(super().remove_project)(slug, uid, internal)
 
     def change_project(
@@ -39,7 +39,7 @@ class AdminServiceAsync(AdminService):
         new_slug: Union[str, None] = SENTINEL,
         new_title: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> Awaitable[any]:
+    ) -> Awaitable[bool]:
         return to_async(super().change_project)(
             slug, uid, new_slug, new_title, internal
         )
@@ -50,7 +50,7 @@ class AdminServiceAsync(AdminService):
         uid: Union[str, None] = SENTINEL,
         new_slug: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> Awaitable[any]:
+    ) -> Awaitable[bool]:
         return to_async(super().change_project_slug)(slug, uid, new_slug, internal)
 
     def change_project_title(
@@ -59,5 +59,5 @@ class AdminServiceAsync(AdminService):
         uid: Union[str, None] = SENTINEL,
         new_title: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> Awaitable[any]:
+    ) -> Awaitable[bool]:
         return to_async(super().change_project_title)(slug, uid, new_title, internal)

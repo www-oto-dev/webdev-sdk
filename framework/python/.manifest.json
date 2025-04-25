@@ -1,19 +1,19 @@
 {
-  "liblabVersion": "2.25.9",
-  "date": "2025-04-22T15:21:13.483Z",
+  "liblabVersion": "2.25.10",
+  "date": "2025-04-25T09:46:47.094Z",
   "config": {
-    "apiId": 2034,
+    "apiId": 2075,
     "sdkName": "web-oto-dev-sdk",
-    "sdkVersion": "1.0.4",
+    "sdkVersion": "1.0.5",
     "languages": ["python"],
     "auth": ["apikey"],
     "liblabVersion": "2",
     "deliveryMethods": ["zip"],
     "rawConfig": {
       "sdkName": "web-oto-dev-sdk",
-      "apiVersion": "1.0.4",
+      "apiVersion": "1.0.5",
       "apiName": "web-oto-dev-api",
-      "specFilePath": "http://localhost:9999/api/v1/openapi.json",
+      "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
       "languages": ["python"],
       "auth": ["apikey"],
       "customizations": {
@@ -43,7 +43,7 @@
           "pypiPackageName": "",
           "githubRepoName": "web-dev-sdk-python",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.4",
+          "sdkVersion": "1.0.5",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -60,7 +60,7 @@
           "npmOrg": "",
           "githubRepoName": "web-dev-sdk-ts",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.4",
+          "sdkVersion": "1.0.5",
           "liblabVersion": "2",
           "generateEnumAs": "union",
           "additionalConstructorParameters": [
@@ -74,7 +74,7 @@
           "goModuleName": "web-dev-sdk",
           "githubRepoName": "web-dev-sdk-go",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.4",
+          "sdkVersion": "1.0.5",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -87,7 +87,7 @@
           "groupId": "dev.oto",
           "artifactId": "webdev",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.4",
+          "sdkVersion": "1.0.5",
           "liblabVersion": "2"
         }
       },
@@ -95,9 +95,9 @@
         "githubOrg": "www-oto-dev"
       }
     },
-    "apiVersion": "1.0.4",
+    "apiVersion": "1.0.5",
     "apiName": "web-oto-dev-api",
-    "specFilePath": "http://localhost:9999/api/v1/openapi.json",
+    "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
     "languageOptions": {
       "go": {
         "goModuleName": "web-dev-sdk",
@@ -110,7 +110,7 @@
         "githubRepoName": "web-dev-sdk-go",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.4"
+        "sdkVersion": "1.0.5"
       },
       "java": {
         "groupId": "dev.oto",
@@ -118,7 +118,7 @@
         "includeKotlinSnippets": false,
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.4"
+        "sdkVersion": "1.0.5"
       },
       "python": {
         "alwaysInitializeOptionals": false,
@@ -132,7 +132,7 @@
         "githubRepoName": "web-dev-sdk-python",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.4"
+        "sdkVersion": "1.0.5"
       },
       "typescript": {
         "bundle": true,
@@ -149,7 +149,7 @@
         "githubRepoName": "web-dev-sdk-ts",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.4",
+        "sdkVersion": "1.0.5",
         "generateEnumAs": "union"
       }
     },
@@ -186,7 +186,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "10601/hooks.zip",
+      "bucketKey": "10697/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,

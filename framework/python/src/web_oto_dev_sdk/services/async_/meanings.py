@@ -14,7 +14,7 @@ class MeaningsServiceAsync(MeaningsService):
 
     def new(
         self, init: Union[str, None] = SENTINEL, collection: Union[str, None] = SENTINEL
-    ) -> Awaitable[any]:
+    ) -> Awaitable[str]:
         return to_async(super().new)(init, collection)
 
     def get(self, name: str, collection: Union[str, None] = SENTINEL) -> Awaitable[str]:

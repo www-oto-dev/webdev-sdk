@@ -12,7 +12,7 @@ from ..models import FormField
 class CrmService(BaseService):
 
     @cast_models
-    def new(self, request_body: List[FormField]) -> any:
+    def new(self, request_body: List[FormField]) -> bool:
         """Create new Deal
 
         :param request_body: The request body.
@@ -21,14 +21,14 @@ class CrmService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: bool
         """
 
         Validator(FormField).is_array().validate(request_body)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/crm/deals/new",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/crm/deals/new",
                 [self.get_api_key()],
             )
             .serialize()

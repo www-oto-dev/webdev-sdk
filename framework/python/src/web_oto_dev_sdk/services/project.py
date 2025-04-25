@@ -25,7 +25,7 @@ class ProjectService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/info",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/info",
                 [self.get_api_key()],
             )
             .serialize()
@@ -36,88 +36,79 @@ class ProjectService(BaseService):
         return Project._unmap(response)
 
     @cast_models
-    def collect(self) -> any:
+    def collect(self) -> None:
         """collect
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
-        :return: The parsed response data.
-        :rtype: any
         """
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/collect",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/collect",
                 [self.get_api_key()],
             )
             .serialize()
             .set_method("POST")
         )
 
-        response, _, _ = self.send_request(serialized_request)
-        return response
+        self.send_request(serialized_request)
 
     @cast_models
-    def generate(self) -> any:
+    def generate(self) -> None:
         """generate
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
-        :return: The parsed response data.
-        :rtype: any
         """
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/generate",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/generate",
                 [self.get_api_key()],
             )
             .serialize()
             .set_method("POST")
         )
 
-        response, _, _ = self.send_request(serialized_request)
-        return response
+        self.send_request(serialized_request)
 
     @cast_models
-    def build(self) -> any:
+    def build(self) -> None:
         """build
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
-        :return: The parsed response data.
-        :rtype: any
         """
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/build",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/build",
                 [self.get_api_key()],
             )
             .serialize()
             .set_method("POST")
         )
 
-        response, _, _ = self.send_request(serialized_request)
-        return response
+        self.send_request(serialized_request)
 
     @cast_models
-    def view(self) -> any:
+    def view(self) -> str:
         """view
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: str
         """
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/view",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/view",
                 [self.get_api_key()],
             )
             .serialize()
@@ -128,7 +119,7 @@ class ProjectService(BaseService):
         return response
 
     @cast_models
-    def imagine(self, target: Union[str, None] = SENTINEL) -> any:
+    def imagine(self, target: Union[str, None] = SENTINEL) -> None:
         """imagine
 
         :param target: target, defaults to None
@@ -136,15 +127,13 @@ class ProjectService(BaseService):
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
-        :return: The parsed response data.
-        :rtype: any
         """
 
         Validator(str).is_optional().is_nullable().validate(target)
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/project/imagine",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/project/imagine",
                 [self.get_api_key()],
             )
             .add_query("target", target, nullable=True)
@@ -152,5 +141,4 @@ class ProjectService(BaseService):
             .set_method("POST")
         )
 
-        response, _, _ = self.send_request(serialized_request)
-        return response
+        self.send_request(serialized_request)

@@ -11,5 +11,5 @@ class CrmServiceAsync(CrmService):
     Async Wrapper for CrmServiceAsync
     """
 
-    def new(self, request_body: List[FormField]) -> Awaitable[any]:
+    def new(self, request_body: List[FormField]) -> Awaitable[bool]:
         return to_async(super().new)(request_body)

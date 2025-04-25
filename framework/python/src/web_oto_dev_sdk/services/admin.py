@@ -25,7 +25,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/all",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/all",
                 [self.get_api_key()],
             )
             .serialize()
@@ -67,7 +67,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/new",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/new",
                 [self.get_api_key()],
             )
             .add_query("title", title, nullable=True)
@@ -87,7 +87,7 @@ class AdminService(BaseService):
         slug: Union[str, None] = SENTINEL,
         uid: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> any:
+    ) -> bool:
         """Remove project with specified ID [ADMIN RIGHTS REQUIRED]
 
         :param slug: slug, defaults to None
@@ -100,7 +100,7 @@ class AdminService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: bool
         """
 
         Validator(str).is_optional().is_nullable().validate(slug)
@@ -109,7 +109,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/remove",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/remove",
                 [self.get_api_key()],
             )
             .add_query("slug", slug, nullable=True)
@@ -130,7 +130,7 @@ class AdminService(BaseService):
         new_slug: Union[str, None] = SENTINEL,
         new_title: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> any:
+    ) -> bool:
         """Change options [ADMIN RIGHTS REQUIRED]
 
         :param slug: slug, defaults to None
@@ -147,7 +147,7 @@ class AdminService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: bool
         """
 
         Validator(str).is_optional().is_nullable().validate(slug)
@@ -158,7 +158,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/change",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/change",
                 [self.get_api_key()],
             )
             .add_query("slug", slug, nullable=True)
@@ -180,7 +180,7 @@ class AdminService(BaseService):
         uid: Union[str, None] = SENTINEL,
         new_slug: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> any:
+    ) -> bool:
         """Change project slug [ADMIN RIGHTS REQUIRED]
 
         :param slug: slug, defaults to None
@@ -195,7 +195,7 @@ class AdminService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: bool
         """
 
         Validator(str).is_optional().is_nullable().validate(slug)
@@ -205,7 +205,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/change/slug",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/change/slug",
                 [self.get_api_key()],
             )
             .add_query("slug", slug, nullable=True)
@@ -226,7 +226,7 @@ class AdminService(BaseService):
         uid: Union[str, None] = SENTINEL,
         new_title: Union[str, None] = SENTINEL,
         internal: Union[bool, None] = SENTINEL,
-    ) -> any:
+    ) -> bool:
         """Change project title [ADMIN RIGHTS REQUIRED]
 
         :param slug: slug, defaults to None
@@ -241,7 +241,7 @@ class AdminService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: bool
         """
 
         Validator(str).is_optional().is_nullable().validate(slug)
@@ -251,7 +251,7 @@ class AdminService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/admin/projects/change/title",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/admin/projects/change/title",
                 [self.get_api_key()],
             )
             .add_query("slug", slug, nullable=True)

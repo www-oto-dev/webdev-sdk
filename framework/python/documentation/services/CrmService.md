@@ -11,7 +11,7 @@ A list of all methods in the `CrmService` service. Click on the method name to v
 Create new Deal
 
 - HTTP Method: `PUT`
-- Endpoint: `/crm/deals/new`
+- Endpoint: `/api/v1/crm/deals/new`
 
 **Parameters**
 
@@ -21,7 +21,7 @@ Create new Deal
 
 **Return Type**
 
-`any`
+`bool`
 
 **Example Usage Code Snippet**
 

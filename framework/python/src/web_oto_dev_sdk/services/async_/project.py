@@ -15,17 +15,17 @@ class ProjectServiceAsync(ProjectService):
     def info(self) -> Awaitable[Project]:
         return to_async(super().info)()
 
-    def collect(self) -> Awaitable[any]:
+    def collect(self) -> Awaitable[None]:
         return to_async(super().collect)()
 
-    def generate(self) -> Awaitable[any]:
+    def generate(self) -> Awaitable[None]:
         return to_async(super().generate)()
 
-    def build(self) -> Awaitable[any]:
+    def build(self) -> Awaitable[None]:
         return to_async(super().build)()
 
-    def view(self) -> Awaitable[any]:
+    def view(self) -> Awaitable[str]:
         return to_async(super().view)()
 
-    def imagine(self, target: Union[str, None] = SENTINEL) -> Awaitable[any]:
+    def imagine(self, target: Union[str, None] = SENTINEL) -> Awaitable[None]:
         return to_async(super().imagine)(target)

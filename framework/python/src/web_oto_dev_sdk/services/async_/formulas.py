@@ -14,7 +14,7 @@ class FormulasServiceAsync(FormulasService):
 
     def new(
         self, init: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
-    ) -> Awaitable[any]:
+    ) -> Awaitable[str]:
         return to_async(super().new)(init, set)
 
     def get(self, name: str, set: Union[str, None] = SENTINEL) -> Awaitable[str]:

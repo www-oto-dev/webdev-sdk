@@ -16,7 +16,7 @@ A list of all methods in the `ProjectService` service. Click on the method name 
 Obtain project information
 
 - HTTP Method: `GET`
-- Endpoint: `/project/info`
+- Endpoint: `/api/v1/project/info`
 
 **Return Type**
 
@@ -44,11 +44,7 @@ print(result)
 collect
 
 - HTTP Method: `POST`
-- Endpoint: `/project/collect`
-
-**Return Type**
-
-`any`
+- Endpoint: `/api/v1/project/collect`
 
 **Example Usage Code Snippet**
 
@@ -72,11 +68,7 @@ print(result)
 generate
 
 - HTTP Method: `POST`
-- Endpoint: `/project/generate`
-
-**Return Type**
-
-`any`
+- Endpoint: `/api/v1/project/generate`
 
 **Example Usage Code Snippet**
 
@@ -100,11 +92,7 @@ print(result)
 build
 
 - HTTP Method: `POST`
-- Endpoint: `/project/build`
-
-**Return Type**
-
-`any`
+- Endpoint: `/api/v1/project/build`
 
 **Example Usage Code Snippet**
 
@@ -128,11 +116,11 @@ print(result)
 view
 
 - HTTP Method: `POST`
-- Endpoint: `/project/view`
+- Endpoint: `/api/v1/project/view`
 
 **Return Type**
 
-`any`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -148,7 +136,8 @@ sdk = WebOtoDevSdk(
 
 result = sdk.project.view()
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## imagine
@@ -156,17 +145,13 @@ print(result)
 imagine
 
 - HTTP Method: `POST`
-- Endpoint: `/project/imagine`
+- Endpoint: `/api/v1/project/imagine`
 
 **Parameters**
 
 | Name   | Type | Required | Description |
 | :----- | :--- | :------- | :---------- |
 | target | str  | ❌       |             |
-
-**Return Type**
-
-`any`
 
 **Example Usage Code Snippet**
 

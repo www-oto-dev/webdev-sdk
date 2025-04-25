@@ -15,7 +15,7 @@ class ValuesService(BaseService):
     @cast_models
     def new(
         self, init: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
-    ) -> any:
+    ) -> str:
         """Create new dataset (default or specified settings)
 
         :param init: init, defaults to None
@@ -26,7 +26,7 @@ class ValuesService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: str
         """
 
         Validator(str).is_optional().is_nullable().validate(init)
@@ -34,7 +34,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/revision/new",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/revision/new",
                 [self.get_api_key()],
             )
             .add_query("init", init, nullable=True)
@@ -66,7 +66,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/actual/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/actual/get",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -106,7 +106,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/actual/set",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/actual/set",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -147,7 +147,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/actual/add",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/actual/add",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -182,7 +182,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/all/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/get",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -216,7 +216,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/all/update",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/update",
                 [self.get_api_key()],
             )
             .add_query("dataset", dataset, nullable=True)
@@ -256,7 +256,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/all/remove",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/remove",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -297,7 +297,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/all/display",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/display",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -342,7 +342,7 @@ class ValuesService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/values/all/move",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/move",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)

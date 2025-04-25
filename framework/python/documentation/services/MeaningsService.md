@@ -18,7 +18,7 @@ A list of all methods in the `MeaningsService` service. Click on the method name
 Create new collection (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/meanings/revision/new`
+- Endpoint: `/api/v1/meanings/revision/new`
 
 **Parameters**
 
@@ -29,7 +29,7 @@ Create new collection (default or specified settings)
 
 **Return Type**
 
-`any`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -48,7 +48,8 @@ result = sdk.meanings.new(
     collection="collection"
 )
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## get
@@ -56,7 +57,7 @@ print(result)
 Obtain the lastest value for meaning with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/meanings/actual/get`
+- Endpoint: `/api/v1/meanings/actual/get`
 
 **Parameters**
 
@@ -95,7 +96,7 @@ with open("output-file.ext", "w") as f:
 Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/meanings/actual/set`
+- Endpoint: `/api/v1/meanings/actual/set`
 
 **Parameters**
 
@@ -135,7 +136,7 @@ print(result)
 Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
-- Endpoint: `/meanings/actual/add`
+- Endpoint: `/api/v1/meanings/actual/add`
 
 **Parameters**
 
@@ -175,7 +176,7 @@ print(result)
 Obtain a list of all meanings with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/meanings/all/get`
+- Endpoint: `/api/v1/meanings/all/get`
 
 **Parameters**
 
@@ -213,7 +214,7 @@ print(result)
 Remove previously set and add new meanings with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/meanings/all/update`
+- Endpoint: `/api/v1/meanings/all/update`
 
 **Parameters**
 
@@ -258,7 +259,7 @@ print(result)
 Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/meanings/all/remove`
+- Endpoint: `/api/v1/meanings/all/remove`
 
 **Parameters**
 
@@ -298,7 +299,7 @@ print(result)
 Display a list of all meanings with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/meanings/all/display`
+- Endpoint: `/api/v1/meanings/all/display`
 
 **Parameters**
 

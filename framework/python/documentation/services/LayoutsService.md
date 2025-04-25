@@ -18,7 +18,7 @@ A list of all methods in the `LayoutsService` service. Click on the method name 
 Create new version (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/layouts/revision/new`
+- Endpoint: `/api/v1/layouts/revision/new`
 
 **Parameters**
 
@@ -56,7 +56,7 @@ print(result)
 Obtain the lastest layout for page with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/layouts/actual/get`
+- Endpoint: `/api/v1/layouts/actual/get`
 
 **Parameters**
 
@@ -95,7 +95,7 @@ with open("output-file.ext", "w") as f:
 Remove all previous layouts for specified page with 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/layouts/actual/set`
+- Endpoint: `/api/v1/layouts/actual/set`
 
 **Parameters**
 
@@ -135,7 +135,7 @@ print(result)
 Add a new value for specified page by 'name'
 
 - HTTP Method: `PUT`
-- Endpoint: `/layouts/actual/add`
+- Endpoint: `/api/v1/layouts/actual/add`
 
 **Parameters**
 
@@ -175,7 +175,7 @@ print(result)
 Obtain a list of all layouts with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/layouts/all/get`
+- Endpoint: `/api/v1/layouts/all/get`
 
 **Parameters**
 
@@ -213,7 +213,7 @@ print(result)
 Remove previously set and add new layouts with specified 'name' fileds with layouts from 'layouts' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/layouts/all/update`
+- Endpoint: `/api/v1/layouts/all/update`
 
 **Parameters**
 
@@ -258,7 +258,7 @@ print(result)
 Remove all layouts for specified 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/layouts/all/remove`
+- Endpoint: `/api/v1/layouts/all/remove`
 
 **Parameters**
 
@@ -298,7 +298,7 @@ print(result)
 Display a list of all layouts with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/layouts/all/display`
+- Endpoint: `/api/v1/layouts/all/display`
 
 **Parameters**
 

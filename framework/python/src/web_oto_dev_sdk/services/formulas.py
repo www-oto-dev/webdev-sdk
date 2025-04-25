@@ -15,7 +15,7 @@ class FormulasService(BaseService):
     @cast_models
     def new(
         self, init: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
-    ) -> any:
+    ) -> str:
         """Create new set (default or specified settings)
 
         :param init: init, defaults to None
@@ -26,7 +26,7 @@ class FormulasService(BaseService):
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: any
+        :rtype: str
         """
 
         Validator(str).is_optional().is_nullable().validate(init)
@@ -34,7 +34,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/revision/new",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/revision/new",
                 [self.get_api_key()],
             )
             .add_query("init", init, nullable=True)
@@ -66,7 +66,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/actual/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/actual/get",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -114,7 +114,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/actual/set",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/actual/set",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -165,7 +165,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/actual/add",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/actual/add",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -202,7 +202,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/all/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/all/get",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -236,7 +236,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/all/update",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/all/update",
                 [self.get_api_key()],
             )
             .add_query("set", set, nullable=True)
@@ -276,7 +276,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/all/remove",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/all/remove",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -317,7 +317,7 @@ class FormulasService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/formulas/all/display",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/all/display",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)

@@ -19,7 +19,7 @@ A list of all methods in the `ValuesService` service. Click on the method name t
 Create new dataset (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/revision/new`
+- Endpoint: `/api/v1/values/revision/new`
 
 **Parameters**
 
@@ -30,7 +30,7 @@ Create new dataset (default or specified settings)
 
 **Return Type**
 
-`any`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -49,7 +49,8 @@ result = sdk.values.new(
     dataset="dataset"
 )
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## get
@@ -57,7 +58,7 @@ print(result)
 Obtain the lastest value for variable with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/values/actual/get`
+- Endpoint: `/api/v1/values/actual/get`
 
 **Parameters**
 
@@ -96,7 +97,7 @@ with open("output-file.ext", "w") as f:
 Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/actual/set`
+- Endpoint: `/api/v1/values/actual/set`
 
 **Parameters**
 
@@ -136,7 +137,7 @@ print(result)
 Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/actual/add`
+- Endpoint: `/api/v1/values/actual/add`
 
 **Parameters**
 
@@ -176,7 +177,7 @@ print(result)
 Obtain a list of all values with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/values/all/get`
+- Endpoint: `/api/v1/values/all/get`
 
 **Parameters**
 
@@ -214,7 +215,7 @@ print(result)
 Remove previously set and add new values with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/values/all/update`
+- Endpoint: `/api/v1/values/all/update`
 
 **Parameters**
 
@@ -259,7 +260,7 @@ print(result)
 Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/values/all/remove`
+- Endpoint: `/api/v1/values/all/remove`
 
 **Parameters**
 
@@ -299,7 +300,7 @@ print(result)
 Display a list of all values with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/values/all/display`
+- Endpoint: `/api/v1/values/all/display`
 
 **Parameters**
 
@@ -339,7 +340,7 @@ print(result)
 Move all values with 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/values/all/move`
+- Endpoint: `/api/v1/values/all/move`
 
 **Parameters**
 

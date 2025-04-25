@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 class Environment(Enum):
     """The environments available for the SDK"""
 
-    DEFAULT = "/api/v1"
+    DEFAULT = "http://api.web.oto.local:9999/api/v1"
 
     def __new__(cls, url):
         parsed_url = urlparse(url)

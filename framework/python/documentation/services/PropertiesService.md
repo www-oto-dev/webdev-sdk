@@ -18,7 +18,7 @@ A list of all methods in the `PropertiesService` service. Click on the method na
 Create new build (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/revision/new`
+- Endpoint: `/api/v1/properties/revision/new`
 
 **Parameters**
 
@@ -29,7 +29,7 @@ Create new build (default or specified settings)
 
 **Return Type**
 
-`any`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -48,7 +48,8 @@ result = sdk.properties.new(
     build="build"
 )
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## get
@@ -56,7 +57,7 @@ print(result)
 Obtain the lastest value for formula with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/properties/actual/get`
+- Endpoint: `/api/v1/properties/actual/get`
 
 **Parameters**
 
@@ -95,7 +96,7 @@ with open("output-file.ext", "w") as f:
 Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/actual/set`
+- Endpoint: `/api/v1/properties/actual/set`
 
 **Parameters**
 
@@ -135,7 +136,7 @@ print(result)
 Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/actual/add`
+- Endpoint: `/api/v1/properties/actual/add`
 
 **Parameters**
 
@@ -175,7 +176,7 @@ print(result)
 Obtain a list of all properties with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/properties/all/get`
+- Endpoint: `/api/v1/properties/all/get`
 
 **Parameters**
 
@@ -213,7 +214,7 @@ print(result)
 Remove previously set and add new properties with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/properties/all/update`
+- Endpoint: `/api/v1/properties/all/update`
 
 **Parameters**
 
@@ -258,7 +259,7 @@ print(result)
 Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/properties/all/remove`
+- Endpoint: `/api/v1/properties/all/remove`
 
 **Parameters**
 
@@ -298,7 +299,7 @@ print(result)
 Display a list of all properties with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/properties/all/display`
+- Endpoint: `/api/v1/properties/all/display`
 
 **Parameters**
 

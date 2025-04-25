@@ -1,29 +1,84 @@
 [
   {
-    "code": "invalid-server-url",
+    "code": "schema-exclusive-properties",
     "path": [
-      "servers",
-      "0",
-      "url"
+      "paths",
+      "/api/v1/properties/actual/set",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
     ],
     "range": {
       "end": {
         "line": 0,
-        "character": 222
+        "character": 10308
       },
       "start": {
         "line": 0,
-        "character": 213
+        "character": 10306
       }
     },
-    "message": "Invalid server URL: /api/v1",
+    "message": "The properties  are mutually exclusive.",
     "severity": "error"
   },
   {
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/admin/projects/remove",
+      "/api/v1/properties/actual/add",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 11141
+      },
+      "start": {
+        "line": 0,
+        "character": 11139
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/api/v1/properties/all/update",
+      "put",
+      "responses",
+      "200",
+      "content",
+      "application/json",
+      "schema"
+    ],
+    "range": {
+      "end": {
+        "line": 0,
+        "character": 12863
+      },
+      "start": {
+        "line": 0,
+        "character": 12861
+      }
+    },
+    "message": "The properties  are mutually exclusive.",
+    "severity": "error"
+  },
+  {
+    "code": "schema-exclusive-properties",
+    "path": [
+      "paths",
+      "/api/v1/properties/all/remove",
       "delete",
       "responses",
       "200",
@@ -34,11 +89,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 2440
+        "character": 13727
       },
       "start": {
         "line": 0,
-        "character": 2438
+        "character": 13725
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -48,332 +103,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/admin/projects/change",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 3604
-      },
-      "start": {
-        "line": 0,
-        "character": 3602
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/admin/projects/change/slug",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 4642
-      },
-      "start": {
-        "line": 0,
-        "character": 4640
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/admin/projects/change/title",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 5686
-      },
-      "start": {
-        "line": 0,
-        "character": 5684
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/project/collect",
-      "post",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 6424
-      },
-      "start": {
-        "line": 0,
-        "character": 6422
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/project/generate",
-      "post",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 6723
-      },
-      "start": {
-        "line": 0,
-        "character": 6721
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/project/build",
-      "post",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 7010
-      },
-      "start": {
-        "line": 0,
-        "character": 7008
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/project/view",
-      "post",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 7293
-      },
-      "start": {
-        "line": 0,
-        "character": 7291
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/project/imagine",
-      "post",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 7769
-      },
-      "start": {
-        "line": 0,
-        "character": 7767
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/revision/new",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 8520
-      },
-      "start": {
-        "line": 0,
-        "character": 8518
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/actual/set",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 10132
-      },
-      "start": {
-        "line": 0,
-        "character": 10130
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/actual/add",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 10958
-      },
-      "start": {
-        "line": 0,
-        "character": 10956
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/all/update",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 12666
-      },
-      "start": {
-        "line": 0,
-        "character": 12664
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/all/remove",
-      "delete",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 13523
-      },
-      "start": {
-        "line": 0,
-        "character": 13521
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/properties/all/display",
+      "/api/v1/properties/all/display",
       "get",
       "responses",
       "200",
@@ -384,11 +114,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 14424
+        "character": 14635
       },
       "start": {
         "line": 0,
-        "character": 14422
+        "character": 14633
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -398,7 +128,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/meanings/revision/new",
+      "/api/v1/meanings/actual/set",
       "put",
       "responses",
       "200",
@@ -409,11 +139,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 15184
+        "character": 17074
       },
       "start": {
         "line": 0,
-        "character": 15182
+        "character": 17072
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -423,7 +153,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/meanings/actual/set",
+      "/api/v1/meanings/actual/add",
       "put",
       "responses",
       "200",
@@ -434,11 +164,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 16804
+        "character": 17911
       },
       "start": {
         "line": 0,
-        "character": 16802
+        "character": 17909
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -448,7 +178,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/meanings/actual/add",
+      "/api/v1/meanings/all/update",
       "put",
       "responses",
       "200",
@@ -459,11 +189,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 17634
+        "character": 19633
       },
       "start": {
         "line": 0,
-        "character": 17632
+        "character": 19631
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -473,32 +203,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/meanings/all/update",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 19342
-      },
-      "start": {
-        "line": 0,
-        "character": 19340
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/meanings/all/remove",
+      "/api/v1/meanings/all/remove",
       "delete",
       "responses",
       "200",
@@ -509,11 +214,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 20203
+        "character": 20501
       },
       "start": {
         "line": 0,
-        "character": 20201
+        "character": 20499
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -523,7 +228,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/meanings/all/display",
+      "/api/v1/meanings/all/display",
       "get",
       "responses",
       "200",
@@ -534,11 +239,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 21106
+        "character": 21411
       },
       "start": {
         "line": 0,
-        "character": 21104
+        "character": 21409
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -548,7 +253,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/formulas/revision/new",
+      "/api/v1/formulas/actual/set",
       "put",
       "responses",
       "200",
@@ -559,11 +264,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 21845
+        "character": 24063
       },
       "start": {
         "line": 0,
-        "character": 21843
+        "character": 24061
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -573,7 +278,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/formulas/actual/set",
+      "/api/v1/formulas/actual/add",
       "put",
       "responses",
       "200",
@@ -584,11 +289,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 23699
+        "character": 25148
       },
       "start": {
         "line": 0,
-        "character": 23697
+        "character": 25146
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -598,7 +303,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/formulas/actual/add",
+      "/api/v1/formulas/all/update",
       "put",
       "responses",
       "200",
@@ -609,11 +314,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 24777
+        "character": 26842
       },
       "start": {
         "line": 0,
-        "character": 24775
+        "character": 26840
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -623,32 +328,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/formulas/all/update",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 26457
-      },
-      "start": {
-        "line": 0,
-        "character": 26455
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/formulas/all/remove",
+      "/api/v1/formulas/all/remove",
       "delete",
       "responses",
       "200",
@@ -659,11 +339,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 27304
+        "character": 27696
       },
       "start": {
         "line": 0,
-        "character": 27302
+        "character": 27694
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -673,7 +353,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/formulas/all/display",
+      "/api/v1/formulas/all/display",
       "get",
       "responses",
       "200",
@@ -684,11 +364,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 28193
+        "character": 28592
       },
       "start": {
         "line": 0,
-        "character": 28191
+        "character": 28590
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -698,7 +378,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/revision/new",
+      "/api/v1/values/actual/set",
       "put",
       "responses",
       "200",
@@ -709,11 +389,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 28938
+        "character": 30993
       },
       "start": {
         "line": 0,
-        "character": 28936
+        "character": 30991
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -723,7 +403,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/actual/set",
+      "/api/v1/values/actual/add",
       "put",
       "responses",
       "200",
@@ -734,11 +414,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 30535
+        "character": 31818
       },
       "start": {
         "line": 0,
-        "character": 30533
+        "character": 31816
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -748,7 +428,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/actual/add",
+      "/api/v1/values/all/update",
       "put",
       "responses",
       "200",
@@ -759,11 +439,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 31353
+        "character": 33506
       },
       "start": {
         "line": 0,
-        "character": 31351
+        "character": 33504
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -773,32 +453,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/all/update",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 33027
-      },
-      "start": {
-        "line": 0,
-        "character": 33025
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/values/all/remove",
+      "/api/v1/values/all/remove",
       "delete",
       "responses",
       "200",
@@ -809,11 +464,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 33876
+        "character": 34362
       },
       "start": {
         "line": 0,
-        "character": 33874
+        "character": 34360
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -823,7 +478,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/all/display",
+      "/api/v1/values/all/display",
       "get",
       "responses",
       "200",
@@ -834,11 +489,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 34765
+        "character": 35258
       },
       "start": {
         "line": 0,
-        "character": 34763
+        "character": 35256
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -848,7 +503,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/values/all/move",
+      "/api/v1/values/all/move",
       "delete",
       "responses",
       "200",
@@ -859,11 +514,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 35717
+        "character": 36217
       },
       "start": {
         "line": 0,
-        "character": 35715
+        "character": 36215
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -873,7 +528,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/revision/new",
+      "/api/v1/layouts/revision/new",
       "put",
       "responses",
       "200",
@@ -884,11 +539,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 36465
+        "character": 36972
       },
       "start": {
         "line": 0,
-        "character": 36463
+        "character": 36970
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -898,7 +553,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/actual/set",
+      "/api/v1/layouts/actual/set",
       "put",
       "responses",
       "200",
@@ -909,11 +564,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 38076
+        "character": 38597
       },
       "start": {
         "line": 0,
-        "character": 38074
+        "character": 38595
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -923,7 +578,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/actual/add",
+      "/api/v1/layouts/actual/add",
       "put",
       "responses",
       "200",
@@ -934,11 +589,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 38905
+        "character": 39433
       },
       "start": {
         "line": 0,
-        "character": 38903
+        "character": 39431
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -948,7 +603,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/all/update",
+      "/api/v1/layouts/all/update",
       "put",
       "responses",
       "200",
@@ -959,11 +614,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 40590
+        "character": 41132
       },
       "start": {
         "line": 0,
-        "character": 40588
+        "character": 41130
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -973,7 +628,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/all/remove",
+      "/api/v1/layouts/all/remove",
       "delete",
       "responses",
       "200",
@@ -984,11 +639,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 41443
+        "character": 41992
       },
       "start": {
         "line": 0,
-        "character": 41441
+        "character": 41990
       }
     },
     "message": "The properties  are mutually exclusive.",
@@ -998,7 +653,7 @@
     "code": "schema-exclusive-properties",
     "path": [
       "paths",
-      "/layouts/all/display",
+      "/api/v1/layouts/all/display",
       "get",
       "responses",
       "200",
@@ -1009,36 +664,11 @@
     "range": {
       "end": {
         "line": 0,
-        "character": 42336
+        "character": 42892
       },
       "start": {
         "line": 0,
-        "character": 42334
-      }
-    },
-    "message": "The properties  are mutually exclusive.",
-    "severity": "error"
-  },
-  {
-    "code": "schema-exclusive-properties",
-    "path": [
-      "paths",
-      "/crm/deals/new",
-      "put",
-      "responses",
-      "200",
-      "content",
-      "application/json",
-      "schema"
-    ],
-    "range": {
-      "end": {
-        "line": 0,
-        "character": 42882
-      },
-      "start": {
-        "line": 0,
-        "character": 42880
+        "character": 42890
       }
     },
     "message": "The properties  are mutually exclusive.",

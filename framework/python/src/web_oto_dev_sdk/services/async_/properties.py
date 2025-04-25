@@ -14,7 +14,7 @@ class PropertiesServiceAsync(PropertiesService):
 
     def new(
         self, init: Union[str, None] = SENTINEL, build: Union[str, None] = SENTINEL
-    ) -> Awaitable[any]:
+    ) -> Awaitable[str]:
         return to_async(super().new)(init, build)
 
     def get(self, name: str, build: Union[str, None] = SENTINEL) -> Awaitable[str]:

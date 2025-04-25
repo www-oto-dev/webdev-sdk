@@ -18,7 +18,7 @@ A list of all methods in the `FormulasService` service. Click on the method name
 Create new set (default or specified settings)
 
 - HTTP Method: `PUT`
-- Endpoint: `/formulas/revision/new`
+- Endpoint: `/api/v1/formulas/revision/new`
 
 **Parameters**
 
@@ -29,7 +29,7 @@ Create new set (default or specified settings)
 
 **Return Type**
 
-`any`
+`str`
 
 **Example Usage Code Snippet**
 
@@ -48,7 +48,8 @@ result = sdk.formulas.new(
     set="set"
 )
 
-print(result)
+with open("output-file.ext", "w") as f:
+    f.write(result)
 ```
 
 ## get
@@ -56,7 +57,7 @@ print(result)
 Obtain the lastest value for formula with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/formulas/actual/get`
+- Endpoint: `/api/v1/formulas/actual/get`
 
 **Parameters**
 
@@ -95,7 +96,7 @@ with open("output-file.ext", "w") as f:
 Remove all previous values for specified 'name' and add a new value
 
 - HTTP Method: `PUT`
-- Endpoint: `/formulas/actual/set`
+- Endpoint: `/api/v1/formulas/actual/set`
 
 **Parameters**
 
@@ -139,7 +140,7 @@ print(result)
 Add a new value for specified 'name'
 
 - HTTP Method: `PUT`
-- Endpoint: `/formulas/actual/add`
+- Endpoint: `/api/v1/formulas/actual/add`
 
 **Parameters**
 
@@ -183,7 +184,7 @@ print(result)
 Obtain a list of all formulas with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/formulas/all/get`
+- Endpoint: `/api/v1/formulas/all/get`
 
 **Parameters**
 
@@ -221,7 +222,7 @@ print(result)
 Remove previously set and add new formulas with specified 'name' fileds with values from 'values' fileds of provided list
 
 - HTTP Method: `PUT`
-- Endpoint: `/formulas/all/update`
+- Endpoint: `/api/v1/formulas/all/update`
 
 **Parameters**
 
@@ -268,7 +269,7 @@ print(result)
 Remove all values for specified 'name'
 
 - HTTP Method: `DELETE`
-- Endpoint: `/formulas/all/remove`
+- Endpoint: `/api/v1/formulas/all/remove`
 
 **Parameters**
 
@@ -308,7 +309,7 @@ print(result)
 Display a list of all formulas with specified 'name'
 
 - HTTP Method: `GET`
-- Endpoint: `/formulas/all/display`
+- Endpoint: `/api/v1/formulas/all/display`
 
 **Parameters**
 

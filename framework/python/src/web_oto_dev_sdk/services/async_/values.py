@@ -14,7 +14,7 @@ class ValuesServiceAsync(ValuesService):
 
     def new(
         self, init: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
-    ) -> Awaitable[any]:
+    ) -> Awaitable[str]:
         return to_async(super().new)(init, dataset)
 
     def get(self, name: str, dataset: Union[str, None] = SENTINEL) -> Awaitable[str]:

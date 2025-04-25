@@ -34,7 +34,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/revision/new",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/revision/new",
                 [self.get_api_key()],
             )
             .add_query("init", init, nullable=True)
@@ -66,7 +66,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/actual/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/actual/get",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -106,7 +106,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/actual/set",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/actual/set",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -147,7 +147,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/actual/add",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/actual/add",
                 [self.get_api_key()],
             )
             .add_query("name", name)
@@ -182,7 +182,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/all/get",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/all/get",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -216,7 +216,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/all/update",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/all/update",
                 [self.get_api_key()],
             )
             .add_query("version", version, nullable=True)
@@ -256,7 +256,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/all/remove",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/all/remove",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
@@ -297,7 +297,7 @@ class LayoutsService(BaseService):
 
         serialized_request = (
             Serializer(
-                f"{self.base_url or Environment.DEFAULT.url}/layouts/all/display",
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/layouts/all/display",
                 [self.get_api_key()],
             )
             .add_query("name", name, nullable=True)
