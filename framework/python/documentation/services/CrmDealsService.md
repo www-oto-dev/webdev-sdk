@@ -1,6 +1,6 @@
-# CrmService
+# CrmDealsService
 
-A list of all methods in the `CrmService` service. Click on the method name to view detailed information about that method.
+A list of all methods in the `CrmDealsService` service. Click on the method name to view detailed information about that method.
 
 | Methods     | Description     |
 | :---------- | :-------------- |
@@ -42,7 +42,7 @@ request_body = [
     }
 ]
 
-result = sdk.crm.new(request_body=request_body)
+result = sdk.crm_deals.new(request_body=request_body)
 
 print(result)
 ```

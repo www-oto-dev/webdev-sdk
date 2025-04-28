@@ -243,7 +243,7 @@ result = sdk.admin.change_project_title(
     slug="slug",
     uid="uid",
     new_title="new_title",
-    internal=False
+    internal=True
 )
 
 print(result)

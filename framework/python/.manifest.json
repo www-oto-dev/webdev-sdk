@@ -1,17 +1,17 @@
 {
   "liblabVersion": "2.25.10",
-  "date": "2025-04-28T05:10:40.909Z",
+  "date": "2025-04-28T05:23:10.390Z",
   "config": {
-    "apiId": 2096,
+    "apiId": 2098,
     "sdkName": "web-oto-dev-sdk",
-    "sdkVersion": "1.0.6",
+    "sdkVersion": "1.0.8",
     "languages": ["python"],
     "auth": ["apikey"],
     "liblabVersion": "2",
     "deliveryMethods": ["zip"],
     "rawConfig": {
       "sdkName": "web-oto-dev-sdk",
-      "apiVersion": "1.0.6",
+      "apiVersion": "1.0.8",
       "apiName": "web-oto-dev-api",
       "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
       "languages": ["python"],
@@ -43,7 +43,7 @@
           "pypiPackageName": "",
           "githubRepoName": "web-dev-sdk-python",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.6",
+          "sdkVersion": "1.0.8",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -60,7 +60,7 @@
           "npmOrg": "",
           "githubRepoName": "web-dev-sdk-ts",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.6",
+          "sdkVersion": "1.0.8",
           "liblabVersion": "2",
           "generateEnumAs": "union",
           "additionalConstructorParameters": [
@@ -74,7 +74,7 @@
           "goModuleName": "web-dev-sdk",
           "githubRepoName": "web-dev-sdk-go",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.6",
+          "sdkVersion": "1.0.8",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -87,7 +87,7 @@
           "groupId": "dev.oto",
           "artifactId": "webdev",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.6",
+          "sdkVersion": "1.0.8",
           "liblabVersion": "2"
         }
       },
@@ -95,7 +95,7 @@
         "githubOrg": "www-oto-dev"
       }
     },
-    "apiVersion": "1.0.6",
+    "apiVersion": "1.0.8",
     "apiName": "web-oto-dev-api",
     "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
     "languageOptions": {
@@ -110,7 +110,7 @@
         "githubRepoName": "web-dev-sdk-go",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.6"
+        "sdkVersion": "1.0.8"
       },
       "java": {
         "groupId": "dev.oto",
@@ -118,7 +118,7 @@
         "includeKotlinSnippets": false,
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.6"
+        "sdkVersion": "1.0.8"
       },
       "python": {
         "alwaysInitializeOptionals": false,
@@ -132,7 +132,7 @@
         "githubRepoName": "web-dev-sdk-python",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.6"
+        "sdkVersion": "1.0.8"
       },
       "typescript": {
         "bundle": true,
@@ -149,7 +149,7 @@
         "githubRepoName": "web-dev-sdk-ts",
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.6",
+        "sdkVersion": "1.0.8",
         "generateEnumAs": "union"
       }
     },
@@ -186,7 +186,7 @@
     },
     "multiTenant": true,
     "hooksLocation": {
-      "bucketKey": "10722/hooks.zip",
+      "bucketKey": "10724/hooks.zip",
       "bucketName": "prod-liblab-api-stack-hooks"
     },
     "includeWatermark": true,
@@ -286,11 +286,11 @@
     "src/web_oto_dev_sdk/services/async_/formulas.py",
     "src/web_oto_dev_sdk/services/async_/values.py",
     "src/web_oto_dev_sdk/services/async_/layouts.py",
-    "src/web_oto_dev_sdk/services/async_/crm.py",
+    "src/web_oto_dev_sdk/services/async_/crm_deals.py",
     "src/web_oto_dev_sdk/sdk_async.py",
     "src/web_oto_dev_sdk/models/utils/sentinel.py",
-    "src/web_oto_dev_sdk/services/crm.py",
-    "documentation/services/CrmService.md",
+    "src/web_oto_dev_sdk/services/crm_deals.py",
+    "documentation/services/CrmDealsService.md",
     "src/web_oto_dev_sdk/models/project.py",
     "src/web_oto_dev_sdk/models/property.py",
     "src/web_oto_dev_sdk/models/meaning.py",

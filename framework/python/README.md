@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.6
+# WebOtoDevSdk Python SDK 1.0.8
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.0.6`
-- SDK version: `1.0.6`
+- API version: `1.0.8`
+- SDK version: `1.0.8`
 
 ## About the API
 
@@ -135,7 +135,7 @@ The SDK provides various services to interact with the API.
 | [FormulasService](documentation/services/FormulasService.md)     |
 | [ValuesService](documentation/services/ValuesService.md)         |
 | [LayoutsService](documentation/services/LayoutsService.md)       |
-| [CrmService](documentation/services/CrmService.md)               |
+| [CrmDealsService](documentation/services/CrmDealsService.md)     |
 
 </details>
 

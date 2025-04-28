@@ -9,7 +9,7 @@ from ..models.utils.cast_models import cast_models
 from ..models import FormField
 
 
-class CrmService(BaseService):
+class CrmDealsService(BaseService):
 
     @cast_models
     def new(self, request_body: List[FormField]) -> bool:

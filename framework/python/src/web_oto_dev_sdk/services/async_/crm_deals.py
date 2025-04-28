@@ -2,13 +2,13 @@
 
 from typing import Awaitable, List
 from .utils.to_async import to_async
-from ..crm import CrmService
+from ..crm_deals import CrmDealsService
 from ...models import FormField
 
 
-class CrmServiceAsync(CrmService):
+class CrmDealsServiceAsync(CrmDealsService):
     """
-    Async Wrapper for CrmServiceAsync
+    Async Wrapper for CrmDealsServiceAsync
     """
 
     def new(self, request_body: List[FormField]) -> Awaitable[bool]:

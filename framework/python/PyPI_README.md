@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.6<a id="webotodevsdk-python-sdk-106"></a>
+# WebOtoDevSdk Python SDK 1.0.8<a id="webotodevsdk-python-sdk-108"></a>
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions<a id="versions"></a>
 
-- API version: `1.0.6`
-- SDK version: `1.0.6`
+- API version: `1.0.8`
+- SDK version: `1.0.8`
 
 ## About the API<a id="about-the-api"></a>
 
@@ -134,7 +134,7 @@ The SDK provides various services to interact with the API.
 | formulas   |
 | values     |
 | layouts    |
-| crm        |
+| crm_deals  |
 
 </details>
 
