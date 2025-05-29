@@ -12,7 +12,7 @@ fi
 #sudo npm update -g liblab
 
 # Building library with liblab
-#liblab build
+liblab build
 
 
 # Replace 'framework'
@@ -85,12 +85,12 @@ fi
 cd "$PWD"/framework/python/
 pip install build
 python -m build --outdir dist .
-pip install dist/web_oto_dev_sdk-1.0.11-py3-none-any.whl --force-reinstall
+pip install dist/web_oto_dev_sdk-1.0.12-py3-none-any.whl --force-reinstall
 cd ../..
 
 
 # Publishing
 pip install twine
 cd "$PWD"/framework/python/
-python3 -m twine upload dist/web_oto_dev_sdk-1.0.11-py3-none-any.whl
+python3 -m twine upload dist/web_oto_dev_sdk-1.0.12-py3-none-any.whl
 cd ../..
