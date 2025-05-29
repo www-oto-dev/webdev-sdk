@@ -70,3 +70,68 @@ class ValuesServiceAsync(ValuesService):
         dataset: Union[str, None] = SENTINEL,
     ) -> Awaitable[any]:
         return to_async(super().move)(name, before, after, dataset)
+
+    def revisions(self) -> Awaitable[any]:
+        return to_async(super().revisions)()
+
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
+    ) -> Awaitable[str]:
+        return to_async(super().new_1)(init, dataset)
+
+    def get_1(self, name: str, dataset: Union[str, None] = SENTINEL) -> Awaitable[str]:
+        return to_async(super().get_1)(name, dataset)
+
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        dataset: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().set_1)(name, value, dataset)
+
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        dataset: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().add_1)(name, value, dataset)
+
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
+    ) -> Awaitable[List[Value]]:
+        return to_async(super().all_1)(name, dataset)
+
+    def update_1(
+        self, request_body: List[Value], dataset: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().update_1)(request_body, dataset)
+
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        dataset: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().remove_1)(name, value, dataset)
+
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        dataset: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().display_1)(name, dataset, format)
+
+    def move_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        before: Union[str, None] = SENTINEL,
+        after: Union[str, None] = SENTINEL,
+        dataset: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().move_1)(name, before, after, dataset)
+
+    def revisions_1(self) -> Awaitable[any]:
+        return to_async(super().revisions_1)()

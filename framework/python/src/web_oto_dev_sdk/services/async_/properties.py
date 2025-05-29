@@ -61,3 +61,59 @@ class PropertiesServiceAsync(PropertiesService):
         format: Union[str, None] = SENTINEL,
     ) -> Awaitable[any]:
         return to_async(super().display)(name, build, format)
+
+    def revisions(self) -> Awaitable[any]:
+        return to_async(super().revisions)()
+
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, build: Union[str, None] = SENTINEL
+    ) -> Awaitable[str]:
+        return to_async(super().new_1)(init, build)
+
+    def get_1(self, name: str, build: Union[str, None] = SENTINEL) -> Awaitable[str]:
+        return to_async(super().get_1)(name, build)
+
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        build: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().set_1)(name, value, build)
+
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        build: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().add_1)(name, value, build)
+
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, build: Union[str, None] = SENTINEL
+    ) -> Awaitable[List[Property]]:
+        return to_async(super().all_1)(name, build)
+
+    def update_1(
+        self, request_body: List[Property], build: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().update_1)(request_body, build)
+
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        build: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().remove_1)(name, value, build)
+
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        build: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().display_1)(name, build, format)
+
+    def revisions_1(self) -> Awaitable[any]:
+        return to_async(super().revisions_1)()

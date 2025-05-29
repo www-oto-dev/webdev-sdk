@@ -1,17 +1,18 @@
 {
-  "liblabVersion": "2.25.10",
-  "date": "2025-04-28T05:23:10.390Z",
+  "liblabVersion": "2.25.23",
+  "date": "2025-05-29T12:29:45.827Z",
   "config": {
-    "apiId": 2098,
+    "apiId": 2243,
     "sdkName": "web-oto-dev-sdk",
-    "sdkVersion": "1.0.8",
+    "sdkVersion": "1.0.9",
     "languages": ["python"],
     "auth": ["apikey"],
+    "docs": [],
     "liblabVersion": "2",
     "deliveryMethods": ["zip"],
     "rawConfig": {
       "sdkName": "web-oto-dev-sdk",
-      "apiVersion": "1.0.8",
+      "apiVersion": "1.0.9",
       "apiName": "web-oto-dev-api",
       "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
       "languages": ["python"],
@@ -43,7 +44,7 @@
           "pypiPackageName": "",
           "githubRepoName": "web-dev-sdk-python",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.8",
+          "sdkVersion": "1.0.9",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -60,7 +61,7 @@
           "npmOrg": "",
           "githubRepoName": "web-dev-sdk-ts",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.8",
+          "sdkVersion": "1.0.9",
           "liblabVersion": "2",
           "generateEnumAs": "union",
           "additionalConstructorParameters": [
@@ -74,7 +75,7 @@
           "goModuleName": "web-dev-sdk",
           "githubRepoName": "web-dev-sdk-go",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.8",
+          "sdkVersion": "1.0.9",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -87,7 +88,7 @@
           "groupId": "dev.oto",
           "artifactId": "webdev",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.8",
+          "sdkVersion": "1.0.9",
           "liblabVersion": "2"
         }
       },
@@ -95,32 +96,41 @@
         "githubOrg": "www-oto-dev"
       }
     },
-    "apiVersion": "1.0.8",
+    "liblabConfigVersion": "1.0.0",
+    "apiVersion": "1.0.9",
     "apiName": "web-oto-dev-api",
     "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
+    "createDocs": false,
     "languageOptions": {
       "go": {
+        "githubRepoName": "web-dev-sdk-go",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "renameIllegalModelProperties": true,
+        "sdkVersion": "1.0.9",
         "goModuleName": "web-dev-sdk",
         "additionalConstructorParameters": [
           {
             "name": "project_id",
             "example": "my-project-slug-or-uid"
           }
-        ],
-        "githubRepoName": "web-dev-sdk-go",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.8"
+        ]
       },
       "java": {
-        "groupId": "dev.oto",
-        "artifactId": "webdev",
-        "includeKotlinSnippets": false,
         "ignoreFiles": [],
         "liblabVersion": "2",
-        "sdkVersion": "1.0.8"
+        "renameIllegalModelProperties": true,
+        "sdkVersion": "1.0.9",
+        "groupId": "dev.oto",
+        "artifactId": "webdev",
+        "includeKotlinSnippets": false
       },
       "python": {
+        "githubRepoName": "web-dev-sdk-python",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "renameIllegalModelProperties": true,
+        "sdkVersion": "1.0.9",
         "alwaysInitializeOptionals": false,
         "additionalConstructorParameters": [
           {
@@ -128,33 +138,37 @@
             "example": "my-project-slug-or-uid"
           }
         ],
-        "pypiPackageName": "",
-        "githubRepoName": "web-dev-sdk-python",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.8"
+        "pypiPackageName": ""
       },
       "typescript": {
-        "bundle": true,
-        "exportClassDefault": false,
-        "httpClient": "fetch",
-        "npmName": "",
-        "npmOrg": "",
+        "githubRepoName": "web-dev-sdk-ts",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "renameIllegalModelProperties": true,
+        "sdkVersion": "1.0.9",
         "additionalConstructorParameters": [
           {
             "name": "project_id",
             "example": "my-project-slug-or-uid"
           }
         ],
-        "githubRepoName": "web-dev-sdk-ts",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.8",
-        "generateEnumAs": "union"
+        "bundle": true,
+        "denoteCommon": false,
+        "exportClassDefault": false,
+        "generateEnumAs": "union",
+        "httpClient": "fetch",
+        "npmName": "",
+        "npmOrg": ""
       }
     },
+    "validationsToIgnore": [],
     "publishing": {
-      "githubOrg": "www-oto-dev"
+      "githubOrg": "www-oto-dev",
+      "platform": "github"
+    },
+    "analytics": {
+      "streaming": false,
+      "pagination": false
     },
     "authentication": {
       "apiKey": {
@@ -164,8 +178,6 @@
     "devContainer": true,
     "generateEnv": true,
     "includeOptionalSnippetParameters": true,
-    "inferServiceNames": false,
-    "injectedModels": [],
     "license": {
       "type": "MIT",
       "name": "MIT",
@@ -173,7 +185,7 @@
       "path": "MIT.ejs"
     },
     "responseHeaders": false,
-    "generateMCP": false,
+    "buildAllModels": false,
     "retry": {
       "enabled": true,
       "maxAttempts": 3,
@@ -185,11 +197,10 @@
       "httpMethodsToRetry": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
     },
     "multiTenant": true,
-    "hooksLocation": {
-      "bucketKey": "10724/hooks.zip",
-      "bucketName": "prod-liblab-api-stack-hooks"
-    },
     "includeWatermark": true,
+    "githubRepoName": "web-dev-sdk-python",
+    "ignoreFiles": [],
+    "renameIllegalModelProperties": true,
     "alwaysInitializeOptionals": false,
     "additionalConstructorParameters": [
       {
@@ -198,21 +209,20 @@
       }
     ],
     "pypiPackageName": "",
-    "githubRepoName": "web-dev-sdk-python",
-    "ignoreFiles": [],
     "language": "python",
     "deliveryMethod": "zip",
     "hooks": {
-      "enabled": true,
-      "sourceDir": "/tmp/resources/hooks"
+      "enabled": false,
+      "sourceDir": ""
     },
     "usesFormData": false,
     "environmentVariables": [],
     "fileOutput": "/tmp",
+    "inferServiceNames": false,
     "httpLibrary": {
       "name": "axios",
       "packages": {
-        "axios": "^1.7.9"
+        "axios": "^1.9.0"
       },
       "languages": ["typescript"]
     },
@@ -243,6 +253,7 @@
     "src/web_oto_dev_sdk/services/async_/utils/__init__.py",
     "src/web_oto_dev_sdk/net/transport/request.py",
     "src/web_oto_dev_sdk/net/transport/response.py",
+    "src/web_oto_dev_sdk/net/transport/api_error.py",
     "src/web_oto_dev_sdk/net/transport/request_error.py",
     "src/web_oto_dev_sdk/sdk.py",
     "src/web_oto_dev_sdk/net/transport/serializer.py",
@@ -271,12 +282,13 @@
     "src/web_oto_dev_sdk/services/utils/default_headers.py",
     "./LICENSE",
     ".devcontainer/devcontainer.json",
-    "documentation/models/Project.md",
+    "documentation/models/ProjectInfo.md",
     "documentation/models/Property.md",
     "documentation/models/Meaning.md",
     "documentation/models/Formula.md",
     "documentation/models/Value.md",
     "documentation/models/FormField.md",
+    "documentation/models/HttpValidationError.md",
     "src/web_oto_dev_sdk/models/utils/one_of_base_model.py",
     "src/web_oto_dev_sdk/services/async_/utils/to_async.py",
     "src/web_oto_dev_sdk/services/async_/admin.py",
@@ -286,17 +298,25 @@
     "src/web_oto_dev_sdk/services/async_/formulas.py",
     "src/web_oto_dev_sdk/services/async_/values.py",
     "src/web_oto_dev_sdk/services/async_/layouts.py",
+    "src/web_oto_dev_sdk/services/async_/crm.py",
     "src/web_oto_dev_sdk/services/async_/crm_deals.py",
     "src/web_oto_dev_sdk/sdk_async.py",
     "src/web_oto_dev_sdk/models/utils/sentinel.py",
-    "src/web_oto_dev_sdk/services/crm_deals.py",
-    "documentation/services/CrmDealsService.md",
-    "src/web_oto_dev_sdk/models/project.py",
+    "documentation/models/ValidationError.md",
+    "src/web_oto_dev_sdk/models/project_info.py",
     "src/web_oto_dev_sdk/models/property.py",
     "src/web_oto_dev_sdk/models/meaning.py",
     "src/web_oto_dev_sdk/models/formula.py",
     "src/web_oto_dev_sdk/models/value.py",
     "src/web_oto_dev_sdk/models/form_field.py",
+    "src/web_oto_dev_sdk/services/crm.py",
+    "src/web_oto_dev_sdk/services/crm_deals.py",
+    "documentation/services/CrmService.md",
+    "documentation/services/CrmDealsService.md",
+    "src/web_oto_dev_sdk/models/http_validation_error.py",
+    "src/web_oto_dev_sdk/models/validation_error.py",
+    "README.md",
+    "PyPI_README.md",
     "documentation/services/AdminService.md",
     "documentation/services/ProjectService.md",
     "documentation/services/PropertiesService.md",
@@ -306,8 +326,6 @@
     "documentation/services/ValuesService.md",
     "src/web_oto_dev_sdk/services/admin.py",
     "src/web_oto_dev_sdk/services/project.py",
-    "README.md",
-    "PyPI_README.md",
     "src/web_oto_dev_sdk/services/properties.py",
     "src/web_oto_dev_sdk/services/meanings.py",
     "src/web_oto_dev_sdk/services/formulas.py",

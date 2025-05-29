@@ -7,20 +7,20 @@ from ..net.transport.serializer import Serializer
 from ..net.environment.environment import Environment
 from ..models.utils.sentinel import SENTINEL
 from ..models.utils.cast_models import cast_models
-from ..models import Project
+from ..models import HttpValidationError, ProjectInfo
 
 
 class ProjectService(BaseService):
 
     @cast_models
-    def info(self) -> Project:
+    def info(self) -> ProjectInfo:
         """Obtain project information
 
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
         :return: The parsed response data.
-        :rtype: Project
+        :rtype: ProjectInfo
         """
 
         serialized_request = (
@@ -32,8 +32,8 @@ class ProjectService(BaseService):
             .set_method("GET")
         )
 
-        response, _, _ = self.send_request(serialized_request)
-        return Project._unmap(response)
+        response, status, content = self.send_request(serialized_request)
+        return ProjectInfo._unmap(response)
 
     @cast_models
     def collect(self) -> None:
@@ -53,7 +53,7 @@ class ProjectService(BaseService):
             .set_method("POST")
         )
 
-        self.send_request(serialized_request)
+        response, status, _ = self.send_request(serialized_request)
 
     @cast_models
     def generate(self) -> None:
@@ -73,7 +73,7 @@ class ProjectService(BaseService):
             .set_method("POST")
         )
 
-        self.send_request(serialized_request)
+        response, status, _ = self.send_request(serialized_request)
 
     @cast_models
     def build(self) -> None:
@@ -93,7 +93,7 @@ class ProjectService(BaseService):
             .set_method("POST")
         )
 
-        self.send_request(serialized_request)
+        response, status, _ = self.send_request(serialized_request)
 
     @cast_models
     def view(self) -> str:
@@ -115,7 +115,7 @@ class ProjectService(BaseService):
             .set_method("POST")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -127,6 +127,8 @@ class ProjectService(BaseService):
         ...
         :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
         ...
+        :return: The parsed response data.
+        :rtype: None
         """
 
         Validator(str).is_optional().is_nullable().validate(target)
@@ -137,8 +139,143 @@ class ProjectService(BaseService):
                 [self.get_api_key()],
             )
             .add_query("target", target, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("POST")
         )
 
-        self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
+
+    @cast_models
+    def info_1(self) -> ProjectInfo:
+        """Obtain project information
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: ProjectInfo
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/info",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return ProjectInfo._unmap(response)
+
+    @cast_models
+    def collect_1(self) -> None:
+        """collect
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/collect",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("POST")
+        )
+
+        response, status, _ = self.send_request(serialized_request)
+
+    @cast_models
+    def generate_1(self) -> None:
+        """generate
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/generate",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("POST")
+        )
+
+        response, status, _ = self.send_request(serialized_request)
+
+    @cast_models
+    def build_1(self) -> None:
+        """build
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/build",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("POST")
+        )
+
+        response, status, _ = self.send_request(serialized_request)
+
+    @cast_models
+    def view_1(self) -> str:
+        """view
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: str
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/view",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("POST")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def imagine_1(self, target: Union[str, None] = SENTINEL) -> None:
+        """imagine
+
+        :param target: target, defaults to None
+        :type target: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: None
+        """
+
+        Validator(str).is_optional().is_nullable().validate(target)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/project/imagine",
+                [self.get_api_key()],
+            )
+            .add_query("target", target, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("POST")
+        )
+
+        response, status, content = self.send_request(serialized_request)

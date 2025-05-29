@@ -7,7 +7,7 @@ from ..net.transport.serializer import Serializer
 from ..net.environment.environment import Environment
 from ..models.utils.sentinel import SENTINEL
 from ..models.utils.cast_models import cast_models
-from ..models import Formula
+from ..models import Formula, HttpValidationError
 
 
 class FormulasService(BaseService):
@@ -39,11 +39,12 @@ class FormulasService(BaseService):
             )
             .add_query("init", init, nullable=True)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("PUT")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -71,11 +72,12 @@ class FormulasService(BaseService):
             )
             .add_query("name", name)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("GET")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -122,11 +124,12 @@ class FormulasService(BaseService):
             .add_query("form", form, nullable=True)
             .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("PUT")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -173,11 +176,12 @@ class FormulasService(BaseService):
             .add_query("form", form, nullable=True)
             .add_query("engine", engine, nullable=True)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("PUT")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -207,11 +211,12 @@ class FormulasService(BaseService):
             )
             .add_query("name", name, nullable=True)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("GET")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return [Formula._unmap(item) for item in response]
 
     @cast_models
@@ -240,12 +245,13 @@ class FormulasService(BaseService):
                 [self.get_api_key()],
             )
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("PUT")
             .set_body(request_body)
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -282,11 +288,12 @@ class FormulasService(BaseService):
             .add_query("name", name, nullable=True)
             .add_query("value", value, nullable=True)
             .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("DELETE")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
         return response
 
     @cast_models
@@ -323,9 +330,382 @@ class FormulasService(BaseService):
             .add_query("name", name, nullable=True)
             .add_query("set", set, nullable=True)
             .add_query("format", format, nullable=True)
+            .add_error(422, HttpValidationError)
             .serialize()
             .set_method("GET")
         )
 
-        response, _, _ = self.send_request(serialized_request)
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def revisions(self) -> any:
+        """List of all avaliable revisions (aka 'set')
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/formulas/rev/list",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
+    ) -> str:
+        """Create new set (default or specified settings)
+
+        :param init: init, defaults to None
+        :type init: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: str
+        """
+
+        Validator(str).is_optional().is_nullable().validate(init)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/revision/new",
+                [self.get_api_key()],
+            )
+            .add_query("init", init, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def get_1(self, name: str, set: Union[str, None] = SENTINEL) -> str:
+        """Obtain the lastest value for formula with specified 'name'
+
+        :param name: name
+        :type name: str
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: str
+        """
+
+        Validator(str).validate(name)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/actual/get",
+                [self.get_api_key()],
+            )
+            .add_query("name", name)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        form: Union[str, None] = SENTINEL,
+        engine: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> any:
+        """Remove all previous values for specified 'name' and add a new value
+
+        :param name: name
+        :type name: str
+        :param value: value, defaults to None
+        :type value: str, optional
+        :param form: form, defaults to None
+        :type form: str, optional
+        :param engine: engine, defaults to None
+        :type engine: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        Validator(str).validate(name)
+        Validator(str).is_optional().is_nullable().validate(value)
+        Validator(str).is_optional().is_nullable().validate(form)
+        Validator(str).is_optional().is_nullable().validate(engine)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/actual/set",
+                [self.get_api_key()],
+            )
+            .add_query("name", name)
+            .add_query("value", value, nullable=True)
+            .add_query("form", form, nullable=True)
+            .add_query("engine", engine, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        form: Union[str, None] = SENTINEL,
+        engine: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> any:
+        """Add a new value for specified 'name'
+
+        :param name: name
+        :type name: str
+        :param value: value, defaults to None
+        :type value: str, optional
+        :param form: form, defaults to None
+        :type form: str, optional
+        :param engine: engine, defaults to None
+        :type engine: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        Validator(str).validate(name)
+        Validator(str).is_optional().is_nullable().validate(value)
+        Validator(str).is_optional().is_nullable().validate(form)
+        Validator(str).is_optional().is_nullable().validate(engine)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/actual/add",
+                [self.get_api_key()],
+            )
+            .add_query("name", name)
+            .add_query("value", value, nullable=True)
+            .add_query("form", form, nullable=True)
+            .add_query("engine", engine, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("PUT")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
+    ) -> List[Formula]:
+        """Obtain a list of all formulas with specified 'name'
+
+        :param name: name, defaults to None
+        :type name: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: List[Formula]
+        """
+
+        Validator(str).is_optional().is_nullable().validate(name)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/all/get",
+                [self.get_api_key()],
+            )
+            .add_query("name", name, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return [Formula._unmap(item) for item in response]
+
+    @cast_models
+    def update_1(
+        self, request_body: List[Formula], set: Union[str, None] = SENTINEL
+    ) -> any:
+        """Remove previously set and add new formulas with specified 'name' fileds with values from 'values' fileds of provided list
+
+        :param request_body: The request body.
+        :type request_body: List[Formula]
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        Validator(Formula).is_array().validate(request_body)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/all/update",
+                [self.get_api_key()],
+            )
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("PUT")
+            .set_body(request_body)
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> any:
+        """Remove all values for specified 'name'
+
+        :param name: name, defaults to None
+        :type name: str, optional
+        :param value: value, defaults to None
+        :type value: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        Validator(str).is_optional().is_nullable().validate(name)
+        Validator(str).is_optional().is_nullable().validate(value)
+        Validator(str).is_optional().is_nullable().validate(set)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/all/remove",
+                [self.get_api_key()],
+            )
+            .add_query("name", name, nullable=True)
+            .add_query("value", value, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("DELETE")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> any:
+        """Display a list of all formulas with specified 'name'
+
+        :param name: name, defaults to None
+        :type name: str, optional
+        :param set: set, defaults to None
+        :type set: str, optional
+        :param format: format, defaults to None
+        :type format: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        Validator(str).is_optional().is_nullable().validate(name)
+        Validator(str).is_optional().is_nullable().validate(set)
+        Validator(str).is_optional().is_nullable().validate(format)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/all/display",
+                [self.get_api_key()],
+            )
+            .add_query("name", name, nullable=True)
+            .add_query("set", set, nullable=True)
+            .add_query("format", format, nullable=True)
+            .add_error(422, HttpValidationError)
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
+    def revisions_1(self) -> any:
+        """List of all avaliable revisions (aka 'set')
+
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data.
+        :rtype: any
+        """
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/api/v1/formulas/rev/list",
+                [self.get_api_key()],
+            )
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
         return response

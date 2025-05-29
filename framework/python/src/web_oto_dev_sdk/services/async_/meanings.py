@@ -61,3 +61,61 @@ class MeaningsServiceAsync(MeaningsService):
         format: Union[str, None] = SENTINEL,
     ) -> Awaitable[any]:
         return to_async(super().display)(name, collection, format)
+
+    def revisions(self) -> Awaitable[any]:
+        return to_async(super().revisions)()
+
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, collection: Union[str, None] = SENTINEL
+    ) -> Awaitable[str]:
+        return to_async(super().new_1)(init, collection)
+
+    def get_1(
+        self, name: str, collection: Union[str, None] = SENTINEL
+    ) -> Awaitable[str]:
+        return to_async(super().get_1)(name, collection)
+
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        collection: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().set_1)(name, value, collection)
+
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        collection: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().add_1)(name, value, collection)
+
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, collection: Union[str, None] = SENTINEL
+    ) -> Awaitable[List[Meaning]]:
+        return to_async(super().all_1)(name, collection)
+
+    def update_1(
+        self, request_body: List[Meaning], collection: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().update_1)(request_body, collection)
+
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        collection: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().remove_1)(name, value, collection)
+
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        collection: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().display_1)(name, collection, format)
+
+    def revisions_1(self) -> Awaitable[any]:
+        return to_async(super().revisions_1)()

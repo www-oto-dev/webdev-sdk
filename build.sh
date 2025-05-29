@@ -6,6 +6,11 @@ if [ -f ~/.zshenv ]; then
 	. ~/.zshenv
 fi
 
+
+
+# Installing lates version of liblab
+#sudo npm update -g liblab
+
 # Building library with liblab
 liblab build
 

@@ -7,8 +7,8 @@ from .utils.sentinel import SENTINEL
 
 
 @JsonMap({})
-class Project(BaseModel):
-    """Project
+class ProjectInfo(BaseModel):
+    """ProjectInfo
 
     :param pid: pid, defaults to None
     :type pid: str, optional
@@ -31,7 +31,7 @@ class Project(BaseModel):
         description: Union[str, None] = SENTINEL,
         **kwargs
     ):
-        """Project
+        """ProjectInfo
 
         :param pid: pid, defaults to None
         :type pid: str, optional

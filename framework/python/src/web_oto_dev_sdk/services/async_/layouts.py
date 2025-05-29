@@ -61,3 +61,59 @@ class LayoutsServiceAsync(LayoutsService):
         format: Union[str, None] = SENTINEL,
     ) -> Awaitable[any]:
         return to_async(super().display)(name, version, format)
+
+    def revisions(self) -> Awaitable[any]:
+        return to_async(super().revisions)()
+
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, version: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().new_1)(init, version)
+
+    def get_1(self, name: str, version: Union[str, None] = SENTINEL) -> Awaitable[str]:
+        return to_async(super().get_1)(name, version)
+
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        version: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().set_1)(name, value, version)
+
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        version: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().add_1)(name, value, version)
+
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, version: Union[str, None] = SENTINEL
+    ) -> Awaitable[List[Value]]:
+        return to_async(super().all_1)(name, version)
+
+    def update_1(
+        self, request_body: List[Value], version: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().update_1)(request_body, version)
+
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        version: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().remove_1)(name, value, version)
+
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        version: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().display_1)(name, version, format)
+
+    def revisions_1(self) -> Awaitable[any]:
+        return to_async(super().revisions_1)()

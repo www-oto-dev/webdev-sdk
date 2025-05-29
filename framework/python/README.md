@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.8
+# WebOtoDevSdk Python SDK 1.0.9
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.0.8`
-- SDK version: `1.0.8`
+- API version: `1.0.9`
+- SDK version: `1.0.9`
 
 ## About the API
 
@@ -135,6 +135,7 @@ The SDK provides various services to interact with the API.
 | [FormulasService](documentation/services/FormulasService.md)     |
 | [ValuesService](documentation/services/ValuesService.md)         |
 | [LayoutsService](documentation/services/LayoutsService.md)       |
+| [CrmService](documentation/services/CrmService.md)               |
 | [CrmDealsService](documentation/services/CrmDealsService.md)     |
 
 </details>
@@ -146,14 +147,16 @@ The SDK includes several models that represent the data structures used in API r
 <details> 
 <summary>Below is a list of all available models with links to their detailed documentation:</summary>
 
-| Name                                           | Description |
-| :--------------------------------------------- | :---------- |
-| [Project](documentation/models/Project.md)     |             |
-| [Property](documentation/models/Property.md)   |             |
-| [Meaning](documentation/models/Meaning.md)     |             |
-| [Formula](documentation/models/Formula.md)     |             |
-| [Value](documentation/models/Value.md)         |             |
-| [FormField](documentation/models/FormField.md) |             |
+| Name                                                               | Description |
+| :----------------------------------------------------------------- | :---------- |
+| [ProjectInfo](documentation/models/ProjectInfo.md)                 |             |
+| [Property](documentation/models/Property.md)                       |             |
+| [Meaning](documentation/models/Meaning.md)                         |             |
+| [Formula](documentation/models/Formula.md)                         |             |
+| [Value](documentation/models/Value.md)                             |             |
+| [FormField](documentation/models/FormField.md)                     |             |
+| [HttpValidationError](documentation/models/HttpValidationError.md) |             |
+| [ValidationError](documentation/models/ValidationError.md)         |             |
 
 </details>
 

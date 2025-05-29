@@ -65,3 +65,63 @@ class FormulasServiceAsync(FormulasService):
         format: Union[str, None] = SENTINEL,
     ) -> Awaitable[any]:
         return to_async(super().display)(name, set, format)
+
+    def revisions(self) -> Awaitable[any]:
+        return to_async(super().revisions)()
+
+    def new_1(
+        self, init: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
+    ) -> Awaitable[str]:
+        return to_async(super().new_1)(init, set)
+
+    def get_1(self, name: str, set: Union[str, None] = SENTINEL) -> Awaitable[str]:
+        return to_async(super().get_1)(name, set)
+
+    def set_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        form: Union[str, None] = SENTINEL,
+        engine: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().set_1)(name, value, form, engine, set)
+
+    def add_1(
+        self,
+        name: str,
+        value: Union[str, None] = SENTINEL,
+        form: Union[str, None] = SENTINEL,
+        engine: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().add_1)(name, value, form, engine, set)
+
+    def all_1(
+        self, name: Union[str, None] = SENTINEL, set: Union[str, None] = SENTINEL
+    ) -> Awaitable[List[Formula]]:
+        return to_async(super().all_1)(name, set)
+
+    def update_1(
+        self, request_body: List[Formula], set: Union[str, None] = SENTINEL
+    ) -> Awaitable[any]:
+        return to_async(super().update_1)(request_body, set)
+
+    def remove_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        value: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().remove_1)(name, value, set)
+
+    def display_1(
+        self,
+        name: Union[str, None] = SENTINEL,
+        set: Union[str, None] = SENTINEL,
+        format: Union[str, None] = SENTINEL,
+    ) -> Awaitable[any]:
+        return to_async(super().display_1)(name, set, format)
+
+    def revisions_1(self) -> Awaitable[any]:
+        return to_async(super().revisions_1)()

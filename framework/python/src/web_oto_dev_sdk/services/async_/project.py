@@ -4,7 +4,7 @@ from typing import Awaitable, Union
 from .utils.to_async import to_async
 from ..project import ProjectService
 from ...models.utils.sentinel import SENTINEL
-from ...models import Project
+from ...models import ProjectInfo
 
 
 class ProjectServiceAsync(ProjectService):
@@ -12,7 +12,7 @@ class ProjectServiceAsync(ProjectService):
     Async Wrapper for ProjectServiceAsync
     """
 
-    def info(self) -> Awaitable[Project]:
+    def info(self) -> Awaitable[ProjectInfo]:
         return to_async(super().info)()
 
     def collect(self) -> Awaitable[None]:
@@ -29,3 +29,21 @@ class ProjectServiceAsync(ProjectService):
 
     def imagine(self, target: Union[str, None] = SENTINEL) -> Awaitable[None]:
         return to_async(super().imagine)(target)
+
+    def info_1(self) -> Awaitable[ProjectInfo]:
+        return to_async(super().info_1)()
+
+    def collect_1(self) -> Awaitable[None]:
+        return to_async(super().collect_1)()
+
+    def generate_1(self) -> Awaitable[None]:
+        return to_async(super().generate_1)()
+
+    def build_1(self) -> Awaitable[None]:
+        return to_async(super().build_1)()
+
+    def view_1(self) -> Awaitable[str]:
+        return to_async(super().view_1)()
+
+    def imagine_1(self, target: Union[str, None] = SENTINEL) -> Awaitable[None]:
+        return to_async(super().imagine_1)(target)

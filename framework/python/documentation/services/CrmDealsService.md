@@ -2,9 +2,10 @@
 
 A list of all methods in the `CrmDealsService` service. Click on the method name to view detailed information about that method.
 
-| Methods     | Description     |
-| :---------- | :-------------- |
-| [new](#new) | Create new Deal |
+| Methods         | Description     |
+| :-------------- | :-------------- |
+| [new](#new)     | Create new Deal |
+| [new_1](#new_1) | Create new Deal |
 
 ## new
 
@@ -43,6 +44,47 @@ request_body = [
 ]
 
 result = sdk.crm_deals.new(request_body=request_body)
+
+print(result)
+```
+
+## new_1
+
+Create new Deal
+
+- HTTP Method: `PUT`
+- Endpoint: `/api/v1/api/v1/crm/deals/new`
+
+**Parameters**
+
+| Name         | Type                                      | Required | Description       |
+| :----------- | :---------------------------------------- | :------- | :---------------- |
+| request_body | [List[FormField]](../models/FormField.md) | ✅       | The request body. |
+
+**Return Type**
+
+`bool`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+request_body = [
+    {
+        "name": "name",
+        "value": "value"
+    }
+]
+
+result = sdk.crm_deals.new_1(request_body=request_body)
 
 print(result)
 ```
