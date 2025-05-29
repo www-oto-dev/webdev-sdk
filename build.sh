@@ -51,6 +51,8 @@ if [ -d "$PWD"/output ]; then
 
 	sed -i '' 's/from \.client import WebOtoDevSdk/from .client import WebOtoDevSdk as _WebOtoDevSdk/g' "$init_file"
 
+	sed -i '' 's/from \.sdk import WebOtoDevSdk/from .sdk import WebOtoDevSdk as _WebOtoDevSdk/g' "$init_file"
+
 	cat <<EOF >> "$init_file"
 
 from .sdk_wrapper import SDKWrapper
@@ -72,18 +74,16 @@ EOF
 fi
 
 
-
-
 # Building & installing
 cd "$PWD"/framework/python/
 pip install build
 python -m build --outdir dist .
-pip install dist/web_oto_dev_sdk-1.0.9-py3-none-any.whl --force-reinstall
+pip install dist/web_oto_dev_sdk-1.0.10-py3-none-any.whl --force-reinstall
 cd ../..
 
 
 # Publishing
 pip install twine
 cd "$PWD"/framework/python/
-python3 -m twine upload dist/web_oto_dev_sdk-1.0.9-py3-none-any.whl
+python3 -m twine upload dist/web_oto_dev_sdk-1.0.10-py3-none-any.whl
 cd ../..
