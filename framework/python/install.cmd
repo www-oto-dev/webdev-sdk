@@ -15,7 +15,7 @@ if "%USE_VENV%"=="1" (
 
 pip install build
 python -m build --outdir dist .
-pip install dist\web_oto_dev_sdk-1.0.10-py3-none-any.whl --force-reinstall
+pip install dist\web_oto_dev_sdk-1.0.11-py3-none-any.whl --force-reinstall
 
 if "%USE_VENV%"=="1" (
     deactivate

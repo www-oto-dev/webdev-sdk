@@ -1,3 +1,6 @@
+
+
+
 class Request:
     def __init__(self, method, url, headers, body=''):
         self.method = method
@@ -19,15 +22,16 @@ class Response:
         return f"Response(status={self.status}, headers={self.headers}, body={self.body})"
 
 
-class CustomHook:
+class DefaultHook:
 
     def before_request(self, request: Request, **kwargs):
-        print("before_request")
-
+        #print("before_request")
         request.headers['Project-Id'] = kwargs.get("project_id")
 
     def after_response(self, request: Request, response: Response, **kwargs):
-        print("after_response")
+        #print("after_response")
+        pass
 
     def on_error(self, error: Exception, request: Request, response: Response, **kwargs):
-        print("on_error")
+        #print("on_error")
+        pass

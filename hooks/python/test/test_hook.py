@@ -1,15 +1,15 @@
 import unittest
 
-from src.hook import CustomHook, Request
+from src.hook import DefaultHook, Request
 
-class TestCustomHook(unittest.TestCase):
+class TestDefaultHook(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
         pass
 
     def test_before_request(self):
-        hook = CustomHook()
+        hook = DefaultHook()
 
         request = Request("GET", "https://api.example.com", {
             "Content-Type": "application/json",

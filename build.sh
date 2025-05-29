@@ -12,22 +12,28 @@ fi
 #sudo npm update -g liblab
 
 # Building library with liblab
-liblab build
+#liblab build
 
 
 # Replace 'framework'
 if [ -d "$PWD"/output ]; then
 
 
+	# Replacing Hook file
+	rm -f "$PWD/output/python/src/web_oto_dev_sdk/hooks/hook.py" && \
+	cp "$PWD/hooks/python/src/hook.py" "$PWD/output/python/src/web_oto_dev_sdk/hooks/hook.py"
+
 	# Patching output
-	from='print("before_request")'; to=''
-	sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
+	
+	#from='print("before_request")'; to=''
+	#sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
+	#
+	#from='print("after_response")'; to='pass'
+	#sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
+	#
+	#from='print("on_error")'; to='pass'
+	#sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
 
-	from='print("after_response")'; to='pass'
-	sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
-
-	from='print("on_error")'; to='pass'
-	sed -i -e "s/$from/$to/g" "$PWD"/output/python/src/web_oto_dev_sdk/hooks/hook.py
 
 	from='bash'; to='sh'
 	sed -i -e "s/$from/$to/g" "$PWD"/output/python/install.sh
@@ -74,16 +80,17 @@ EOF
 fi
 
 
+
 # Building & installing
 cd "$PWD"/framework/python/
 pip install build
 python -m build --outdir dist .
-pip install dist/web_oto_dev_sdk-1.0.10-py3-none-any.whl --force-reinstall
+pip install dist/web_oto_dev_sdk-1.0.11-py3-none-any.whl --force-reinstall
 cd ../..
 
 
 # Publishing
 pip install twine
 cd "$PWD"/framework/python/
-python3 -m twine upload dist/web_oto_dev_sdk-1.0.10-py3-none-any.whl
+python3 -m twine upload dist/web_oto_dev_sdk-1.0.11-py3-none-any.whl
 cd ../..
