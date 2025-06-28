@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.12
+# WebOtoDevSdk Python SDK 1.0.15
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.0.12`
-- SDK version: `1.0.12`
+- API version: `1.0.15`
+- SDK version: `1.0.15`
 
 ## About the API
 
@@ -135,6 +135,8 @@ The SDK provides various services to interact with the API.
 | [FormulasService](documentation/services/FormulasService.md)     |
 | [ValuesService](documentation/services/ValuesService.md)         |
 | [LayoutsService](documentation/services/LayoutsService.md)       |
+| [MenuitemsService](documentation/services/MenuitemsService.md)   |
+| [ContextService](documentation/services/ContextService.md)       |
 | [CrmService](documentation/services/CrmService.md)               |
 | [CrmDealsService](documentation/services/CrmDealsService.md)     |
 
@@ -154,6 +156,7 @@ The SDK includes several models that represent the data structures used in API r
 | [Meaning](documentation/models/Meaning.md)                         |             |
 | [Formula](documentation/models/Formula.md)                         |             |
 | [Value](documentation/models/Value.md)                             |             |
+| [MenuItem](documentation/models/MenuItem.md)                       |             |
 | [FormField](documentation/models/FormField.md)                     |             |
 | [HttpValidationError](documentation/models/HttpValidationError.md) |             |
 | [ValidationError](documentation/models/ValidationError.md)         |             |

@@ -1,10 +1,10 @@
 {
-  "liblabVersion": "2.25.23",
-  "date": "2025-05-29T14:15:52.700Z",
+  "liblabVersion": "2.25.33",
+  "date": "2025-06-28T13:00:56.988Z",
   "config": {
-    "apiId": 2246,
+    "apiId": 2412,
     "sdkName": "web-oto-dev-sdk",
-    "sdkVersion": "1.0.12",
+    "sdkVersion": "1.0.15",
     "languages": ["python"],
     "auth": ["apikey"],
     "docs": [],
@@ -12,7 +12,7 @@
     "deliveryMethods": ["zip"],
     "rawConfig": {
       "sdkName": "web-oto-dev-sdk",
-      "apiVersion": "1.0.12",
+      "apiVersion": "1.0.15",
       "apiName": "web-oto-dev-api",
       "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
       "languages": ["python"],
@@ -44,7 +44,7 @@
           "pypiPackageName": "",
           "githubRepoName": "web-dev-sdk-python",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.12",
+          "sdkVersion": "1.0.15",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -61,7 +61,7 @@
           "npmOrg": "",
           "githubRepoName": "web-dev-sdk-ts",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.12",
+          "sdkVersion": "1.0.15",
           "liblabVersion": "2",
           "generateEnumAs": "union",
           "additionalConstructorParameters": [
@@ -75,7 +75,7 @@
           "goModuleName": "web-dev-sdk",
           "githubRepoName": "web-dev-sdk-go",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.12",
+          "sdkVersion": "1.0.15",
           "liblabVersion": "2",
           "additionalConstructorParameters": [
             {
@@ -88,7 +88,7 @@
           "groupId": "dev.oto",
           "artifactId": "webdev",
           "ignoreFiles": [],
-          "sdkVersion": "1.0.12",
+          "sdkVersion": "1.0.15",
           "liblabVersion": "2"
         }
       },
@@ -97,7 +97,7 @@
       }
     },
     "liblabConfigVersion": "1.0.0",
-    "apiVersion": "1.0.12",
+    "apiVersion": "1.0.15",
     "apiName": "web-oto-dev-api",
     "specFilePath": "http://api.web.oto.local:9999/api/v1/openapi.json",
     "createDocs": false,
@@ -107,7 +107,7 @@
         "ignoreFiles": [],
         "liblabVersion": "2",
         "renameIllegalModelProperties": true,
-        "sdkVersion": "1.0.12",
+        "sdkVersion": "1.0.15",
         "goModuleName": "web-dev-sdk",
         "additionalConstructorParameters": [
           {
@@ -120,7 +120,7 @@
         "ignoreFiles": [],
         "liblabVersion": "2",
         "renameIllegalModelProperties": true,
-        "sdkVersion": "1.0.12",
+        "sdkVersion": "1.0.15",
         "groupId": "dev.oto",
         "artifactId": "webdev",
         "includeKotlinSnippets": false
@@ -130,7 +130,7 @@
         "ignoreFiles": [],
         "liblabVersion": "2",
         "renameIllegalModelProperties": true,
-        "sdkVersion": "1.0.12",
+        "sdkVersion": "1.0.15",
         "alwaysInitializeOptionals": false,
         "additionalConstructorParameters": [
           {
@@ -145,7 +145,7 @@
         "ignoreFiles": [],
         "liblabVersion": "2",
         "renameIllegalModelProperties": true,
-        "sdkVersion": "1.0.12",
+        "sdkVersion": "1.0.15",
         "additionalConstructorParameters": [
           {
             "name": "project_id",
@@ -197,6 +197,10 @@
       "httpMethodsToRetry": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
     },
     "multiTenant": true,
+    "hooksLocation": {
+      "bucketKey": "12247/hooks.zip",
+      "bucketName": "prod-liblab-api-stack-hooks"
+    },
     "includeWatermark": true,
     "githubRepoName": "web-dev-sdk-python",
     "ignoreFiles": [],
@@ -212,8 +216,8 @@
     "language": "python",
     "deliveryMethod": "zip",
     "hooks": {
-      "enabled": false,
-      "sourceDir": ""
+      "enabled": true,
+      "sourceDir": "/tmp/resources/hooks"
     },
     "usesFormData": false,
     "environmentVariables": [],
@@ -277,16 +281,15 @@
     "src/web_oto_dev_sdk/net/request_chain/handlers/hook_handler.py",
     "src/web_oto_dev_sdk/net/request_chain/handlers/retry_handler.py",
     "examples/sample.py",
-    ".env.example",
-    "/examples/.env.example",
     "src/web_oto_dev_sdk/services/utils/default_headers.py",
-    "./LICENSE",
+    "LICENSE",
     ".devcontainer/devcontainer.json",
     "documentation/models/ProjectInfo.md",
     "documentation/models/Property.md",
     "documentation/models/Meaning.md",
     "documentation/models/Formula.md",
     "documentation/models/Value.md",
+    "documentation/models/MenuItem.md",
     "documentation/models/FormField.md",
     "documentation/models/HttpValidationError.md",
     "src/web_oto_dev_sdk/models/utils/one_of_base_model.py",
@@ -298,16 +301,21 @@
     "src/web_oto_dev_sdk/services/async_/formulas.py",
     "src/web_oto_dev_sdk/services/async_/values.py",
     "src/web_oto_dev_sdk/services/async_/layouts.py",
+    "src/web_oto_dev_sdk/services/async_/menuitems.py",
+    "src/web_oto_dev_sdk/services/async_/context.py",
     "src/web_oto_dev_sdk/services/async_/crm.py",
     "src/web_oto_dev_sdk/services/async_/crm_deals.py",
     "src/web_oto_dev_sdk/sdk_async.py",
     "src/web_oto_dev_sdk/models/utils/sentinel.py",
+    ".env.example",
+    "examples/.env.example",
     "documentation/models/ValidationError.md",
     "src/web_oto_dev_sdk/models/project_info.py",
     "src/web_oto_dev_sdk/models/property.py",
     "src/web_oto_dev_sdk/models/meaning.py",
     "src/web_oto_dev_sdk/models/formula.py",
     "src/web_oto_dev_sdk/models/value.py",
+    "src/web_oto_dev_sdk/models/menu_item.py",
     "src/web_oto_dev_sdk/models/form_field.py",
     "src/web_oto_dev_sdk/services/crm.py",
     "src/web_oto_dev_sdk/services/crm_deals.py",
@@ -319,17 +327,21 @@
     "PyPI_README.md",
     "documentation/services/AdminService.md",
     "documentation/services/ProjectService.md",
+    "documentation/services/ContextService.md",
     "documentation/services/PropertiesService.md",
     "documentation/services/MeaningsService.md",
     "documentation/services/FormulasService.md",
     "documentation/services/LayoutsService.md",
+    "documentation/services/MenuitemsService.md",
     "documentation/services/ValuesService.md",
     "src/web_oto_dev_sdk/services/admin.py",
     "src/web_oto_dev_sdk/services/project.py",
+    "src/web_oto_dev_sdk/services/context.py",
     "src/web_oto_dev_sdk/services/properties.py",
     "src/web_oto_dev_sdk/services/meanings.py",
     "src/web_oto_dev_sdk/services/formulas.py",
     "src/web_oto_dev_sdk/services/layouts.py",
+    "src/web_oto_dev_sdk/services/menuitems.py",
     "src/web_oto_dev_sdk/services/values.py"
   ]
 }

@@ -8,6 +8,8 @@ from .services.meanings import MeaningsService
 from .services.formulas import FormulasService
 from .services.values import ValuesService
 from .services.layouts import LayoutsService
+from .services.menuitems import MenuitemsService
+from .services.context import ContextService
 from .services.crm import CrmService
 from .services.crm_deals import CrmDealsService
 from .net.environment import Environment
@@ -36,6 +38,8 @@ class WebOtoDevSdk:
         self.formulas = FormulasService(base_url=self._base_url)
         self.values = ValuesService(base_url=self._base_url)
         self.layouts = LayoutsService(base_url=self._base_url)
+        self.menuitems = MenuitemsService(base_url=self._base_url)
+        self.context = ContextService(base_url=self._base_url)
         self.crm = CrmService(base_url=self._base_url)
         self.crm_deals = CrmDealsService(base_url=self._base_url)
         self.set_api_key(api_key, api_key_header)
@@ -60,6 +64,8 @@ class WebOtoDevSdk:
         self.formulas.set_base_url(self._base_url)
         self.values.set_base_url(self._base_url)
         self.layouts.set_base_url(self._base_url)
+        self.menuitems.set_base_url(self._base_url)
+        self.context.set_base_url(self._base_url)
         self.crm.set_base_url(self._base_url)
         self.crm_deals.set_base_url(self._base_url)
 
@@ -76,6 +82,8 @@ class WebOtoDevSdk:
         self.formulas.set_api_key(api_key, api_key_header)
         self.values.set_api_key(api_key, api_key_header)
         self.layouts.set_api_key(api_key, api_key_header)
+        self.menuitems.set_api_key(api_key, api_key_header)
+        self.context.set_api_key(api_key, api_key_header)
         self.crm.set_api_key(api_key, api_key_header)
         self.crm_deals.set_api_key(api_key, api_key_header)
 
@@ -92,6 +100,8 @@ class WebOtoDevSdk:
         self.formulas.set_additional_variables(project_id)
         self.values.set_additional_variables(project_id)
         self.layouts.set_additional_variables(project_id)
+        self.menuitems.set_additional_variables(project_id)
+        self.context.set_additional_variables(project_id)
         self.crm.set_additional_variables(project_id)
         self.crm_deals.set_additional_variables(project_id)
 
@@ -111,6 +121,8 @@ class WebOtoDevSdk:
         self.formulas.set_timeout(timeout)
         self.values.set_timeout(timeout)
         self.layouts.set_timeout(timeout)
+        self.menuitems.set_timeout(timeout)
+        self.context.set_timeout(timeout)
         self.crm.set_timeout(timeout)
         self.crm_deals.set_timeout(timeout)
 

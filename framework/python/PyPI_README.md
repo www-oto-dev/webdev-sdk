@@ -1,4 +1,4 @@
-# WebOtoDevSdk Python SDK 1.0.12<a id="webotodevsdk-python-sdk-1012"></a>
+# WebOtoDevSdk Python SDK 1.0.15<a id="webotodevsdk-python-sdk-1015"></a>
 
 Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get started with integrating and using the WebOtoDevSdk SDK in your project.
 
@@ -6,8 +6,8 @@ Welcome to the WebOtoDevSdk SDK documentation. This guide will help you get star
 
 ## Versions<a id="versions"></a>
 
-- API version: `1.0.12`
-- SDK version: `1.0.12`
+- API version: `1.0.15`
+- SDK version: `1.0.15`
 
 ## About the API<a id="about-the-api"></a>
 
@@ -134,6 +134,8 @@ The SDK provides various services to interact with the API.
 | formulas   |
 | values     |
 | layouts    |
+| menuitems  |
+| context    |
 | crm        |
 | crm_deals  |
 
@@ -153,6 +155,7 @@ The SDK includes several models that represent the data structures used in API r
 | Meaning             |             |
 | Formula             |             |
 | Value               |             |
+| MenuItem            |             |
 | FormField           |             |
 | HttpValidationError |             |
 | ValidationError     |             |

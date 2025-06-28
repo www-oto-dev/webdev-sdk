@@ -5,6 +5,7 @@ from .property import Property
 from .meaning import Meaning
 from .formula import Formula
 from .value import Value
+from .menu_item import MenuItem
 from .form_field import FormField
 from .http_validation_error import HttpValidationError
 from .validation_error import ValidationError, Loc

@@ -35,3 +35,6 @@ class DefaultHook:
     def on_error(self, error: Exception, request: Request, response: Response, **kwargs):
         #print("on_error")
         pass
+
+CustomHook = DefaultHook
+
