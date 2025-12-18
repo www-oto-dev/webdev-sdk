@@ -74,6 +74,9 @@ class ValuesServiceAsync(ValuesService):
     def revisions(self) -> Awaitable[any]:
         return to_async(super().revisions)()
 
+    def tree(self, dataset: Union[str, None] = SENTINEL) -> Awaitable[dict]:
+        return to_async(super().tree)(dataset)
+
     def new_1(
         self, init: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
     ) -> Awaitable[str]:

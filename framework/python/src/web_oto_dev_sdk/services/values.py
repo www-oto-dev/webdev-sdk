@@ -389,6 +389,34 @@ class ValuesService(BaseService):
         return response
 
     @cast_models
+    def tree(self, dataset: Union[str, None] = SENTINEL) -> dict:
+        """Obtain all values as a JSON tree structure
+
+        :param dataset: dataset, defaults to None
+        :type dataset: str, optional
+        ...
+        :raises RequestError: Raised when a request fails, with optional HTTP status code and details.
+        ...
+        :return: The parsed response data as a JSON tree.
+        :rtype: dict
+        """
+
+        Validator(str).is_optional().is_nullable().validate(dataset)
+
+        serialized_request = (
+            Serializer(
+                f"{self.base_url or Environment.DEFAULT.url}/api/v1/values/all/tree",
+                [self.get_api_key()],
+            )
+            .add_query("dataset", dataset, nullable=True)
+            .serialize()
+            .set_method("GET")
+        )
+
+        response, status, content = self.send_request(serialized_request)
+        return response
+
+    @cast_models
     def new_1(
         self, init: Union[str, None] = SENTINEL, dataset: Union[str, None] = SENTINEL
     ) -> str:

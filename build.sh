@@ -12,7 +12,23 @@ fi
 #sudo npm update -g liblab
 
 # Building library with liblab
-liblab build
+#liblab build
+
+
+# Increment version in pyproject.toml (patch version)
+pyproject="$PWD/framework/python/pyproject.toml"
+if [ -f "$pyproject" ]; then
+	current_version=$(grep -E '^version = "[0-9]+\.[0-9]+\.[0-9]+"' "$pyproject" | sed 's/version = "\(.*\)"/\1/')
+	if [ -n "$current_version" ]; then
+		major=$(echo "$current_version" | cut -d. -f1)
+		minor=$(echo "$current_version" | cut -d. -f2)
+		patch=$(echo "$current_version" | cut -d. -f3)
+		new_patch=$((patch + 1))
+		new_version="$major.$minor.$new_patch"
+		sed -i '' "s/version = \"$current_version\"/version = \"$new_version\"/" "$pyproject"
+		echo "Version incremented: $current_version -> $new_version"
+	fi
+fi
 
 
 # Replace 'framework'
@@ -85,12 +101,15 @@ fi
 cd "$PWD"/framework/python/
 pip install build
 python -m build --outdir dist .
-pip install dist/web_oto_dev_sdk-1.0.15-py3-none-any.whl --force-reinstall
+# Get version from pyproject.toml
+VERSION=$(grep -E '^version = "[0-9]+\.[0-9]+\.[0-9]+"' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+pip install "dist/web_oto_dev_sdk-${VERSION}-py3-none-any.whl" --force-reinstall
 cd ../..
 
 
 # Publishing
 pip install twine
 cd "$PWD"/framework/python/
-python3 -m twine upload dist/web_oto_dev_sdk-1.0.15-py3-none-any.whl
+VERSION=$(grep -E '^version = "[0-9]+\.[0-9]+\.[0-9]+"' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+python3 -m twine upload "dist/web_oto_dev_sdk-${VERSION}-py3-none-any.whl"
 cd ../..

@@ -14,6 +14,7 @@ A list of all methods in the `ValuesService` service. Click on the method name t
 | [display](#display)         | Display a list of all values with specified 'name'                                                                      |
 | [move](#move)               | Move all values with 'name'                                                                                             |
 | [revisions](#revisions)     | List of all avaliable revisions (aka 'dataset')                                                                         |
+| [tree](#tree)               | Obtain all values as a JSON tree structure                                                                              |
 | [new_1](#new_1)             | Create new dataset (default or specified settings)                                                                      |
 | [get_1](#get_1)             | Obtain the lastest value for variable with specified 'name'                                                             |
 | [set_1](#set_1)             | Remove all previous values for specified 'name' and add a new value                                                     |
@@ -412,6 +413,40 @@ sdk = WebOtoDevSdk(
 )
 
 result = sdk.values.revisions()
+
+print(result)
+```
+
+## tree
+
+Obtain all values as a JSON tree structure
+
+- HTTP Method: `GET`
+- Endpoint: `/api/v1/values/all/tree`
+
+**Parameters**
+
+| Name    | Type | Required | Description |
+| :------ | :--- | :------- | :---------- |
+| dataset | str  | ❌       |             |
+
+**Return Type**
+
+`dict`
+
+**Example Usage Code Snippet**
+
+```python
+from web_oto_dev_sdk import WebOtoDevSdk
+
+sdk = WebOtoDevSdk(
+    project_id="my-project-slug-or-uid",
+    api_key="YOUR_API_KEY",
+    api_key_header="YOUR_API_KEY_HEADER",
+    timeout=10000
+)
+
+result = sdk.values.tree(dataset="dataset")
 
 print(result)
 ```
